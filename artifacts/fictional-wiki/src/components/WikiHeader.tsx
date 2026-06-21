@@ -88,7 +88,7 @@ export default function WikiHeader({ onMenuClick }: WikiHeaderProps) {
           <Menu size={20} />
         </button>
 
-        <Link href="/wiki/main-page" data-testid="link-wordmark" className="flex items-center gap-1 shrink-0">
+        <Link href="/" data-testid="link-wordmark" className="flex items-center gap-1 shrink-0">
           <span className="font-serif font-bold text-lg tracking-wide text-foreground">Thoshan's Wiki</span>
         </Link>
 
@@ -136,7 +136,6 @@ export default function WikiHeader({ onMenuClick }: WikiHeaderProps) {
 
         <nav className="hidden md:flex items-center gap-3 text-sm text-foreground shrink-0">
           <a href="https://github.com/lingadevaru-hp" target="_blank" rel="noreferrer" className="hover:text-accent">GitHub</a>
-          <a href="https://lingadevaru.in" target="_blank" rel="noreferrer" className="hover:text-accent">Portfolio</a>
         </nav>
 
         <button

@@ -24,7 +24,7 @@ export default function ArticlePage() {
       .then((a) => {
         setArticle(a);
         setLoading(false);
-        document.title = `${a.metadata.title} - Aethelgard Codex`;
+        document.title = `${a.metadata.title} - Thoshan's Wiki`;
       })
       .catch(() => {
         setError(true);
@@ -48,7 +48,7 @@ export default function ArticlePage() {
               <h1 className="text-[1.95em] font-serif font-normal mb-3">Article not found</h1>
               <hr className="border-border mb-3" />
               <p className="text-sm mb-2">
-                There is no article titled <strong>&ldquo;{slug}&rdquo;</strong> in the Aethelgard Codex.
+                There is no article titled <strong>&ldquo;{slug}&rdquo;</strong> in Thoshan's Wiki.
               </p>
               <p className="text-sm">
                 <button onClick={() => setLocation('/wiki/main-page')} className="text-accent hover:underline">

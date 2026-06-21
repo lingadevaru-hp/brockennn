@@ -1,11 +1,23 @@
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'wouter';
-import type { Article } from '../types/article';
+import type { Article, ArticleIndexEntry } from '../types/article';
 import Infobox from './Infobox';
 import TableOfContents from './TableOfContents';
 import Section from './Section';
 import References from './References';
 import RevisionHistory from './RevisionHistory';
+import { loadArticlesIndex } from '../lib/articleLoader';
+
+const categoryColors: Record<string, string> = {
+  'Profile':        '#3366CC',
+  'Blockchain':     '#E67E22',
+  'AI / ML':        '#8E44AD',
+  'Infrastructure': '#27AE60',
+  'Security':       '#C0392B',
+  'Systems':        '#2980B9',
+  'Web':            '#16A085',
+  'Learning':       '#F39C12',
+};
 
 interface ArticleViewProps {
   article: Article;
@@ -26,7 +38,8 @@ function parseLeadText(text: string) {
 export default function ArticleView({ article }: ArticleViewProps) {
   const [activeSection, setActiveSection] = useState('');
   const [fontSize, setFontSize] = useState<'small' | 'standard' | 'large'>('standard');
-  const [contentWidth, setContentWidth] = useState<'standard' | 'wide'>('standard');
+  const [contentWidth, setContentWidth] = useState<'standard' | 'wide'>('wide');
+  const [allArticles, setAllArticles] = useState<ArticleIndexEntry[]>([]);
   const articleRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -36,6 +49,7 @@ export default function ArticleView({ article }: ArticleViewProps) {
       if (p.fontSize) setFontSize(p.fontSize);
       if (p.contentWidth) setContentWidth(p.contentWidth);
     }
+    loadArticlesIndex().then((idx) => setAllArticles(idx.articles));
   }, []);
 
   useEffect(() => {
@@ -166,17 +180,47 @@ export default function ArticleView({ article }: ArticleViewProps) {
           </div>
 
           {article.relatedArticles.length > 0 && (
-            <div className="border border-border bg-card p-3 text-sm" data-testid="related-articles">
-              <p className="font-bold text-xs uppercase tracking-wider mb-2 text-muted-foreground">Related articles</p>
-              <ul className="space-y-1">
-                {article.relatedArticles.map((slug) => (
-                  <li key={slug}>
-                    <Link href={`/wiki/${slug}`} className="text-accent hover:underline text-xs">
-                      {slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ')}
+            <div className="text-sm" data-testid="related-articles">
+              <p className="font-bold text-xs uppercase tracking-wider mb-3 text-muted-foreground border-b border-border pb-1">
+                Read next
+              </p>
+              <div className="space-y-2">
+                {article.relatedArticles.map((slug) => {
+                  const entry = allArticles.find((a) => a.slug === slug);
+                  const title = entry?.title ?? slug.split('-').map((w) => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+                  const category = entry?.category ?? '';
+                  const color = categoryColors[category] || '#3366CC';
+                  return (
+                    <Link key={slug} href={`/wiki/${slug}`} className="block group">
+                      <div className="border border-border bg-card hover:border-accent transition-colors p-2 rounded-sm">
+                        {entry?.thumbnail && (
+                          <img
+                            src={entry.thumbnail}
+                            alt={title}
+                            className="w-full h-16 object-cover mb-1.5 rounded-sm"
+                          />
+                        )}
+                        {category && (
+                          <span
+                            className="text-[10px] font-bold uppercase tracking-wider"
+                            style={{ color }}
+                          >
+                            {category}
+                          </span>
+                        )}
+                        <p className="text-xs font-semibold text-accent group-hover:underline leading-tight mt-0.5">
+                          {title}
+                        </p>
+                        {entry?.excerpt && (
+                          <p className="text-[11px] text-muted-foreground mt-0.5 leading-snug line-clamp-2">
+                            {entry.excerpt}
+                          </p>
+                        )}
+                      </div>
                     </Link>
-                  </li>
-                ))}
-              </ul>
+                  );
+                })}
+              </div>
             </div>
           )}
 

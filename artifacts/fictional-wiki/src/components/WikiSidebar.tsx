@@ -7,9 +7,9 @@ interface WikiSidebarProps {
 }
 
 const navLinks = [
+  { label: '⌂ Home', href: '/' },
   { label: 'Main Page', href: '/wiki/main-page' },
   { label: 'About Thoshan', href: '/wiki/about' },
-  { label: 'Random article', href: '/wiki/foss-coin' },
 ];
 
 const articleLinks = [
