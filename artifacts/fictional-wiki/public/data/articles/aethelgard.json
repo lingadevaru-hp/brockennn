@@ -1,0 +1,146 @@
+{
+  "metadata": {
+    "id": "aethelgard",
+    "title": "Aethelgard",
+    "slug": "aethelgard",
+    "category": "Geography",
+    "lastEdited": "2026-06-10T14:22:00Z",
+    "editCount": 847,
+    "views": 412890
+  },
+  "infobox": {
+    "title": "Aethelgard",
+    "image": "https://picsum.photos/seed/aethelgard-infobox/280/200",
+    "imageCaption": "Map of Aethelgard, c. 1923 AE",
+    "fields": [
+      { "label": "Region type", "value": "Continent" },
+      { "label": "Capital", "value": "Aethelheim" },
+      { "label": "Population", "value": "~12.4 million (est.)" },
+      { "label": "Area", "value": "3.2 million km²" },
+      { "label": "Major factions", "value": "Lumina Collective, Ironclad Dominion, Verdant Weavers, Sky-Merchants Guild" },
+      { "label": "Founded", "value": "c. 0 AE (Aethelgard Era)" },
+      { "label": "Currency", "value": "Aethercoin (Æ)" },
+      { "label": "Official languages", "value": "High Aethelic, Ironspeak, Verdant Tongue" }
+    ]
+  },
+  "lead": "**Aethelgard** is a vast realm of wonders, where ancient magic and industrial ingenuity exist in fragile balance. Spanning over three million square kilometres, it is a continent of dramatic contrasts: thundering steam-powered cities press against primordial forests, and crystal spires shimmer beside coal-belching forges.\n\nHome to four great factions — the luminous [[Lumina Collective]], the iron-fisted [[Ironclad Dominion]], the nature-bound Verdant Weavers, and the daring [[Sky-Merchants Guild]] — Aethelgard is a world perpetually on the cusp of transformation. Its defining geological feature is the [[Great Aetheric Rift]], a colossal fissure from which raw magical energy flows, sustaining both wonder and conflict across the land.",
+  "sections": [
+    {
+      "id": "history",
+      "title": "History",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The recorded history of Aethelgard begins with what scholars call the **Founding** (0 AE), when the first stable settlements arose around [[Aether-Crystals]] deposits. Prior to this, the continent was inhabited by nomadic tribes who feared and revered the magical energies emanating from the [[Great Aetheric Rift]].\n\nThe **Age of Exploration** (0–500 AE) saw rapid expansion as settlers followed crystal deposits northward, westward, and into the dangerous [[Whispering Woods]]. The construction of the first steam-powered machinery, powered by [[Aether-Crystals]], began around 320 AE."
+        },
+        {
+          "type": "image",
+          "src": "https://picsum.photos/seed/aethelgard-hist/800/500",
+          "alt": "Ancient ruins of the First Settlers",
+          "caption": "Ruins of the earliest Aethelgard settlements, near the Rift's western shore"
+        }
+      ],
+      "subsections": [
+        {
+          "id": "history-age-of-factions",
+          "title": "Age of Factions",
+          "level": 3,
+          "content": [
+            {
+              "type": "text",
+              "content": "The **Age of Factions** (500–1600 AE) was defined by the gradual consolidation of power around four distinct philosophies. The arcane scholars of the [[Lumina Collective]] argued that [[Aether-Crystals]] were a gift to be studied and shared; the industrialists who would become the [[Ironclad Dominion]] believed they were resources to be harvested and weaponised.\n\nThe **Verdant Wars** (1100–1200 AE) marked the first major armed conflict on the continent, triggered by Ironclad mining operations encroaching on the [[Whispering Woods]]. The wars ended in a stalemate, with a contested border established that has been disputed ever since."
+            },
+            {
+              "type": "callout",
+              "variant": "info",
+              "title": "The Contested Border",
+              "content": "The border between the Ironclad Dominion and the Whispering Woods has been the subject of 47 separate diplomatic negotiations since 1200 AE, none of which have produced a lasting agreement."
+            }
+          ]
+        },
+        {
+          "id": "history-steam-revolution",
+          "title": "The Steam Revolution",
+          "level": 3,
+          "content": [
+            {
+              "type": "text",
+              "content": "The **Steam Revolution** (1600–1850 AE) fundamentally altered Aethelgard's balance of power. The [[Ironclad Dominion]]'s development of [[Steam-Golems]] gave them a decisive military and industrial advantage. Meanwhile, the [[Sky-Merchants Guild]] pioneered [[Cloud-Skimmers]], opening trade routes that bypassed ground-level conflict zones entirely.\n\nBy 1800 AE, Aethelgard's population had quadrupled, its cities had grown into massive industrial centres, and the ecological pressure on the [[Whispering Woods]] had reached a critical point."
+            },
+            {
+              "type": "quote",
+              "content": "We did not conquer nature — we merely convinced her to wait.",
+              "author": "High Marshal Vorkan, Ironclad Dominion, 1742 AE"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "geography",
+      "title": "Geography",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Aethelgard's geography is shaped by the [[Great Aetheric Rift]], which bisects the continent from the Stormshorn Mountains in the north to the Shattered Coast in the south. The rift creates distinct climate zones on either side, with the western territories receiving more rainfall and the eastern plains experiencing prolonged dry seasons."
+        },
+        {
+          "type": "table",
+          "columns": ["Region", "Area (km²)", "Climate", "Dominant Faction"],
+          "rows": [
+            { "Region": "Northern Reaches", "Area (km²)": "820,000", "Climate": "Subarctic", "Dominant Faction": "Lumina Collective" },
+            { "Region": "Central Plains", "Area (km²)": "1,100,000", "Climate": "Temperate", "Dominant Faction": "Ironclad Dominion" },
+            { "Region": "Whispering Woods", "Area (km²)": "650,000", "Climate": "Humid Continental", "Dominant Faction": "Verdant Weavers" },
+            { "Region": "Southern Reaches", "Area (km²)": "430,000", "Climate": "Semi-arid", "Dominant Faction": "Ironclad Dominion" },
+            { "Region": "Sky Territories", "Area (km²)": "N/A", "Climate": "Alpine", "Dominant Faction": "Sky-Merchants Guild" }
+          ]
+        },
+        {
+          "type": "gallery",
+          "items": [
+            { "src": "https://picsum.photos/seed/aethelgard-geo1/800/500", "alt": "Northern Reaches", "caption": "The ice-crystal formations of the Northern Reaches" },
+            { "src": "https://picsum.photos/seed/aethelgard-geo2/800/500", "alt": "Central Plains", "caption": "Industrial sprawl of the Central Plains" },
+            { "src": "https://picsum.photos/seed/aethelgard-geo3/800/500", "alt": "Shattered Coast", "caption": "The Shattered Coast at low tide" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "culture",
+      "title": "Culture and Society",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Aethelgard's culture is as varied as its geography. In the arcane towers of the [[Lumina Collective]], scholars debate the fundamental nature of aetheric energy; in the soot-stained factories of the [[Ironclad Dominion]], workers labour 14-hour shifts to feed the ever-hungry furnaces of progress.\n\nThe **Aethercoin** serves as the common currency across most of Aethelgard, though the [[Whispering Woods]] operates on a system of barter and favour-exchange. The **Sky-Merchants Guild** maintains their own complementary currency, the *sky-mark*, accepted at all major airship ports."
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "references": [
+    { "id": 1, "title": "A History of Aethelgard, Vol. I", "author": "Professor Elara Stonecroft", "year": 1901, "publisher": "Aethelheim University Press" },
+    { "id": 2, "title": "The Great Survey: Cartographic Records of the Known World", "year": 1876, "publisher": "Imperial Cartographic Society" },
+    { "id": 3, "title": "Factions and Federations", "author": "Hadwick Pryne", "year": 1889, "publisher": "Lumina Press" }
+  ],
+  "relatedArticles": ["lumina-collective", "ironclad-dominion", "great-aetheric-rift", "whispering-woods"],
+  "categories": ["Geography", "Continents", "Aethelgard", "World-building"],
+  "editHistory": [
+    { "date": "2026-06-10T14:22:00Z", "editor": "CrystalScribe", "summary": "Expanded the Steam Revolution section with new sources", "changeType": "major" },
+    { "date": "2026-05-22T09:15:00Z", "editor": "AethelArchivist", "summary": "Fixed population estimate in infobox", "changeType": "minor" },
+    { "date": "2026-04-01T18:00:00Z", "editor": "WoodwardN", "summary": "Added gallery section to Geography", "changeType": "minor" },
+    { "date": "2026-01-15T11:30:00Z", "editor": "SteamPen42", "summary": "Created article with initial content", "changeType": "new" }
+  ],
+  "perspectives": [
+    {
+      "title": "Ironclad Dominion View",
+      "content": "Dominion historians emphasise Aethelgard's industrial potential, framing the Steam Revolution as the true beginning of civilisation and the continent's natural destiny."
+    },
+    {
+      "title": "Verdant Weavers View",
+      "content": "Verdant scholars regard Aethelgard as a living entity wounded by industrialisation, and date their calendar from the first felling of the great trees rather than the human Founding."
+    }
+  ]
+}

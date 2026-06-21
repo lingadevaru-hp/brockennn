@@ -1,0 +1,133 @@
+{
+  "metadata": {
+    "id": "life-threads",
+    "title": "Life-Threads",
+    "slug": "life-threads",
+    "category": "Magic",
+    "lastEdited": "2026-06-07T13:45:00Z",
+    "editCount": 421,
+    "views": 203110
+  },
+  "infobox": {
+    "title": "Life-Threads",
+    "image": "https://picsum.photos/seed/thread-infobox/280/200",
+    "imageCaption": "Visible Life-Thread manifestation during a healing ritual",
+    "fields": [
+      { "label": "Type", "value": "Biological magic system" },
+      { "label": "Practitioners", "value": "Verdant Weavers (primarily)" },
+      { "label": "Origin", "value": "[[Whispering Woods]] (nexus points)" },
+      { "label": "Key technique", "value": "Thread-weaving, Crystal-Song" },
+      { "label": "Applications", "value": "Healing, growth, communication, combat" },
+      { "label": "Training time", "value": "Minimum 10 years" },
+      { "label": "Governing body", "value": "Council of Thread-Elders" }
+    ]
+  },
+  "lead": "**Life-Threads** are the metaphysical filaments believed to connect all living beings to each other and to the natural world. The practice of manipulating these threads — called **Thread-Weaving** — is the primary magical discipline of the Verdant Weavers of the [[Whispering Woods]] and is regarded as both a sacred art and a practical skill of enormous power.\n\nUnlike the [[Aether-Crystals]]-based magic practised by the [[Lumina Collective]], Life-Thread work requires no external tool or resource — practitioners draw on the living energy of the world itself. This makes it uniquely independent of political control and supply chains, a fact that has made Thread-Weavers invaluable to communities throughout [[Aethelgard]] regardless of faction affiliation.",
+  "sections": [
+    {
+      "id": "theory",
+      "title": "Theoretical Basis",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The theoretical framework of Life-Threads posits that all living beings exist in a web of **vital resonance** — invisible connections that transmit life energy, emotional states, and biological information between organisms. Thread-Weavers describe these connections as having texture, colour, and tension: a healthy being's threads are said to be bright, taut, and warm; a sick or dying being's threads are grey, slack, and cold.\n\nThe [[Lumina Collective]]'s Biological Weaving discipline has attempted to quantify Life-Threads using [[Aether-Crystals]] resonance measurement, with partial success. Their findings suggest that Life-Threads are not metaphorical but correspond to measurable aetheric field gradients between organisms — though Verdant Thread-Elders dispute this reductionist interpretation."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "The Lumina-Verdant Debate",
+          "content": "The question of whether Life-Threads are a manifestation of aetheric energy (Lumina position) or an independent phenomenon that predates aetheric theory (Verdant position) remains unresolved and is one of the most active areas of magical scholarship in Aethelgard."
+        },
+        {
+          "type": "image",
+          "src": "https://picsum.photos/seed/thread-theory/800/500",
+          "alt": "Life-Thread mapping diagram",
+          "caption": "Lumina Collective diagram of Life-Thread resonance fields, 1892 AE"
+        }
+      ]
+    },
+    {
+      "id": "techniques",
+      "title": "Weaving Techniques",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Life-Thread practice encompasses hundreds of documented techniques, organised by the Council of Thread-Elders into three major schools: **Healing Weave**, **Growth Weave**, and **Bond Weave**. A fourth, informal school — the **Severance Weave** — exists for combat and emergency applications and is taught only to senior practitioners."
+        },
+        {
+          "type": "table",
+          "columns": ["School", "Primary Application", "Training Time", "Risk Level"],
+          "rows": [
+            { "School": "Healing Weave", "Primary Application": "Closing wounds, treating illness, regeneration", "Training Time": "3–5 years", "Risk Level": "Low (if trained)" },
+            { "School": "Growth Weave", "Primary Application": "Accelerating plant growth, shaping living structures", "Training Time": "5–7 years", "Risk Level": "Medium" },
+            { "School": "Bond Weave", "Primary Application": "Communication between organisms, empathy projection", "Training Time": "7–10 years", "Risk Level": "Medium" },
+            { "School": "Severance Weave", "Primary Application": "Disrupting life energy, emergency severing of corrupted threads", "Training Time": "10+ years", "Risk Level": "High" }
+          ]
+        }
+      ],
+      "subsections": [
+        {
+          "id": "techniques-crystal-song",
+          "title": "Crystal-Song",
+          "level": 3,
+          "content": [
+            {
+              "type": "text",
+              "content": "**Crystal-Song** is a hybrid technique developed by Verdant-Lumina collaborators in the 1860s AE that combines Life-Thread manipulation with [[Aether-Crystals]] resonance. The practitioner uses a tuned crystal to amplify and project Healing Weave energy, dramatically extending its range and potency.\n\nCrystal-Song is the most widely adopted Life-Thread technique outside the [[Whispering Woods]], as it can be partially learned without a full Thread-Weaving background. Field medics across all four factions now carry Grade-D crystals tuned for basic Crystal-Song applications."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "training",
+      "title": "Training and Initiation",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Life-Thread training is famously demanding. The standard curriculum, as defined by the Council of Thread-Elders, begins with **five years of silent observation** — the student accompanies a master Weaver but may not attempt to weave for the entire period. This phase is intended to develop sensitivity to the threads before attempting to interact with them.\n\nThe **First Weaving** — a student's initial unaided manipulation of a Life-Thread — is a ritual event attended by the student's master and a witness Thread-Elder. Students typically attempt their first weaving between years five and seven, though cases of practitioners taking twelve or more years before attempting are documented."
+        },
+        {
+          "type": "quote",
+          "content": "The thread does not wait for you to be ready. You wait until you can hear it clearly enough to know you will not break it.",
+          "author": "Thread-Elder Sylvara Rootwhisper, teaching the Third Circle, 1910 AE"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            { "src": "https://picsum.photos/seed/thread-train1/800/500", "alt": "Weaver in training", "caption": "A Thread-Weaver initiate in the observation year" },
+            { "src": "https://picsum.photos/seed/thread-train2/800/500", "alt": "First Weaving ceremony", "caption": "A First Weaving ceremony in the forest clearing" },
+            { "src": "https://picsum.photos/seed/thread-train3/800/500", "alt": "Thread-Elder teaching", "caption": "Thread-Elder Rootwhisper conducting a forest meditation session" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "societal-role",
+      "title": "Societal Role",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Life-Thread practitioners are sought after across all of [[Aethelgard]]'s factions. The [[Lumina Collective]] includes a dedicated Biological Weaving archonate that works alongside traditional Thread-Weavers. Even the [[Ironclad Dominion]], which is generally sceptical of non-industrial solutions, employs Thread-Weavers in military hospitals.\n\nThe [[Sky-Merchants Guild]] provides safe passage to any certified Weaver free of charge — an arrangement formalised in the **Charter of Healers** (1820 AE) that has been renewed without interruption ever since."
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "references": [
+    { "id": 1, "title": "The Weaver's Path: A Manual of Life-Thread Practice", "author": "Thread-Elder Sylvara Rootwhisper", "year": 1912, "publisher": "Verdant Weavers Council" },
+    { "id": 2, "title": "Aetheric Correlates of Life-Thread Phenomena", "author": "Archon Miriam Biowright", "year": 1897, "publisher": "Lumina Press" },
+    { "id": 3, "title": "Healing in the Field: Crystal-Song Applications for Military Medicine", "author": "Dr. Halden Cross", "year": 1906, "publisher": "Ironforge Medical Press" }
+  ],
+  "relatedArticles": ["whispering-woods", "aether-crystals", "lumina-collective", "aethelgard"],
+  "categories": ["Magic", "Verdant Weavers", "Healing", "Biology"],
+  "editHistory": [
+    { "date": "2026-06-07T13:45:00Z", "editor": "GreenScholar", "summary": "Added Crystal-Song subsection, expanded training section", "changeType": "major" },
+    { "date": "2026-04-22T11:30:00Z", "editor": "ForestWarden", "summary": "Added quotes from Thread-Elder teachings", "changeType": "minor" },
+    { "date": "2026-03-25T10:00:00Z", "editor": "AethelArchivist", "summary": "Created article", "changeType": "new" }
+  ]
+}

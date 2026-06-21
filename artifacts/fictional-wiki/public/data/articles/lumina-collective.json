@@ -1,0 +1,121 @@
+{
+  "metadata": {
+    "id": "lumina-collective",
+    "title": "Lumina Collective",
+    "slug": "lumina-collective",
+    "category": "Factions",
+    "lastEdited": "2026-06-08T09:11:00Z",
+    "editCount": 523,
+    "views": 287341
+  },
+  "infobox": {
+    "title": "Lumina Collective",
+    "image": "https://picsum.photos/seed/lumina-infobox/280/200",
+    "imageCaption": "The Crystal Spire of Aethelheim, seat of the High Council",
+    "fields": [
+      { "label": "Type", "value": "Arcane Republic" },
+      { "label": "Founded", "value": "412 AE" },
+      { "label": "Headquarters", "value": "Aethelheim" },
+      { "label": "Leader", "value": "High Councillor Seraphina Lux" },
+      { "label": "Members", "value": "~1.8 million" },
+      { "label": "Motto", "value": "\"Light guides, knowledge liberates\"" },
+      { "label": "Symbol", "value": "Seven-pointed crystal star" }
+    ]
+  },
+  "lead": "The **Lumina Collective** is the foremost alliance of aetheric scholars, crystal-mages, and philosophical engineers in [[Aethelgard]]. Founded in 412 AE by seven archmages who believed that [[Aether-Crystals]] held the key to ending all conflict, the Collective has grown into a powerful faction controlling the Northern Reaches and exerting significant diplomatic influence across the continent.\n\nUnlike the militaristic [[Ironclad Dominion]], the Lumina Collective eschews conventional armies in favour of a corps of highly trained **Crystal Sentinels** whose individual power can neutralise entire platoons. The Collective maintains the largest library in Aethelgard — the **Luminary Archive** — which holds records of every known aetheric phenomenon.",
+  "sections": [
+    {
+      "id": "founding",
+      "title": "Founding and Early History",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The Lumina Collective traces its origins to the **Conclave of Seven** (412 AE), a historic gathering of the most powerful archmages of the era. Dismayed by the first stirrings of militarism in what would become the [[Ironclad Dominion]], they signed the **Luminary Charter** — a foundational document pledging the collective pursuit of knowledge over conquest.\n\nThe early decades were precarious. Without military force, the Collective relied on diplomacy and the strategic positioning of knowledge. Their practice of sharing medical and agricultural aetheric techniques with neighbouring communities built a network of goodwill that served as their true defence."
+        },
+        {
+          "type": "image",
+          "src": "https://picsum.photos/seed/lumina-hist/800/500",
+          "alt": "The Conclave of Seven",
+          "caption": "Depiction of the Conclave of Seven, from the Luminary Archive"
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "The Luminary Charter",
+          "content": "The original Luminary Charter is preserved in the Luminary Archive under a self-renewing preservation crystal. It has been signed by every High Councillor since 412 AE, now bearing 247 signatures."
+        }
+      ]
+    },
+    {
+      "id": "structure",
+      "title": "Organisation and Structure",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The Lumina Collective is governed by a **High Council** of nine members, each elected by the scholarly body of their respective discipline. The nine disciplines represented are: Crystal Resonance, Aetheric Theory, Biological Weaving, Chrono-Mechanics, Spatial Harmonics, Meteorological Aethery, Historical Preservation, Diplomatic Aethery, and Applied Luminology."
+        },
+        {
+          "type": "table",
+          "columns": ["Rank", "Title", "Responsibilities", "Members"],
+          "rows": [
+            { "Rank": "1", "Title": "High Councillor", "Responsibilities": "Supreme authority, diplomatic representation", "Members": "1" },
+            { "Rank": "2", "Title": "Archon", "Responsibilities": "Discipline leadership, Council voting", "Members": "9" },
+            { "Rank": "3", "Title": "Senior Luminary", "Responsibilities": "Research direction, teaching", "Members": "~200" },
+            { "Rank": "4", "Title": "Luminary", "Responsibilities": "Active research, field work", "Members": "~3,000" },
+            { "Rank": "5", "Title": "Initiate", "Responsibilities": "Study and apprenticeship", "Members": "~12,000" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crystal-sentinels",
+      "title": "Crystal Sentinels",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The **Crystal Sentinels** are the Collective's elite defensive corps. Unlike conventional soldiers, Sentinels are trained over a decade to channel [[Aether-Crystals]] energy through their own bodies, granting them abilities that range from projecting blinding light to creating impassable force barriers.\n\nThere are never more than 144 active Crystal Sentinels at any time — a number prescribed by the Luminary Charter based on the harmonic limit of cooperative crystal-channelling."
+        },
+        {
+          "type": "quote",
+          "content": "We do not fight to win. We fight to make winning unnecessary.",
+          "author": "Grand Sentinel Mira Crystalborn, 1802 AE"
+        },
+        {
+          "type": "gallery",
+          "items": [
+            { "src": "https://picsum.photos/seed/sentinel-1/800/500", "alt": "Crystal Sentinel in ceremonial armour", "caption": "A Crystal Sentinel in full ceremonial regalia" },
+            { "src": "https://picsum.photos/seed/sentinel-2/800/500", "alt": "Sentinel training grounds", "caption": "Training grounds at the Crystal Spire" },
+            { "src": "https://picsum.photos/seed/sentinel-3/800/500", "alt": "Sentinel deployment", "caption": "Sentinels deploying aetheric barrier during the 1891 Rift Crisis" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "luminary-archive",
+      "title": "The Luminary Archive",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The **Luminary Archive** is the largest repository of knowledge in [[Aethelgard]], containing over 4 million hand-copied and crystal-imprinted texts. It is housed in the Crystal Spire of Aethelheim, a tower that grows a few centimetres every decade as new [[Aether-Crystals]] are incorporated into its structure.\n\nThe Archive is open to all verified scholars, regardless of factional affiliation. This policy has been a diplomatic cornerstone of the Collective — even Ironclad engineers regularly apply for research visas."
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "references": [
+    { "id": 1, "title": "The Luminary Charter: Annotated Edition", "author": "Archon Thessaly Brightmind", "year": 1850, "publisher": "Lumina Press" },
+    { "id": 2, "title": "Crystal Sentinels: A History of Aetheric Defence", "author": "Galeron Swift", "year": 1899, "publisher": "Aethelheim University Press" },
+    { "id": 3, "title": "Politics of Knowledge", "author": "Priya Moonwhisper", "year": 1912, "publisher": "Northern Reaches Academic Press" }
+  ],
+  "relatedArticles": ["aethelgard", "aether-crystals", "ironclad-dominion", "great-aetheric-rift"],
+  "categories": ["Factions", "Magic", "Organisations", "Northern Reaches"],
+  "editHistory": [
+    { "date": "2026-06-08T09:11:00Z", "editor": "LuminaScholar", "summary": "Added Crystal Sentinels gallery", "changeType": "major" },
+    { "date": "2026-04-14T16:45:00Z", "editor": "ArcaneArchivist", "summary": "Updated High Councillor's name following election", "changeType": "minor" },
+    { "date": "2026-02-28T10:00:00Z", "editor": "SteamPen42", "summary": "Initial article creation", "changeType": "new" }
+  ]
+}

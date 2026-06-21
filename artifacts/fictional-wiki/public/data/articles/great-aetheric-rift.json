@@ -1,0 +1,139 @@
+{
+  "metadata": {
+    "id": "great-aetheric-rift",
+    "title": "Great Aetheric Rift",
+    "slug": "great-aetheric-rift",
+    "category": "Geography",
+    "lastEdited": "2026-06-16T17:22:00Z",
+    "editCount": 862,
+    "views": 498230
+  },
+  "infobox": {
+    "title": "Great Aetheric Rift",
+    "image": "https://picsum.photos/seed/rift-infobox/280/200",
+    "imageCaption": "The Rift's glowing edge at night, viewed from the western observation platform",
+    "fields": [
+      { "label": "Type", "value": "Aetheric geological feature" },
+      { "label": "Length", "value": "~2,800 km" },
+      { "label": "Average width", "value": "8–12 km" },
+      { "label": "Maximum depth", "value": "Unmeasured (estimated >40 km)" },
+      { "label": "Location", "value": "Central Aethelgard, north-south axis" },
+      { "label": "Energy output", "value": "~140,000 AEU continuously" },
+      { "label": "First crossing", "value": "347 AE" },
+      { "label": "Governing body", "value": "Rift Oversight Commission (four-faction)" }
+    ]
+  },
+  "lead": "The **Great Aetheric Rift** is a colossal geological fissure stretching approximately 2,800 kilometres across the centre of [[Aethelgard]], running roughly north-south from the Stormshorn Mountains to the Shattered Coast. It is the continent's single most important geographical and magical feature — the ultimate source of all [[Aether-Crystals]] and the continuous emission of aetheric energy that sustains the continent's magical ecosystem.\n\nThe Rift is not merely a geological curiosity: it is a defining political reality. Control of the observation platforms, research stations, and limited crossing points along the Rift's length is a perennial source of tension between the four major factions. The **Rift Oversight Commission** — a nominally four-faction body established in 1874 AE — manages access, though its decisions are frequently contested.",
+  "sections": [
+    {
+      "id": "geology",
+      "title": "Geological Characteristics",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The Great Aetheric Rift is believed to have formed during the **Primordial Upheaval** — a massive geological event estimated at 80,000–100,000 years before the Aethelgard Era. Scholars of the [[Lumina Collective]]'s Geological Weaving subdiscipline believe it represents a fundamental fracture in the aethic substrate of the world — not merely in physical rock, but in the foundational magical structure of the continent.\n\nThe Rift's interior walls are lined with [[Aether-Crystals]] of extraordinary grade. The largest crystal formations ever recorded — including the legendary **Heartstone**, estimated at Grade-A with an output exceeding 50,000 AEU — are located on interior ledges inaccessible by conventional means. The Rift produces a faint harmonic hum audible up to 40 km away on calm days, which varies in pitch and frequency with weather patterns and seasons."
+        },
+        {
+          "type": "image",
+          "src": "https://picsum.photos/seed/rift-geo/800/500",
+          "alt": "The Rift's interior walls",
+          "caption": "Crystal formations on the Rift's interior wall, photographed from a lowered platform, 1904 AE"
+        },
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "Aetheric Hazard Zone",
+          "content": "Within 5 km of the Rift's edge, ambient aetheric energy levels exceed safe exposure thresholds for unshielded individuals. Prolonged exposure (>6 hours daily) without protective gear is associated with crystal fever, aetheric sensitisation syndrome, and in rare cases, involuntary crystal growth under the skin."
+        }
+      ]
+    },
+    {
+      "id": "history",
+      "title": "History of Exploration",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The first recorded crossing of the Rift occurred in 347 AE, accomplished by the explorer **Aldric the Brave** using a rope bridge of unknown construction. The crossing is celebrated annually across [[Aethelgard]] as **Crossing Day**, though historians debate whether Aldric's account is literal or allegorical.\n\nThe **First Scientific Expedition** (1891 AE), jointly sponsored by the [[Lumina Collective]] and the [[Sky-Merchants Guild]], produced the first systematic measurements of Rift energy output, crystal distribution, and the composition of the gases rising from the fissure. The expedition's report, running to 24 volumes, remains the primary reference work on the Rift."
+        },
+        {
+          "type": "table",
+          "columns": ["Year", "Event", "Significance"],
+          "rows": [
+            { "Year": "347 AE", "Event": "First recorded crossing", "Significance": "Established that the Rift could be traversed" },
+            { "Year": "820 AE", "Event": "First crystal extraction from Rift interior", "Significance": "Demonstrated the extraordinary grade of interior crystals" },
+            { "Year": "1843 AE", "Event": "Battle of the Rift", "Significance": "First and only major military engagement directly at the Rift" },
+            { "Year": "1874 AE", "Event": "Rift Oversight Commission established", "Significance": "Formalised four-faction governance of Rift access" },
+            { "Year": "1891 AE", "Event": "First Scientific Expedition", "Significance": "Systematic scientific documentation of the Rift" },
+            { "Year": "1922 AE", "Event": "Heartstone discovery", "Significance": "Largest crystal formation ever recorded; currently inaccessible" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "crossing-points",
+      "title": "Crossing Points and Infrastructure",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Only four permanent crossing points exist along the Rift's 2,800 km length. Each is a marvel of engineering, constructed to withstand the constant aetheric interference that makes conventional iron construction unreliable near the Rift.\n\n**Aldric's Bridge** (the northernmost crossing, rebuilt in aether-tempered steel in 1880 AE) is the oldest and most heavily used. **The Guild's Span** is operated by the [[Sky-Merchants Guild]] and includes a full cargo loading facility. **Dominion Gate** is a military crossing maintained by the [[Ironclad Dominion]], and the **Weavers' Path** is a Verdant Weavers living-wood bridge grown over three decades."
+        },
+        {
+          "type": "gallery",
+          "items": [
+            { "src": "https://picsum.photos/seed/rift-bridge1/800/500", "alt": "Aldric's Bridge", "caption": "Aldric's Bridge, rebuilt 1880 AE, spanning the northern Rift" },
+            { "src": "https://picsum.photos/seed/rift-bridge2/800/500", "alt": "Guild's Span", "caption": "The Guild's Span cargo facility, central Rift crossing" },
+            { "src": "https://picsum.photos/seed/rift-bridge3/800/500", "alt": "Weavers' Path", "caption": "The Weavers' Path, a living bridge of Elder-grown wood" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "political-status",
+      "title": "Political Status",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The Great Aetheric Rift is classified as a **Shared Natural Heritage Site** under the Continental Agreement of 1874 AE — a designation that theoretically prevents any single faction from exercising exclusive control. In practice, the four factions each control sections of the Rift's edge corresponding to their territorial claims, and the **Rift Oversight Commission** spends a significant portion of its time adjudicating boundary disputes.\n\nThe discovery of the **Heartstone** in 1922 AE has dramatically increased political tension. The inaccessible crystal's estimated energy output would give its controller an unprecedented strategic advantage. All four factions have launched expeditions to reach it; none have succeeded."
+        },
+        {
+          "type": "quote",
+          "content": "The Rift does not belong to any of us. It is older than our nations, older than our languages, older than our gods. We would do well to remember that.",
+          "author": "High Councillor Seraphina Lux, address to the Continental Assembly, 1923 AE"
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "references": [
+    { "id": 1, "title": "Report of the First Scientific Expedition to the Great Aetheric Rift, 24 volumes", "year": 1892, "publisher": "Lumina Press / Port Azure Academic Press" },
+    { "id": 2, "title": "The Continental Agreement: Text and Commentary", "year": 1874, "publisher": "Aethelgard Diplomatic Press" },
+    { "id": 3, "title": "Geology of the Primordial Upheaval", "author": "Prof. Harwin Deeprock", "year": 1911, "publisher": "Aethelheim University Press" },
+    { "id": 4, "title": "The Heartstone Discovery: Implications and Controversies", "author": "Dr. Elara Stonecroft", "year": 1923, "publisher": "Lumina Press" }
+  ],
+  "relatedArticles": ["aether-crystals", "aethelgard", "lumina-collective", "ironclad-dominion", "cloud-skimmers"],
+  "categories": ["Geography", "Geology", "Magic", "Political Disputes"],
+  "editHistory": [
+    { "date": "2026-06-16T17:22:00Z", "editor": "CrystalScribe", "summary": "Added Heartstone discovery to history table and political section", "changeType": "major" },
+    { "date": "2026-06-01T10:00:00Z", "editor": "RiftWatcher", "summary": "Updated energy output measurements from 1925 AE survey", "changeType": "minor" },
+    { "date": "2026-04-10T14:30:00Z", "editor": "AethelArchivist", "summary": "Added crossing points gallery and bridge details", "changeType": "major" },
+    { "date": "2026-02-01T09:00:00Z", "editor": "SteamPen42", "summary": "Initial article creation", "changeType": "new" }
+  ],
+  "perspectives": [
+    {
+      "title": "Scientific Perspective",
+      "content": "Lumina scholars view the Rift as a window into the fundamental structure of aetheric reality — potentially the origin point of all magical energy in the world. They advocate unrestricted scientific access as a condition of human progress."
+    },
+    {
+      "title": "Verdant Perspective",
+      "content": "The Verdant Weavers regard the Rift as a wound in the living world — a scar from the Primordial Upheaval that requires healing, not exploitation. Their Thread-Elders conduct annual rituals at the Weavers' Path intended to 'soothe' the Rift's energy."
+    },
+    {
+      "title": "Dominion Perspective",
+      "content": "The Ironclad Dominion's official position is that the Rift's resources are a strategic asset that should be controlled and managed by the strongest faction — which they assert is themselves — for the benefit of all Aethelgard through stable governance."
+    }
+  ]
+}

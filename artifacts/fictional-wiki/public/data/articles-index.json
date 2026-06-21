@@ -1,0 +1,84 @@
+{
+  "articles": [
+    {
+      "id": "aethelgard",
+      "title": "Aethelgard",
+      "slug": "aethelgard",
+      "category": "Geography",
+      "excerpt": "A vast realm where ancient magic and industrial ingenuity exist in fragile balance, home to four great factions vying for supremacy.",
+      "thumbnail": "https://picsum.photos/seed/aethelgard-1/160/100"
+    },
+    {
+      "id": "lumina-collective",
+      "title": "Lumina Collective",
+      "slug": "lumina-collective",
+      "category": "Factions",
+      "excerpt": "The foremost alliance of aetheric scholars and crystal-mages, dedicated to harnessing the power of Aether-Crystals for the betterment of all.",
+      "thumbnail": "https://picsum.photos/seed/lumina-1/160/100"
+    },
+    {
+      "id": "aether-crystals",
+      "title": "Aether-Crystals",
+      "slug": "aether-crystals",
+      "category": "Technology",
+      "excerpt": "Rare mineral formations suffused with primordial magical energy, the cornerstone of both arcane and industrial power throughout Aethelgard.",
+      "thumbnail": "https://picsum.photos/seed/aether-1/160/100"
+    },
+    {
+      "id": "steam-golems",
+      "title": "Steam-Golems",
+      "slug": "steam-golems",
+      "category": "Technology",
+      "excerpt": "Massive mechanical constructs powered by pressurised steam and guided by aetheric cores, serving as both laborers and soldiers.",
+      "thumbnail": "https://picsum.photos/seed/golem-1/160/100"
+    },
+    {
+      "id": "ironclad-dominion",
+      "title": "Ironclad Dominion",
+      "slug": "ironclad-dominion",
+      "category": "Factions",
+      "excerpt": "A militaristic state built on industrial might and iron discipline, the dominant military power in southern Aethelgard.",
+      "thumbnail": "https://picsum.photos/seed/ironclad-1/160/100"
+    },
+    {
+      "id": "whispering-woods",
+      "title": "Whispering Woods",
+      "slug": "whispering-woods",
+      "category": "Geography",
+      "excerpt": "An ancient and mysterious forest said to be sentient, home to the Verdant Weavers and countless dangerous flora and fauna.",
+      "thumbnail": "https://picsum.photos/seed/woods-1/160/100"
+    },
+    {
+      "id": "sky-merchants-guild",
+      "title": "Sky-Merchants Guild",
+      "slug": "sky-merchants-guild",
+      "category": "Factions",
+      "excerpt": "The preeminent mercantile organisation of Aethelgard, controlling the vast majority of airborne trade routes across the continent.",
+      "thumbnail": "https://picsum.photos/seed/guild-1/160/100"
+    },
+    {
+      "id": "cloud-skimmers",
+      "title": "Cloud-Skimmers",
+      "slug": "cloud-skimmers",
+      "category": "Technology",
+      "excerpt": "Sleek, fast airships designed for high-altitude travel, prized by the Sky-Merchants Guild for rapid courier missions.",
+      "thumbnail": "https://picsum.photos/seed/skimmer-1/160/100"
+    },
+    {
+      "id": "life-threads",
+      "title": "Life-Threads",
+      "slug": "life-threads",
+      "category": "Magic",
+      "excerpt": "The metaphysical filaments that connect all living things, manipulated by the Verdant Weavers to heal, grow, and protect.",
+      "thumbnail": "https://picsum.photos/seed/thread-1/160/100"
+    },
+    {
+      "id": "great-aetheric-rift",
+      "title": "Great Aetheric Rift",
+      "slug": "great-aetheric-rift",
+      "category": "Geography",
+      "excerpt": "A colossal fissure in the earth stretching across central Aethelgard, from which raw aetheric energy constantly emanates.",
+      "thumbnail": "https://picsum.photos/seed/rift-1/160/100"
+    }
+  ]
+}
