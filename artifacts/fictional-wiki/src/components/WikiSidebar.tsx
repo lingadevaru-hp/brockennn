@@ -8,25 +8,33 @@ interface WikiSidebarProps {
 
 const navLinks = [
   { label: 'Main Page', href: '/wiki/main-page' },
-  { label: 'Contents', href: '/wiki/main-page#contents' },
-  { label: 'Current events', href: '/wiki/main-page#news' },
-  { label: 'Random article', href: '/wiki/aethelgard' },
-  { label: 'About', href: '/wiki/main-page#about' },
-  { label: 'Help', href: '/wiki/main-page' },
+  { label: 'About Thoshan', href: '/wiki/about' },
+  { label: 'Random article', href: '/wiki/foss-coin' },
 ];
 
 const articleLinks = [
-  { label: 'Aethelgard', href: '/wiki/aethelgard' },
-  { label: 'Lumina Collective', href: '/wiki/lumina-collective' },
-  { label: 'Aether-Crystals', href: '/wiki/aether-crystals' },
-  { label: 'Steam-Golems', href: '/wiki/steam-golems' },
-  { label: 'Ironclad Dominion', href: '/wiki/ironclad-dominion' },
-  { label: 'Whispering Woods', href: '/wiki/whispering-woods' },
-  { label: 'Sky-Merchants Guild', href: '/wiki/sky-merchants-guild' },
-  { label: 'Cloud-Skimmers', href: '/wiki/cloud-skimmers' },
-  { label: 'Life-Threads', href: '/wiki/life-threads' },
-  { label: 'Great Aetheric Rift', href: '/wiki/great-aetheric-rift' },
+  { label: 'About', href: '/wiki/about', category: 'Profile' },
+  { label: 'FOSS Coin', href: '/wiki/foss-coin', category: 'Blockchain' },
+  { label: 'Thoshan Flash', href: '/wiki/thoshan-flash', category: 'AI / ML' },
+  { label: 'Insurance DApp', href: '/wiki/insurance-dapp', category: 'Blockchain' },
+  { label: 'Libre Cloud — Homelab', href: '/wiki/homelab', category: 'Infrastructure' },
+  { label: 'Privacy Stack', href: '/wiki/privacy-stack', category: 'Security' },
+  { label: 'Linux Setup', href: '/wiki/linux-setup', category: 'Systems' },
+  { label: 'Fraud Detection System', href: '/wiki/fraud-detection', category: 'AI / ML' },
+  { label: 'LocalPulse', href: '/wiki/local-pulse', category: 'Web' },
+  { label: 'Learning Roadmap', href: '/wiki/learning-roadmap', category: 'Learning' },
 ];
+
+const categoryLabels: Record<string, { color: string }> = {
+  'Profile':        { color: '#3366CC' },
+  'Blockchain':     { color: '#E67E22' },
+  'AI / ML':        { color: '#8E44AD' },
+  'Infrastructure': { color: '#27AE60' },
+  'Security':       { color: '#C0392B' },
+  'Systems':        { color: '#2980B9' },
+  'Web':            { color: '#16A085' },
+  'Learning':       { color: '#F39C12' },
+};
 
 export default function WikiSidebar({ open, onClose }: WikiSidebarProps) {
   return (
@@ -76,18 +84,27 @@ export default function WikiSidebar({ open, onClose }: WikiSidebarProps) {
           <div className="mt-4 pt-3 border-t border-border">
             <p className="px-2 py-1 text-xs font-bold uppercase text-muted-foreground tracking-wider">Articles</p>
             <ul className="space-y-0.5 mt-1">
-              {articleLinks.map((l) => (
-                <li key={l.label}>
-                  <Link
-                    href={l.href}
-                    onClick={onClose}
-                    data-testid={`article-link-${l.href.split('/').pop()}`}
-                    className="block px-2 py-1 hover:bg-background hover:text-accent text-foreground"
-                  >
-                    {l.label}
-                  </Link>
-                </li>
-              ))}
+              {articleLinks.map((l) => {
+                const cat = categoryLabels[l.category];
+                return (
+                  <li key={l.label}>
+                    <Link
+                      href={l.href}
+                      onClick={onClose}
+                      data-testid={`article-link-${l.href.split('/').pop()}`}
+                      className="block px-2 py-1 hover:bg-background hover:text-accent text-foreground"
+                    >
+                      <span className="block text-xs leading-tight">{l.label}</span>
+                      <span
+                        className="text-[10px]"
+                        style={{ color: cat?.color ?? '#A8A8A8' }}
+                      >
+                        {l.category}
+                      </span>
+                    </Link>
+                  </li>
+                );
+              })}
             </ul>
           </div>
         </nav>

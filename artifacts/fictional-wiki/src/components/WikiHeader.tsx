@@ -89,7 +89,7 @@ export default function WikiHeader({ onMenuClick }: WikiHeaderProps) {
         </button>
 
         <Link href="/wiki/main-page" data-testid="link-wordmark" className="flex items-center gap-1 shrink-0">
-          <span className="font-serif font-bold text-lg tracking-wide text-foreground">Wikipedia</span>
+          <span className="font-serif font-bold text-lg tracking-wide text-foreground">Thoshan's Wiki</span>
         </Link>
 
         <div ref={searchRef} className="flex-1 relative mx-2 max-w-xl">
@@ -103,7 +103,7 @@ export default function WikiHeader({ onMenuClick }: WikiHeaderProps) {
                 onChange={(e) => setQuery(e.target.value)}
                 onKeyDown={handleKeyDown}
                 onFocus={() => query.length >= 2 && setShowSuggestions(true)}
-                placeholder="Search Wikipedia"
+                placeholder="Search Thoshan's Wiki"
                 className="w-full pl-7 pr-2 py-1.5 text-sm border border-border bg-background focus:outline-none focus:border-accent rounded-l"
               />
             </div>
@@ -135,9 +135,8 @@ export default function WikiHeader({ onMenuClick }: WikiHeaderProps) {
         </div>
 
         <nav className="hidden md:flex items-center gap-3 text-sm text-foreground shrink-0">
-          <a href="#" className="hover:text-accent">Donate</a>
-          <a href="#" className="hover:text-accent">Create account</a>
-          <a href="#" className="hover:text-accent">Log in</a>
+          <a href="https://github.com/lingadevaru-hp" target="_blank" rel="noreferrer" className="hover:text-accent">GitHub</a>
+          <a href="https://lingadevaru.in" target="_blank" rel="noreferrer" className="hover:text-accent">Portfolio</a>
         </nav>
 
         <button

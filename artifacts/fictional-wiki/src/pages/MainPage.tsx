@@ -6,6 +6,17 @@ import WikiFooter from '../components/WikiFooter';
 import { loadArticlesIndex } from '../lib/articleLoader';
 import type { ArticleIndexEntry } from '../types/article';
 
+const categoryColors: Record<string, string> = {
+  'Profile':        '#3366CC',
+  'Blockchain':     '#E67E22',
+  'AI / ML':        '#8E44AD',
+  'Infrastructure': '#27AE60',
+  'Security':       '#C0392B',
+  'Systems':        '#2980B9',
+  'Web':            '#16A085',
+  'Learning':       '#F39C12',
+};
+
 export default function MainPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [articles, setArticles] = useState<ArticleIndexEntry[]>([]);
@@ -26,83 +37,84 @@ export default function MainPage() {
             <span>Read</span>
             <span>View source</span>
             <span>View history</span>
-            <span>Tools</span>
           </div>
 
           <div className="text-center mb-4 text-sm">
-            <strong>Welcome to Wikipedia,</strong>{' '}
-            the free encyclopedia that anyone can edit.{' '}
-            <Link href="/wiki/aethelgard" className="text-accent hover:underline">
-              10 articles
+            <strong>Thoshan's personal knowledge base</strong>{' '}
+            — a Wikipedia-style wiki about projects, systems, and learning.{' '}
+            <Link href="/wiki/about" className="text-accent hover:underline">
+              {articles.length || 10} articles
             </Link>{' '}
-            in the Aethelgard Codex.
+            in this wiki.
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mb-4">
             <div className="border border-border p-3">
-              <h2 className="font-bold border-b border-border pb-1 mb-2 text-sm">From today's featured article</h2>
+              <h2 className="font-bold border-b border-border pb-1 mb-2 text-sm">Featured article</h2>
               <div className="flex gap-3">
                 <img
-                  src="https://picsum.photos/seed/aethelgard-featured/120/90"
-                  alt="Aethelgard"
+                  src="https://picsum.photos/seed/about-featured/120/90"
+                  alt="About Thoshan"
                   className="w-28 h-20 object-cover border border-border shrink-0"
                 />
                 <div>
                   <p className="text-sm">
-                    <Link href="/wiki/aethelgard" className="font-bold text-accent hover:underline">Aethelgard</Link>{' '}
-                    is a vast realm of wonders, where ancient magic and industrial ingenuity exist in fragile balance.
-                    Home to four great factions — the luminous Lumina Collective, the iron-fisted Ironclad Dominion,
-                    the nature-bound Verdant Weavers, and the daring Sky-Merchants Guild — it is a world on the cusp
-                    of transformation.
+                    <Link href="/wiki/about" className="font-bold text-accent hover:underline">Lingadevaru H P</Link>{' '}
+                    (also known as <em>Thoshan</em>) is an MCA student at SIT Tumakuru, graduating 2026.
+                    Builder of deployed blockchain, AI, and web projects — with a career focus on networking,
+                    cloud, and cybersecurity. All skills are demonstrated through real deployed work: a{' '}
+                    <Link href="/wiki/foss-coin" className="text-accent hover:underline">Solana SPL token</Link>,
+                    a <Link href="/wiki/thoshan-flash" className="text-accent hover:underline">fine-tuned LLM</Link>,
+                    and a <Link href="/wiki/homelab" className="text-accent hover:underline">self-hosted cloud homelab</Link>.
                   </p>
                   <p className="text-right mt-1">
-                    <Link href="/wiki/aethelgard" className="text-accent text-xs hover:underline">Full article...</Link>
+                    <Link href="/wiki/about" className="text-accent text-xs hover:underline">Full article...</Link>
                   </p>
                 </div>
               </div>
               <p className="text-xs text-muted-foreground mt-2">
-                Recently featured:{' '}
-                <Link href="/wiki/lumina-collective" className="text-accent hover:underline">Lumina Collective</Link>
+                Other articles:{' '}
+                <Link href="/wiki/foss-coin" className="text-accent hover:underline">FOSS Coin</Link>
                 {' · '}
-                <Link href="/wiki/ironclad-dominion" className="text-accent hover:underline">Ironclad Dominion</Link>
+                <Link href="/wiki/thoshan-flash" className="text-accent hover:underline">Thoshan Flash</Link>
                 {' · '}
-                <Link href="/wiki/great-aetheric-rift" className="text-accent hover:underline">Great Aetheric Rift</Link>
+                <Link href="/wiki/privacy-stack" className="text-accent hover:underline">Privacy Stack</Link>
               </p>
             </div>
 
-            <div className="border border-border border-l-0 p-3 bg-[#FFF8E7] dark:bg-[#3A3A1A]">
-              <h2 className="font-bold border-b border-[#A2A9B1] dark:border-[#555] pb-1 mb-2 text-sm">In the news</h2>
+            <div className="border border-border border-l-0 p-3 bg-[#1A3A1A] dark:bg-[#1A3A1A]">
+              <h2 className="font-bold border-b border-[#555] pb-1 mb-2 text-sm">Project highlights</h2>
               <ul className="text-sm space-y-1.5 list-disc list-inside">
-                <li>The <Link href="/wiki/lumina-collective" className="text-accent font-bold hover:underline">Lumina Collective</Link> announces a new Aether-Crystal powered communication network spanning the Northern Reaches.</li>
-                <li>The <Link href="/wiki/ironclad-dominion" className="text-accent font-bold hover:underline">Ironclad Dominion</Link> unveils its latest generation of <Link href="/wiki/steam-golems" className="text-accent hover:underline">Steam-Golems</Link>, capable of operating for 72 hours without refueling.</li>
-                <li>The <Link href="/wiki/sky-merchants-guild" className="text-accent font-bold hover:underline">Sky-Merchants Guild</Link> opens a new trade corridor through the <Link href="/wiki/whispering-woods" className="text-accent hover:underline">Whispering Woods</Link>.</li>
-                <li>Researchers report unusual activity near the <Link href="/wiki/great-aetheric-rift" className="text-accent font-bold hover:underline">Great Aetheric Rift</Link>, with crystal formations growing at unprecedented rates.</li>
-                <li><strong>Ongoing:</strong> Diplomatic summit between the four factions — <Link href="/wiki/aethelgard" className="text-accent hover:underline">background</Link></li>
+                <li><Link href="/wiki/foss-coin" className="text-accent font-bold hover:underline">FOSS Coin ($FOSS)</Link> — live Solana SPL token on Orca Whirlpool DEX. Fixed 1B supply, mint authority permanently revoked. 7 ⭐ on GitHub.</li>
+                <li><Link href="/wiki/thoshan-flash" className="text-accent font-bold hover:underline">Thoshan Flash</Link> — QLoRA fine-tune of Gemma-2-9B published on Hugging Face with 26+ downloads and live Gradio inference.</li>
+                <li><Link href="/wiki/insurance-dapp" className="text-accent font-bold hover:underline">Insurance DApp</Link> — Ethereum smart contract insurance system using Solidity, Truffle, Web3.js, and MetaMask.</li>
+                <li><Link href="/wiki/local-pulse" className="text-accent font-bold hover:underline">LocalPulse</Link> — Next.js 15 event discovery PWA with Clerk auth, Firebase, PDF ticketing, and offline support.</li>
+                <li><Link href="/wiki/fraud-detection" className="text-accent font-bold hover:underline">Fraud Detection System</Link> — MCA final year project. 4-algorithm ML ensemble (LR + KNN + SVM + CNN) in ASP.NET.</li>
               </ul>
             </div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-0 mb-4">
-            <div className="border border-border border-t-0 p-3 bg-[#E7F3FF] dark:bg-[#1A3A52]">
-              <h2 className="font-bold border-b border-[#A2A9B1] dark:border-[#555] pb-1 mb-2 text-sm">Did you know...</h2>
+            <div className="border border-border border-t-0 p-3 bg-[#1A2A3A] dark:bg-[#1A2A3A]">
+              <h2 className="font-bold border-b border-[#555] pb-1 mb-2 text-sm">Did you know...</h2>
               <ul className="text-sm space-y-1.5 list-disc list-inside">
-                <li>...that <Link href="/wiki/aether-crystals" className="text-accent font-bold hover:underline">Aether-Crystals</Link> resonate at different frequencies depending on their depth of formation?</li>
-                <li>...that the <Link href="/wiki/whispering-woods" className="text-accent font-bold hover:underline">Whispering Woods</Link> have never been fully mapped despite centuries of exploration?</li>
-                <li>...that <Link href="/wiki/cloud-skimmers" className="text-accent font-bold hover:underline">Cloud-Skimmers</Link> are capable of reaching altitudes where conventional airships would lose buoyancy?</li>
-                <li>...that practitioners of <Link href="/wiki/life-threads" className="text-accent font-bold hover:underline">Life-Threads</Link> must spend years in silent meditation before weaving their first thread?</li>
-                <li>...that the <Link href="/wiki/great-aetheric-rift" className="text-accent font-bold hover:underline">Great Aetheric Rift</Link> produces a faint harmonic hum audible up to 40 km away?</li>
+                <li>...that <Link href="/wiki/foss-coin" className="text-accent font-bold hover:underline">FOSS Coin</Link> was deployed in a single atomic transaction containing 7 instructions — all-or-nothing, with no partial state?</li>
+                <li>...that <Link href="/wiki/thoshan-flash" className="text-accent font-bold hover:underline">QLoRA fine-tuning</Link> reduces GPU memory requirements from ~36 GB to ~12 GB by training only ~1–3% of model parameters?</li>
+                <li>...that the <Link href="/wiki/homelab" className="text-accent font-bold hover:underline">Libre Cloud homelab</Link> uses a zero-trust architecture where no service is directly reachable without passing through Cloudflare?</li>
+                <li>...that the <Link href="/wiki/privacy-stack" className="text-accent hover:underline">privacy stack</Link> runs DNS filtering at three independent layers — router, cloud DNS, and device-level — simultaneously?</li>
+                <li>...that the <Link href="/wiki/linux-setup" className="text-accent hover:underline">Omarchy</Link> distro was created by DHH (of Ruby on Rails fame) and has ~22,000 GitHub stars?</li>
               </ul>
             </div>
 
             <div className="border border-border border-l-0 border-t-0 p-3">
-              <h2 className="font-bold border-b border-border pb-1 mb-2 text-sm">On this day</h2>
-              <p className="text-xs text-muted-foreground mb-2">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</p>
+              <h2 className="font-bold border-b border-border pb-1 mb-2 text-sm">Technical areas</h2>
+              <p className="text-xs text-muted-foreground mb-2">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
               <ul className="text-sm space-y-1.5 list-disc list-inside">
-                <li><strong>347 AE</strong> — The first recorded crossing of the <Link href="/wiki/great-aetheric-rift" className="text-accent hover:underline">Great Aetheric Rift</Link> by a solo explorer.</li>
-                <li><strong>1654 AE</strong> — Founding of the <Link href="/wiki/ironclad-dominion" className="text-accent hover:underline">Ironclad Dominion</Link> by High Marshal Korrath the Unyielding.</li>
-                <li><strong>1778 AE</strong> — Charter of the <Link href="/wiki/sky-merchants-guild" className="text-accent hover:underline">Sky-Merchants Guild</Link> signed at Port Azure.</li>
-                <li><strong>1891 AE</strong> — First modern scientific expedition to the <Link href="/wiki/great-aetheric-rift" className="text-accent hover:underline">Great Aetheric Rift</Link>.</li>
-                <li><strong>1923 AE</strong> — Deployment of the first combat-ready <Link href="/wiki/steam-golems" className="text-accent hover:underline">Steam-Golem</Link> battalion.</li>
+                <li><strong>Blockchain</strong> — <Link href="/wiki/foss-coin" className="text-accent hover:underline">Solana SPL tokens</Link>, <Link href="/wiki/insurance-dapp" className="text-accent hover:underline">Ethereum smart contracts</Link>, Orca DEX liquidity</li>
+                <li><strong>AI / ML</strong> — <Link href="/wiki/thoshan-flash" className="text-accent hover:underline">LLM fine-tuning</Link>, <Link href="/wiki/fraud-detection" className="text-accent hover:underline">ML ensemble systems</Link>, HuggingFace deployment</li>
+                <li><strong>Infrastructure</strong> — <Link href="/wiki/homelab" className="text-accent hover:underline">Oracle Cloud free tier</Link>, Docker, Coolify, Cloudflare zero-trust</li>
+                <li><strong>Security</strong> — <Link href="/wiki/privacy-stack" className="text-accent hover:underline">layered DNS filtering</Link>, WireGuard VPN, UFW, fail2ban</li>
+                <li><strong>Systems</strong> — <Link href="/wiki/linux-setup" className="text-accent hover:underline">Arch Linux / Omarchy</Link>, Hyprland, Neovim, terminal-first workflow</li>
               </ul>
             </div>
           </div>
@@ -123,6 +135,12 @@ export default function MainPage() {
                     <Link href={`/wiki/${article.slug}`} className="text-accent hover:underline text-sm font-medium block truncate">
                       {article.title}
                     </Link>
+                    <span
+                      className="text-[10px] font-semibold"
+                      style={{ color: categoryColors[article.category] || '#A8A8A8' }}
+                    >
+                      {article.category}
+                    </span>
                     <p className="text-xs text-muted-foreground truncate">{article.excerpt}</p>
                   </div>
                 </div>
@@ -131,38 +149,34 @@ export default function MainPage() {
           </div>
 
           <div className="border border-border border-t-0 p-3 mb-4">
-            <h2 className="font-bold border-b border-border pb-1 mb-3 text-sm">Other areas of the Codex</h2>
+            <h2 className="font-bold border-b border-border pb-1 mb-3 text-sm">Browse by category</h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
               <div>
-                <p className="font-bold mb-1">Community</p>
-                <ul className="space-y-0.5 text-muted-foreground">
-                  <li><a href="#" className="text-accent hover:underline">Community portal</a></li>
-                  <li><a href="#" className="text-accent hover:underline">Village pump</a></li>
-                  <li><a href="#" className="text-accent hover:underline">Site news</a></li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-bold mb-1">Contribute</p>
-                <ul className="space-y-0.5 text-muted-foreground">
-                  <li><a href="#" className="text-accent hover:underline">Help desk</a></li>
-                  <li><a href="#" className="text-accent hover:underline">Teahouse</a></li>
-                  <li><a href="#" className="text-accent hover:underline">Sandbox</a></li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-bold mb-1">Portals</p>
+                <p className="font-bold mb-1" style={{ color: '#E67E22' }}>Blockchain</p>
                 <ul className="space-y-0.5">
-                  <li><Link href="/wiki/aethelgard" className="text-accent hover:underline">Geography</Link></li>
-                  <li><Link href="/wiki/lumina-collective" className="text-accent hover:underline">Factions</Link></li>
-                  <li><Link href="/wiki/aether-crystals" className="text-accent hover:underline">Technology</Link></li>
+                  <li><Link href="/wiki/foss-coin" className="text-accent hover:underline">FOSS Coin</Link></li>
+                  <li><Link href="/wiki/insurance-dapp" className="text-accent hover:underline">Insurance DApp</Link></li>
                 </ul>
               </div>
               <div>
-                <p className="font-bold mb-1">Categories</p>
+                <p className="font-bold mb-1" style={{ color: '#8E44AD' }}>AI / ML</p>
                 <ul className="space-y-0.5">
-                  <li><Link href="/wiki/search?q=geography" className="text-accent hover:underline">Geography</Link></li>
-                  <li><Link href="/wiki/search?q=magic" className="text-accent hover:underline">Magic</Link></li>
-                  <li><Link href="/wiki/search?q=history" className="text-accent hover:underline">History</Link></li>
+                  <li><Link href="/wiki/thoshan-flash" className="text-accent hover:underline">Thoshan Flash</Link></li>
+                  <li><Link href="/wiki/fraud-detection" className="text-accent hover:underline">Fraud Detection</Link></li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold mb-1" style={{ color: '#27AE60' }}>Infrastructure</p>
+                <ul className="space-y-0.5">
+                  <li><Link href="/wiki/homelab" className="text-accent hover:underline">Libre Cloud</Link></li>
+                  <li><Link href="/wiki/linux-setup" className="text-accent hover:underline">Linux Setup</Link></li>
+                </ul>
+              </div>
+              <div>
+                <p className="font-bold mb-1" style={{ color: '#C0392B' }}>Security</p>
+                <ul className="space-y-0.5">
+                  <li><Link href="/wiki/privacy-stack" className="text-accent hover:underline">Privacy Stack</Link></li>
+                  <li><Link href="/wiki/learning-roadmap" className="text-accent hover:underline">Learning Roadmap</Link></li>
                 </ul>
               </div>
             </div>

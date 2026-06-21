@@ -1,0 +1,98 @@
+{
+  "metadata": {
+    "id": "thoshan-flash",
+    "title": "Thoshan Flash",
+    "slug": "thoshan-flash",
+    "category": "AI / ML",
+    "lastEdited": "2026-04-29T00:00:00Z",
+    "editCount": 18,
+    "views": 4320
+  },
+  "infobox": {
+    "title": "Thoshan Flash",
+    "image": "https://picsum.photos/seed/flash-infobox/280/200",
+    "imageCaption": "Fine-tuning pipeline overview",
+    "fields": [
+      { "label": "Base model", "value": "Gemma-2-9B (Google)" },
+      { "label": "Method", "value": "QLoRA — Quantized Low-Rank Adaptation" },
+      { "label": "Framework", "value": "PEFT + Unsloth + PyTorch" },
+      { "label": "Quantization", "value": "4-bit (VRAM: ~36 GB → ~12 GB)" },
+      { "label": "Downloads", "value": "26+ (first month)" },
+      { "label": "Platform", "value": "Hugging Face Hub" },
+      { "label": "Interface", "value": "Gradio (live inference)" },
+      { "label": "Status", "value": "Completed, public" }
+    ]
+  },
+  "lead": "**Thoshan Flash** is a fine-tuned version of Google's **Gemma-2-9B** base model, published on Hugging Face with a live Gradio inference interface. This is explicitly **not** a model built from scratch — it is a parameter-efficient fine-tune of an existing pre-trained model using QLoRA (Quantized Low-Rank Adaptation), which reduces GPU memory requirements from ~36 GB to ~12 GB.\n\nThe project achieved 26+ downloads in its first month on the Hugging Face Hub. It was also connected to the CHIAC ASI internship — the ML techniques used in the fine-tuning (attention mechanisms, transformer internals, PEFT methodology) formed part of the Phase 2 research study.",
+  "sections": [
+    {
+      "id": "what-qlora-does",
+      "title": "What QLoRA Does",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Full fine-tuning of a 9B-parameter model requires approximately 36 GB of GPU memory — far beyond what consumer hardware provides. QLoRA solves this with a three-part strategy:\n\n**Step 1:** Load the base model in 4-bit quantized form, which dramatically reduces memory footprint while preserving most of the model's learned representations.\n\n**Step 2:** Inject small trainable **LoRA adapter layers** at key weight matrices within the transformer. These adapters are the only parts that get updated during training.\n\n**Step 3:** At export, merge the trained adapter weights back into the base model weights, producing a single fine-tuned model file ready for inference."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Parameter efficiency",
+          "content": "LoRA adapters typically represent only 1–3% of the total model parameters. Training 1% of a 9B-parameter model is vastly more resource-efficient than training all 9B parameters — without sacrificing significant capability on the target task."
+        },
+        {
+          "type": "table",
+          "columns": ["Component", "Detail"],
+          "rows": [
+            { "Component": "Base Model", "Detail": "Gemma-2-9B (Google) — pre-trained on large text corpus" },
+            { "Component": "Fine-tuning Method", "Detail": "QLoRA — Quantized Low-Rank Adaptation" },
+            { "Component": "PEFT Framework", "Detail": "PEFT (Parameter-Efficient Fine-Tuning) by Hugging Face" },
+            { "Component": "Quantization", "Detail": "4-bit → reduced VRAM from ~36 GB to ~12 GB" },
+            { "Component": "Training Library", "Detail": "Unsloth — optimised QLoRA training" },
+            { "Component": "Deep Learning", "Detail": "PyTorch" },
+            { "Component": "Ecosystem", "Detail": "Hugging Face Transformers" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "results-deployment",
+      "title": "Results and Deployment",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "After training, the model was uploaded to the Hugging Face Hub under the username `lingadevaruhp`. A Gradio inference interface was deployed alongside it, allowing anyone to run inference without local setup.\n\nWithin the first month of publication, the model received **26+ downloads** — demonstrating that it was being pulled and used by people beyond the original creator.\n\nThe Hugging Face model card documents the fine-tuning setup, hyperparameters, and intended use case, following the standard model documentation practice."
+        },
+        {
+          "type": "callout",
+          "variant": "success",
+          "title": "Live inference",
+          "content": "A Gradio interface is deployed at go.lingadevaru.in/LLM and on the Hugging Face model page. No local installation required to try the model."
+        }
+      ]
+    },
+    {
+      "id": "context",
+      "title": "Context and Framing",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Thoshan Flash is deliberately framed with accuracy: it is a fine-tune of an existing model, not a model built from scratch. This honest framing is part of a broader approach to self-presentation — distinguishing what was actually built versus what was just used or studied.\n\nThe fine-tuning work connects to the [[about|skill profile]] in AI/ML: parameter-efficient fine-tuning, Hugging Face ecosystem, and deployment of ML models to public inference endpoints. It does not connect to software development or model architecture design.\n\nFor other ML work, see [[fraud-detection|Fraud Detection System]] — a traditional ML ensemble built in C# for banking fraud classification."
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "references": [
+    { "id": 1, "title": "Thoshan Flash on Hugging Face", "url": "https://huggingface.co/lingadevaruhp/thoshan_Flash" },
+    { "id": 2, "title": "Short link — go.lingadevaru.in/LLM", "url": "https://go.lingadevaru.in/LLM" }
+  ],
+  "relatedArticles": ["about", "fraud-detection", "foss-coin"],
+  "categories": ["AI / ML", "LLM", "Hugging Face", "Fine-tuning"],
+  "editHistory": [
+    { "date": "2026-04-29T00:00:00Z", "editor": "thoshan", "summary": "Full rewrite: QLoRA explanation, honest framing, deployment details", "changeType": "major" },
+    { "date": "2026-04-28T10:00:00Z", "editor": "thoshan", "summary": "Initial page created", "changeType": "new" }
+  ]
+}

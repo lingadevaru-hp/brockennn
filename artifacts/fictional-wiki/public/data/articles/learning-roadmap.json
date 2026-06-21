@@ -1,0 +1,132 @@
+{
+  "metadata": {
+    "id": "learning-roadmap",
+    "title": "Learning Roadmap",
+    "slug": "learning-roadmap",
+    "category": "Learning",
+    "lastEdited": "2026-04-30T00:00:00Z",
+    "editCount": 8,
+    "views": 1840
+  },
+  "infobox": {
+    "title": "Learning Roadmap",
+    "image": "https://picsum.photos/seed/learn-infobox/280/200",
+    "imageCaption": "Study area and terminal workspace",
+    "fields": [
+      { "label": "Priority certs", "value": "CompTIA Network+, Security+, CCNA" },
+      { "label": "In progress", "value": "CS50 Cybersecurity (Harvard)" },
+      { "label": "Tools learning", "value": "Vim/Neovim, Obsidian (advanced)" },
+      { "label": "Reading", "value": "I Came Upon a Lighthouse — partially read" },
+      { "label": "Status", "value": "None yet obtained — all in planning" }
+    ]
+  },
+  "lead": "This page documents planned learning — certifications not yet obtained, tools not yet mastered, and courses in progress. **Nothing here represents a current skill or finished item.** This is an honest future agenda.\n\nThe overarching career direction is **Computer Networking, Cloud Computing, and Cybersecurity** — and the certification plan reflects this. The priority sequence targets networking fundamentals first (CompTIA Network+, CCNA), then security (Security+, CEH), then cloud (AWS, OCI, Azure).",
+  "sections": [
+    {
+      "id": "in-progress",
+      "title": "Currently In Progress",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "**CS50 Introduction to Cybersecurity (Harvard)** — Started on edX / cs50.harvard.edu. Covers cybersecurity fundamentals: threats, vulnerabilities, defensive techniques, cryptography basics, web security. Status: started, not yet completed. Remaining modules and final project still to be done.\n\n**Vim / Neovim** — Not fully started. Learning through vimtutor (built into Vim). Target: keyboard-driven terminal editing that requires no GUI. Worth learning for serious terminal work where LibreWolf or VS Code aren't available. Neovim with LazyVim config is already the editor in the [[linux-setup|Omarchy setup]], but deeper proficiency is still being developed."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Reading",
+          "content": "Partially reading I Came Upon a Lighthouse by Shantanu Naidu — a personal memoir about an intergenerational friendship and mentorship. Not a business book. About human connection and life lessons. Need to finish the remaining chapters."
+        }
+      ]
+    },
+    {
+      "id": "certifications",
+      "title": "Certification Plan",
+      "level": 2,
+      "content": [
+        {
+          "type": "callout",
+          "variant": "warning",
+          "title": "No industry certifications obtained yet",
+          "content": "As of April 2026, no formal industry certifications have been obtained. The Linux Fundamentals course certificate is a basic course cert. CS50 Cybersecurity is started but not completed. Everything listed below is planned with no set timeline."
+        },
+        {
+          "type": "text",
+          "content": "**Networking (highest priority):**"
+        },
+        {
+          "type": "table",
+          "columns": ["Certification", "Level", "Notes"],
+          "rows": [
+            { "Certification": "CompTIA Network+", "Level": "Entry — vendor-neutral", "Notes": "Good foundation before Security+. Networking fundamentals." },
+            { "Certification": "CCNA (Cisco)", "Level": "Associate", "Notes": "Gold standard for networking roles in India. High priority." }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "**Cybersecurity:**"
+        },
+        {
+          "type": "table",
+          "columns": ["Certification", "Level", "Notes"],
+          "rows": [
+            { "Certification": "CompTIA Security+", "Level": "Entry — industry standard", "Notes": "Most recognised first cert in cybersecurity. After Network+." },
+            { "Certification": "CEH (Certified Ethical Hacker)", "Level": "Intermediate", "Notes": "EC-Council — offensive security focus. After Security+." }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "**Cloud Computing:**"
+        },
+        {
+          "type": "table",
+          "columns": ["Certification", "Level", "Notes"],
+          "rows": [
+            { "Certification": "AWS Cloud Practitioner", "Level": "Foundational", "Notes": "Easiest entry into cloud certs." },
+            { "Certification": "OCI Foundations Associate", "Level": "Foundational", "Notes": "Oracle Cloud — relevant given existing OCI homelab usage." },
+            { "Certification": "AZ-900 (Azure Fundamentals)", "Level": "Foundational", "Notes": "Microsoft Azure entry cert." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tools",
+      "title": "Tools to Learn",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "**Obsidian (advanced features)** — Currently using Obsidian as a personal wiki host but not using it beyond basic note-taking. Features to learn: Dataview plugin (query notes like a database), Canvas (visual mind maps), graph filters, templates, tag hierarchies, backlink navigation, and core plugin configuration. Self-study via official docs and community guides.\n\n**Hermes Agent (Nous Research)** — A self-improving autonomous AI agent (Feb 2026, 123,000+ GitHub stars, MIT license). Runs across 15+ platforms from a single install. Natural language cron jobs, model-agnostic, closed learning loop, GEPA self-improvement. Status: on hold indefinitely. The current Oracle Cloud VM (1 OCPU, 1 GB RAM) is too limited — Hermes needs 24 GB+ RAM. Blocked until the [[homelab|ARM Ampere situation]] resolves."
+        }
+      ],
+      "collapsible": true
+    },
+    {
+      "id": "approach",
+      "title": "Learning Approach",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The certification plan prioritises **CCNA and Security+** as the two highest-value items for the target career in networking and cloud. Both are recognised hiring signals in India — particularly CCNA for network engineering roles and Security+ for security-adjacent roles.\n\nThe approach throughout is to build real things alongside studying theory. Each certification target connects to something already built: the [[privacy-stack|Privacy Stack]] demonstrates the practical networking knowledge that Network+ covers in theory; the [[homelab|homelab architecture]] demonstrates the cloud concepts that AWS/OCI certs formalise.\n\nNo timeline is set for any certification. The honest status is: none started, all planned."
+        },
+        {
+          "type": "quote",
+          "content": "None of these are current skills or finished. These are honest future agenda items.",
+          "author": "Learning Plans document, April 2026"
+        }
+      ]
+    }
+  ],
+  "references": [
+    { "id": 1, "title": "CS50 Introduction to Cybersecurity", "url": "https://cs50.harvard.edu/cybersecurity" },
+    { "id": 2, "title": "CompTIA Certification Roadmap", "url": "https://www.comptia.org/certifications" },
+    { "id": 3, "title": "Hermes Agent — Nous Research", "url": "https://hermes-agent.nousresearch.com" }
+  ],
+  "relatedArticles": ["about", "privacy-stack", "homelab", "linux-setup"],
+  "categories": ["Learning", "Certifications", "Networking", "Cybersecurity"],
+  "editHistory": [
+    { "date": "2026-04-30T00:00:00Z", "editor": "thoshan", "summary": "Added CS50 status, Hermes constraint note, cert sequence clarified", "changeType": "major" },
+    { "date": "2026-04-29T08:00:00Z", "editor": "thoshan", "summary": "Initial page", "changeType": "new" }
+  ]
+}

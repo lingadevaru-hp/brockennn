@@ -1,0 +1,134 @@
+{
+  "metadata": {
+    "id": "about",
+    "title": "About — Lingadevaru H P",
+    "slug": "about",
+    "category": "Profile",
+    "lastEdited": "2026-04-30T00:00:00Z",
+    "editCount": 24,
+    "views": 8210
+  },
+  "infobox": {
+    "title": "Lingadevaru H P",
+    "image": "https://picsum.photos/seed/about-profile/280/200",
+    "imageCaption": "Personal workspace setup, April 2026",
+    "fields": [
+      { "label": "Also known as", "value": "Thoshan" },
+      { "label": "Age", "value": "22" },
+      { "label": "Location", "value": "Tumakuru, Karnataka, India" },
+      { "label": "Degree", "value": "MCA — Siddaganga Institute of Technology" },
+      { "label": "Graduating", "value": "2026" },
+      { "label": "Career focus", "value": "Networking, Cloud, Cybersecurity" },
+      { "label": "GitHub", "value": "github.com/lingadevaru-hp" },
+      { "label": "Portfolio", "value": "lingadevaru.in" }
+    ]
+  },
+  "lead": "**Lingadevaru H P** (also known as **Thoshan**) is a 22-year-old MCA student at Siddaganga Institute of Technology, Tumakuru, graduating in 2026. He builds deployed projects across blockchain, AI/ML, web development, and self-hosted infrastructure — with a career focus on computer networking, cloud computing, and cybersecurity.\n\nUnlike most peers, he explicitly distinguishes himself as *not a software developer*: his proven strengths are operational — running, deploying, and managing systems. This is evidenced by a portfolio of live public projects: a [[foss-coin|Solana SPL token]] on Orca DEX, a [[thoshan-flash|fine-tuned LLM]] on Hugging Face, an [[insurance-dapp|Ethereum DApp]], and a self-hosted [[homelab|cloud homelab]] architecture.",
+  "sections": [
+    {
+      "id": "education",
+      "title": "Education",
+      "level": 2,
+      "content": [
+        {
+          "type": "table",
+          "columns": ["Degree", "Institution", "Years", "Result"],
+          "rows": [
+            { "Degree": "MCA", "Institution": "Siddaganga Institute of Technology, Tumakuru", "Years": "2024 – 2026", "Result": "Final semester — graduating 2026" },
+            { "Degree": "BCA", "Institution": "Seshadripuram Degree College", "Years": "2021 – 2024", "Result": "CGPA 8.2/10" }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "The MCA programme at SIT is structured across four semesters. The **3rd semester** was devoted to the [[fraud-detection|Final Year Academic Project]] — an online fraud detection system built and publicly released on GitHub. The **4th (final) semester** consisted of an internship at CHIAC ASI (Panchasutra Ltd, UK), where he served as Team 8 Lead in Research & Publication, completing all three assigned projects."
+        }
+      ]
+    },
+    {
+      "id": "skills",
+      "title": "Skills",
+      "level": 2,
+      "content": [
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Honest Skills Framework",
+          "content": "All skills listed here are demonstrated through real deployed work — not just classroom exposure or tutorials."
+        },
+        {
+          "type": "text",
+          "content": "**Linux & Systems:** Runs Arch Linux as a daily driver via [[linux-setup|Omarchy]], DHH's opinionated distro with Hyprland Wayland tiling WM. Comfortable with Bash, Git, GitHub, GitLab, Docker, and Kubernetes (exploring).\n\n**Self-Hosting & Deployment:** Deploys and manages containerised services using Docker and Coolify. Self-hosted services include Vaultwarden, SearXNG, Immich, and Pi-hole (see [[homelab|Homelab]]).\n\n**Networking & Security:** Cloudflare DNS management, WireGuard VPN, Pi-hole, AdGuard Home on GL.iNet router, SPF/DKIM/DMARC email records, UFW firewall configuration. Detailed in the [[privacy-stack|Privacy Stack]].\n\n**Blockchain / Web3:** Deployed a live Solana SPL token end-to-end ([[foss-coin|FOSS Coin]], live on Orca DEX) and a fully functional Ethereum smart contract DApp ([[insurance-dapp|Insurance DApp]]).\n\n**AI / ML:** Fine-tuned Google's Gemma-2-9B using QLoRA/PEFT ([[thoshan-flash|Thoshan Flash]], 26+ HF downloads). Built a custom perceptron-style ML regressor for metro arrival time prediction.\n\n**Media Production:** OBS Studio (screen recording with noise gate + RNNoise audio filters), Shotcut video editing."
+        }
+      ]
+    },
+    {
+      "id": "achievements",
+      "title": "Achievements & Leadership",
+      "level": 2,
+      "content": [
+        {
+          "type": "table",
+          "columns": ["Honour", "Year", "Detail"],
+          "rows": [
+            { "Honour": "Yoga Ratna Award", "Year": "2018", "Detail": "National-level recognition by the Central Government of India" },
+            { "Honour": "Event Lead, Zerone 2.0", "Year": "2025", "Detail": "Elected lead; managed an 80-member team for SIT's flagship technical event" },
+            { "Honour": "Founder, Debate Society", "Year": "2021–24", "Detail": "Established and led a 60–80 member community at Seshadripuram College" }
+          ]
+        },
+        {
+          "type": "text",
+          "content": "In hackathons, he has participated in three events: an **AI Systems Hackathon** (2025, multi-agent autonomous systems), a **24-Hour Rapid Build Challenge** (2025, privacy-focused e-commerce prototype on Tor), and the **NMIT Web3 Hackathon** (2024, decentralised web application prototype)."
+        }
+      ]
+    },
+    {
+      "id": "github",
+      "title": "Public Repositories",
+      "level": 2,
+      "content": [
+        {
+          "type": "table",
+          "columns": ["Repository", "Language", "Stars", "Description"],
+          "rows": [
+            { "Repository": "Foss-Token", "Language": "HTML", "Stars": "7 ⭐  4 🔱", "Description": "$FOSS Solana SPL token — live on Orca DEX" },
+            { "Repository": "LocalPulse", "Language": "TypeScript", "Stars": "1 ⭐", "Description": "Local event discovery platform" },
+            { "Repository": "insurance-dapp", "Language": "JavaScript", "Stars": "1 ⭐", "Description": "Ethereum insurance DApp" },
+            { "Repository": "online-fraud-detection-system", "Language": "HTML/C#", "Stars": "1 ⭐", "Description": "Fraud detection ML system" },
+            { "Repository": "smart-expense-analyzer", "Language": "HTML", "Stars": "1 ⭐", "Description": "Agentic AI expense analyzer" },
+            { "Repository": "metro-arrival-time-prediction", "Language": "Python", "Stars": "1 ⭐", "Description": "ML metro arrival predictor" },
+            { "Repository": "search-engine", "Language": "HTML", "Stars": "1 ⭐", "Description": "SearchXEng — custom SearXNG templates" }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "career",
+      "title": "Career Direction",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The primary career target is **Computer Networking, Cloud Computing, and Cybersecurity** — specifically operational and deployment roles rather than software development. The distinction is deliberate: Python is described as uncomfortable; Java was a struggle. The strengths are in running, deploying, and managing systems.\n\nEvidence-based positioning is a core principle: every claim on the portfolio links to a live project, on-chain transaction, or GitHub repository rather than relying on buzzwords.\n\nFor planned certifications and tools being learned, see [[learning-roadmap|Learning Roadmap]]."
+        },
+        {
+          "type": "quote",
+          "content": "Skills are proven through live projects, not just theory.",
+          "author": "Personal positioning principle"
+        }
+      ],
+      "collapsible": true
+    }
+  ],
+  "references": [
+    { "id": 1, "title": "GitHub Profile — lingadevaru-hp", "url": "https://github.com/lingadevaru-hp" },
+    { "id": 2, "title": "Portfolio — lingadevaru.in", "url": "https://lingadevaru.in" },
+    { "id": 3, "title": "HuggingFace — lingadevaruhp", "url": "https://huggingface.co/lingadevaruhp" }
+  ],
+  "relatedArticles": ["foss-coin", "thoshan-flash", "homelab", "privacy-stack", "learning-roadmap"],
+  "categories": ["Profile", "MCA", "Blockchain", "AI / ML", "Infrastructure"],
+  "editHistory": [
+    { "date": "2026-04-30T00:00:00Z", "editor": "thoshan", "summary": "Added GitHub repository table and career direction section", "changeType": "major" },
+    { "date": "2026-04-29T12:00:00Z", "editor": "thoshan", "summary": "Full rewrite from raw data", "changeType": "major" },
+    { "date": "2026-04-29T08:00:00Z", "editor": "thoshan", "summary": "Initial article creation", "changeType": "new" }
+  ]
+}
