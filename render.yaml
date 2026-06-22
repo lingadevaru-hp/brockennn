@@ -1,0 +1,6 @@
+services:
+  - type: static
+    name: fictional-wiki
+    buildCommand: pnpm install && pnpm --filter @workspace/fictional-wiki run build
+    outputDir: artifacts/fictional-wiki/dist
+    env: node
