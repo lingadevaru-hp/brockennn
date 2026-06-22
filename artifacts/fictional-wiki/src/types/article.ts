@@ -21,7 +21,7 @@ export interface Infobox {
 }
 
 export interface ContentBlock {
-  type: 'text' | 'image' | 'table' | 'video' | 'gallery' | 'callout' | 'quote';
+  type: 'text' | 'image' | 'table' | 'video' | 'gallery' | 'callout' | 'quote' | 'banner';
   content?: string;
   src?: string;
   alt?: string;
