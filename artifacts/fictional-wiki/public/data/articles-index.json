@@ -14,14 +14,14 @@
       "slug": "foss-coin",
       "category": "Blockchain",
       "excerpt": "An SPL token on Solana Mainnet built to symbolise support for Free and Open Source Software. Live on Orca Whirlpool DEX with a fixed 1B supply.",
-      "thumbnail": "https://picsum.photos/seed/foss-thumb/160/100"
+      "thumbnail": "https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png"
     },
     {
       "id": "thoshan-flash",
       "title": "Thoshan Flash",
       "slug": "thoshan-flash",
       "category": "AI / ML",
-      "excerpt": "A QLoRA fine-tune of Google's Gemma-2-9B base model, published on Hugging Face with 26+ downloads and a live Gradio inference interface.",
+      "excerpt": "A QLoRA fine-tune of Google's Gemma-2-9B large language model (LLM), published on Hugging Face with 26+ downloads and a live Gradio inference interface.",
       "thumbnail": "https://picsum.photos/seed/flash-thumb/160/100"
     },
     {
@@ -61,7 +61,7 @@
       "title": "Fraud Detection System",
       "slug": "fraud-detection",
       "category": "AI / ML",
-      "excerpt": "MCA Final Year Project: online banking fraud detection using ASP.NET and a 4-algorithm ML ensemble (LR, KNN, SVM, CNN) with auto-blocking.",
+      "excerpt": "MCA Final Year Project: online banking fraud detection using ASP.NET and a 4-algorithm ML ensemble (Logistic Regression, KNN, SVM, CNN) with auto-blocking.",
       "thumbnail": "https://picsum.photos/seed/fraud-thumb/160/100"
     },
     {
@@ -77,7 +77,7 @@
       "title": "Learning Roadmap",
       "slug": "learning-roadmap",
       "category": "Learning",
-      "excerpt": "Planned certifications in networking, cloud, and cybersecurity. Tools being learned: Vim/Neovim, Obsidian advanced features, and CS50 Cybersecurity in progress.",
+      "excerpt": "Planned certifications in networking, cloud, and cybersecurity (CCNA, Security+). Tools being learned: Vim/Neovim, Obsidian. CS50 Cybersecurity in progress.",
       "thumbnail": "https://picsum.photos/seed/learn-thumb/160/100"
     }
   ]

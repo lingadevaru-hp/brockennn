@@ -2,7 +2,7 @@ import type { Article, ArticleIndex, ArticleIndexEntry } from '../types/article'
 
 const articleCache = new Map<string, Article>();
 let indexCache: ArticleIndex | null = null;
-let allArticlesLoaded = false;
+let preloadStarted = false;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -22,14 +22,18 @@ export async function loadArticlesIndex(): Promise<ArticleIndex> {
   const res = await fetch(`${base}/data/articles-index.json`);
   if (!res.ok) throw new Error('Failed to load articles index');
   indexCache = await res.json();
-  return indexCache!;
-}
 
-async function preloadAllArticles(): Promise<void> {
-  if (allArticlesLoaded) return;
-  const index = await loadArticlesIndex();
-  await Promise.all(index.articles.map((a) => loadArticle(a.slug).catch(() => null)));
-  allArticlesLoaded = true;
+  // Eagerly preload all articles in the background so search is instant
+  if (!preloadStarted) {
+    preloadStarted = true;
+    setTimeout(() => {
+      indexCache!.articles.forEach((a) => {
+        loadArticle(a.slug).catch(() => null);
+      });
+    }, 200);
+  }
+
+  return indexCache!;
 }
 
 function extractArticleText(article: Article): string {
@@ -56,10 +60,6 @@ export async function searchArticles(query: string): Promise<ArticleIndexEntry[]
 
   const q = query.toLowerCase().trim();
 
-  // Kick off full-article preload in background for future searches
-  preloadAllArticles().catch(() => null);
-
-  // Score each article
   const scored = await Promise.all(
     index.articles.map(async (entry) => {
       let score = 0;

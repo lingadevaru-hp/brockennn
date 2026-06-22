@@ -18,7 +18,9 @@ const categoryColors: Record<string, string> = {
 };
 
 export default function MainPage() {
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth >= 768
+  );
   const [articles, setArticles] = useState<ArticleIndexEntry[]>([]);
 
   useEffect(() => {
@@ -27,18 +29,10 @@ export default function MainPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <WikiHeader onMenuClick={() => setSidebarOpen(true)} />
+      <WikiHeader onMenuClick={() => setSidebarOpen((o) => !o)} />
       <div className="flex flex-1 max-w-[1400px] mx-auto w-full">
         <WikiSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         <main className="flex-1 px-4 py-4 min-w-0">
-          <div className="mb-4 border-b border-border pb-3 text-sm text-muted-foreground flex items-center gap-3">
-            <Link href="/wiki/main-page" className="text-accent hover:underline font-medium">Main Page</Link>
-            <span>Talk</span>
-            <span>Read</span>
-            <span>View source</span>
-            <span>View history</span>
-          </div>
-
           <div className="text-center mb-4 text-sm">
             <strong>Thoshan's personal knowledge base</strong>{' '}
             — a Wikipedia-style wiki about projects, systems, and learning.{' '}
@@ -110,11 +104,11 @@ export default function MainPage() {
               <h2 className="font-bold border-b border-border pb-1 mb-2 text-sm">Technical areas</h2>
               <p className="text-xs text-muted-foreground mb-2">{new Date().toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })}</p>
               <ul className="text-sm space-y-1.5 list-disc list-inside">
-                <li><strong>Blockchain</strong> — <Link href="/wiki/foss-coin" className="text-accent hover:underline">Solana SPL tokens</Link>, <Link href="/wiki/insurance-dapp" className="text-accent hover:underline">Ethereum smart contracts</Link>, Orca DEX liquidity</li>
-                <li><strong>AI / ML</strong> — <Link href="/wiki/thoshan-flash" className="text-accent hover:underline">LLM fine-tuning</Link>, <Link href="/wiki/fraud-detection" className="text-accent hover:underline">ML ensemble systems</Link>, HuggingFace deployment</li>
-                <li><strong>Infrastructure</strong> — <Link href="/wiki/homelab" className="text-accent hover:underline">Oracle Cloud free tier</Link>, Docker, Coolify, Cloudflare zero-trust</li>
-                <li><strong>Security</strong> — <Link href="/wiki/privacy-stack" className="text-accent hover:underline">layered DNS filtering</Link>, WireGuard VPN, UFW, fail2ban</li>
-                <li><strong>Systems</strong> — <Link href="/wiki/linux-setup" className="text-accent hover:underline">Arch Linux / Omarchy</Link>, Hyprland, Neovim, terminal-first workflow</li>
+                <li><strong>Blockchain</strong> — <Link href="/wiki/foss-coin" className="text-accent hover:underline">Solana SPL tokens</Link>, <Link href="/wiki/insurance-dapp" className="text-accent hover:underline">Ethereum smart contracts</Link></li>
+                <li><strong>AI / ML</strong> — <Link href="/wiki/thoshan-flash" className="text-accent hover:underline">LLM fine-tuning</Link>, <Link href="/wiki/fraud-detection" className="text-accent hover:underline">ML ensemble systems</Link></li>
+                <li><strong>Infrastructure</strong> — <Link href="/wiki/homelab" className="text-accent hover:underline">Oracle Cloud free tier</Link>, Docker, Coolify, Cloudflare</li>
+                <li><strong>Security</strong> — <Link href="/wiki/privacy-stack" className="text-accent hover:underline">layered DNS filtering</Link>, WireGuard VPN, UFW</li>
+                <li><strong>Systems</strong> — <Link href="/wiki/linux-setup" className="text-accent hover:underline">Arch Linux / Omarchy</Link>, Hyprland, Neovim</li>
               </ul>
             </div>
           </div>
@@ -135,50 +129,13 @@ export default function MainPage() {
                     <Link href={`/wiki/${article.slug}`} className="text-accent hover:underline text-sm font-medium block truncate">
                       {article.title}
                     </Link>
-                    <span
-                      className="text-[10px] font-semibold"
-                      style={{ color: categoryColors[article.category] || '#A8A8A8' }}
-                    >
+                    <span className="text-[10px] font-semibold" style={{ color: categoryColors[article.category] || '#A8A8A8' }}>
                       {article.category}
                     </span>
                     <p className="text-xs text-muted-foreground truncate">{article.excerpt}</p>
                   </div>
                 </div>
               ))}
-            </div>
-          </div>
-
-          <div className="border border-border border-t-0 p-3 mb-4">
-            <h2 className="font-bold border-b border-border pb-1 mb-3 text-sm">Browse by category</h2>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 text-sm">
-              <div>
-                <p className="font-bold mb-1" style={{ color: '#E67E22' }}>Blockchain</p>
-                <ul className="space-y-0.5">
-                  <li><Link href="/wiki/foss-coin" className="text-accent hover:underline">FOSS Coin</Link></li>
-                  <li><Link href="/wiki/insurance-dapp" className="text-accent hover:underline">Insurance DApp</Link></li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-bold mb-1" style={{ color: '#8E44AD' }}>AI / ML</p>
-                <ul className="space-y-0.5">
-                  <li><Link href="/wiki/thoshan-flash" className="text-accent hover:underline">Thoshan Flash</Link></li>
-                  <li><Link href="/wiki/fraud-detection" className="text-accent hover:underline">Fraud Detection</Link></li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-bold mb-1" style={{ color: '#27AE60' }}>Infrastructure</p>
-                <ul className="space-y-0.5">
-                  <li><Link href="/wiki/homelab" className="text-accent hover:underline">Libre Cloud</Link></li>
-                  <li><Link href="/wiki/linux-setup" className="text-accent hover:underline">Linux Setup</Link></li>
-                </ul>
-              </div>
-              <div>
-                <p className="font-bold mb-1" style={{ color: '#C0392B' }}>Security</p>
-                <ul className="space-y-0.5">
-                  <li><Link href="/wiki/privacy-stack" className="text-accent hover:underline">Privacy Stack</Link></li>
-                  <li><Link href="/wiki/learning-roadmap" className="text-accent hover:underline">Learning Roadmap</Link></li>
-                </ul>
-              </div>
             </div>
           </div>
         </main>

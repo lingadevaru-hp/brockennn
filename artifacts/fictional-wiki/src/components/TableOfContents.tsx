@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import type { Section } from '../types/article';
 
 interface TableOfContentsProps {
@@ -27,10 +27,10 @@ export default function TableOfContents({ sections, activeId }: TableOfContentsP
   return (
     <div
       data-testid="table-of-contents"
-      className="border border-border bg-card text-sm mb-4 inline-block min-w-[200px] max-w-full md:max-w-[350px]"
+      className="border border-border bg-card text-sm mb-5 w-full md:w-auto md:min-w-[320px] md:max-w-[520px] clear-both"
     >
-      <div className="flex items-center gap-2 px-3 py-1.5 border-b border-border bg-card/80">
-        <span className="font-bold text-foreground">Contents</span>
+      <div className="flex items-center gap-2 px-4 py-2 border-b border-border bg-card/80">
+        <span className="font-bold text-foreground text-sm">Contents</span>
         <button
           data-testid="button-toc-toggle"
           onClick={() => setCollapsed((c) => !c)}
@@ -40,18 +40,23 @@ export default function TableOfContents({ sections, activeId }: TableOfContentsP
         </button>
       </div>
       {!collapsed && (
-        <ol className="px-3 py-2 space-y-0.5">
+        <ol className="px-4 py-3 space-y-1.5">
           {flat.map((item) => (
             <li
               key={item.id}
-              style={{ paddingLeft: `${(item.level - 2) * 16}px` }}
+              style={{ paddingLeft: `${(item.level - 2) * 20}px` }}
+              className="flex items-start gap-1.5"
             >
+              <span className="text-muted-foreground text-xs mt-0.5 shrink-0 w-5 text-right">{item.num}</span>
               <a
                 href={`#${item.id}`}
                 data-testid={`toc-link-${item.id}`}
-                className={`hover:underline ${activeId === item.id ? 'font-bold text-foreground' : 'text-accent'}`}
+                className={`hover:underline leading-snug ${
+                  activeId === item.id
+                    ? 'font-semibold text-foreground'
+                    : 'text-accent'
+                }`}
               >
-                <span className="text-foreground mr-1">{item.num}</span>
                 {item.title}
               </a>
             </li>

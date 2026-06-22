@@ -7,6 +7,7 @@ import Section from './Section';
 import References from './References';
 import RevisionHistory from './RevisionHistory';
 import { loadArticlesIndex } from '../lib/articleLoader';
+import { useTheme } from '../contexts/ThemeContext';
 
 const categoryColors: Record<string, string> = {
   'Profile':        '#3366CC',
@@ -23,19 +24,33 @@ interface ArticleViewProps {
   article: Article;
 }
 
+function parseWikiLink(inner: string): { slug: string; text: string } {
+  const parts = inner.split('|');
+  const rawSlug = parts[0].trim();
+  const slug = rawSlug.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const text = parts[1]?.trim() || parts[0].trim();
+  return { slug, text };
+}
+
 function parseLeadText(text: string) {
   const paras = text.split(/\n\n+/);
   return paras.map((p, i) => {
-    const parsed = p.replace(/\[\[(.*?)\]\]/g, (_m, title) => {
-      const slug = title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
-      return `<a href="/wiki/${slug}" class="text-accent hover:underline">${title}</a>`;
-    }).replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    const parsed = p
+      .replace(/\[\[(.*?)\]\]/g, (_m, inner) => {
+        const { slug, text: display } = parseWikiLink(inner);
+        return `<a href="/wiki/${slug}" class="text-accent hover:underline">${display}</a>`;
+      })
+      .replace(/\[([^\]]+)\]\((https?:\/\/[^\)]+)\)/g, (_m, label, url) => {
+        return `<a href="${url}" class="text-accent hover:underline" target="_blank" rel="noopener noreferrer">${label}</a>`;
+      })
+      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\*(.*?)\*/g, '<em>$1</em>');
     return <p key={i} className="mb-4 text-sm leading-relaxed" dangerouslySetInnerHTML={{ __html: parsed }} />;
   });
 }
 
 export default function ArticleView({ article }: ArticleViewProps) {
+  const { theme, setTheme } = useTheme();
   const [activeSection, setActiveSection] = useState('');
   const [fontSize, setFontSize] = useState<'small' | 'standard' | 'large'>('large');
   const [contentWidth, setContentWidth] = useState<'standard' | 'wide'>('wide');
@@ -143,45 +158,94 @@ export default function ArticleView({ article }: ArticleViewProps) {
         </div>
       </div>
 
-      <aside className="hidden lg:block w-[200px] shrink-0">
-        <div className="sticky top-[56px] space-y-4">
-          <div className="border border-border bg-card p-3 text-sm" data-testid="appearance-panel">
-            <p className="font-bold text-xs uppercase tracking-wider mb-2 text-muted-foreground">Appearance</p>
-            <div className="mb-3">
-              <p className="text-xs font-bold mb-1">Text size</p>
-              <div className="flex gap-1">
-                {(['small', 'standard', 'large'] as const).map((s) => (
-                  <button
-                    key={s}
-                    data-testid={`font-size-${s}`}
-                    onClick={() => setFontSize(s)}
-                    className={`flex-1 py-0.5 text-xs border ${fontSize === s ? 'border-accent bg-accent/10 text-accent' : 'border-border'}`}
-                  >
-                    {s === 'small' ? 'S' : s === 'large' ? 'L' : 'M'}
-                  </button>
-                ))}
-              </div>
+      {/* Sidebar panel */}
+      <aside className="hidden lg:block w-[210px] shrink-0">
+        <div className="sticky top-[56px] space-y-3">
+
+          {/* ── Appearance panel ─────────────────────────── */}
+          <div
+            className="border border-border bg-card overflow-hidden"
+            data-testid="appearance-panel"
+          >
+            <div className="px-3 py-2 border-b border-border bg-card/60">
+              <p className="font-bold text-[11px] uppercase tracking-widest text-muted-foreground">Appearance</p>
             </div>
-            <div>
-              <p className="text-xs font-bold mb-1">Width</p>
-              <div className="flex gap-1">
-                {(['standard', 'wide'] as const).map((w) => (
-                  <button
-                    key={w}
-                    data-testid={`width-${w}`}
-                    onClick={() => setContentWidth(w)}
-                    className={`flex-1 py-0.5 text-xs border ${contentWidth === w ? 'border-accent bg-accent/10 text-accent' : 'border-border'}`}
-                  >
-                    {w === 'standard' ? 'Std' : 'Wide'}
-                  </button>
-                ))}
+
+            <div className="px-3 py-2.5 space-y-3">
+              {/* Text size */}
+              <div>
+                <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">Text size</p>
+                <div className="flex gap-1">
+                  {(['small', 'standard', 'large'] as const).map((s) => (
+                    <button
+                      key={s}
+                      data-testid={`font-size-${s}`}
+                      onClick={() => setFontSize(s)}
+                      className={`flex-1 py-1 text-xs border transition-colors ${
+                        fontSize === s
+                          ? 'border-accent bg-accent/15 text-accent font-semibold'
+                          : 'border-border hover:border-border/80 hover:bg-card/60'
+                      }`}
+                    >
+                      {s === 'small' ? 'S' : s === 'large' ? 'L' : 'M'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="border-t border-border/50" />
+
+              {/* Width */}
+              <div>
+                <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">Width</p>
+                <div className="flex gap-1">
+                  {(['standard', 'wide'] as const).map((w) => (
+                    <button
+                      key={w}
+                      data-testid={`width-${w}`}
+                      onClick={() => setContentWidth(w)}
+                      className={`flex-1 py-1 text-xs border transition-colors ${
+                        contentWidth === w
+                          ? 'border-accent bg-accent/15 text-accent font-semibold'
+                          : 'border-border hover:border-border/80 hover:bg-card/60'
+                      }`}
+                    >
+                      {w === 'standard' ? 'Standard' : 'Wide'}
+                    </button>
+                  ))}
+                </div>
+              </div>
+
+              {/* Divider */}
+              <div className="border-t border-border/50" />
+
+              {/* Theme */}
+              <div>
+                <p className="text-[11px] font-semibold text-muted-foreground uppercase tracking-wide mb-1.5">Theme</p>
+                <div className="flex gap-1">
+                  {(['light', 'dark'] as const).map((t) => (
+                    <button
+                      key={t}
+                      onClick={() => setTheme(t)}
+                      className={`flex-1 py-1 text-xs border transition-colors ${
+                        theme === t
+                          ? 'border-accent bg-accent/15 text-accent font-semibold'
+                          : 'border-border hover:border-border/80 hover:bg-card/60'
+                      }`}
+                    >
+                      {t === 'light' ? '☀ Light' : '☾ Dark'}
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
 
+          {/* ── Read next ─────────────────────────────────── */}
           {article.relatedArticles.length > 0 && (
-            <div className="text-sm" data-testid="related-articles">
-              <p className="font-bold text-xs uppercase tracking-wider mb-3 text-muted-foreground border-b border-border pb-1">
+            <div data-testid="related-articles">
+              <p className="font-bold text-[11px] uppercase tracking-widest mb-2 text-muted-foreground px-1">
                 Read next
               </p>
               <div className="space-y-2">
@@ -192,30 +256,35 @@ export default function ArticleView({ article }: ArticleViewProps) {
                   const color = categoryColors[category] || '#3366CC';
                   return (
                     <Link key={slug} href={`/wiki/${slug}`} className="block group">
-                      <div className="border border-border bg-card hover:border-accent transition-colors p-2 rounded-sm">
+                      <div className="border border-border bg-card hover:border-accent/60 transition-colors overflow-hidden">
                         {entry?.thumbnail && (
-                          <img
-                            src={entry.thumbnail}
-                            alt={title}
-                            className="w-full h-16 object-cover mb-1.5 rounded-sm"
-                          />
+                          <div className="w-full h-[72px] overflow-hidden bg-card/50">
+                            <img
+                              src={entry.thumbnail}
+                              alt={title}
+                              className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity"
+                              loading="lazy"
+                            />
+                          </div>
                         )}
-                        {category && (
-                          <span
-                            className="text-[10px] font-bold uppercase tracking-wider"
-                            style={{ color }}
-                          >
-                            {category}
-                          </span>
-                        )}
-                        <p className="text-xs font-semibold text-accent group-hover:underline leading-tight mt-0.5">
-                          {title}
-                        </p>
-                        {entry?.excerpt && (
-                          <p className="text-[11px] text-muted-foreground mt-0.5 leading-snug line-clamp-2">
-                            {entry.excerpt}
+                        <div className="p-2">
+                          {category && (
+                            <span
+                              className="text-[10px] font-bold uppercase tracking-wider"
+                              style={{ color }}
+                            >
+                              {category}
+                            </span>
+                          )}
+                          <p className="text-xs font-semibold text-accent group-hover:underline leading-tight mt-0.5 mb-1">
+                            {title}
                           </p>
-                        )}
+                          {entry?.excerpt && (
+                            <p className="text-[11px] text-muted-foreground leading-snug line-clamp-2">
+                              {entry.excerpt}
+                            </p>
+                          )}
+                        </div>
                       </div>
                     </Link>
                   );
@@ -224,7 +293,8 @@ export default function ArticleView({ article }: ArticleViewProps) {
             </div>
           )}
 
-          <div className="border border-border bg-card p-3 text-sm" data-testid="edit-history-sidebar">
+          {/* ── Edit history ──────────────────────────────── */}
+          <div className="border border-border bg-card" data-testid="edit-history-sidebar">
             <RevisionHistory history={article.editHistory} />
           </div>
         </div>

@@ -1,0 +1,51 @@
+16. Resources reference for FOSS Coin article
+
+Pull content from https://github.com/lingadevaru-hp/Foss-Token/blob/main/resources.md — these are real resources created for the FOSS Coin project. Incorporate relevant material from this file into the expanded FOSS Coin article.
+17. Image placement — logo vs. GIF, specific locations
+
+In the infobox (the sidebar key-value card on the article): use only the coin logo image — https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png
+In the article body (the main content area, where images/tables normally go — NOT the infobox): embed the terminal GIF, full-width, placed either at the very start of the article or after the first couple of paragraphs.
+GIF source: https://camo.githubusercontent.com/83e9d33984dd65af8ddff8fb07d24c6ce76075362cf3564c78bacda2fbefbd73/68747470733a2f2f6d65646961302e67697068792e636f6d2f6d656469612f76312e59326c6b505463354d4749334e6a4578644864324d584e346248687663546b77645870735a3231724d6e527564484a744e4870754e32527a5a3239725a7a64314d574a3465535a6c634431324d563970626e526c636d35686246396e61575a66596e6c666157516d593351395a772f62514c335975694b4b415842776577765a312f67697068792e676966 — decode the hex string to the actual Giphy URL and use that direct link rather than relying on the camo proxy, for reliable embedding.
+
+18. GIF preloading
+
+The GIF should start loading in the background as soon as the user lands on the site (landing page or main nav), not only when they open the FOSS Coin article — so by the time they click into it, the GIF displays instantly with zero load delay. Implement via <link rel="preload"> in the document head or a fetch triggered on landing-page mount, not a plain lazy-loaded <img> on the article page alone.
+19. Appearance panel — default behavior, keep both themes
+
+The site keeps both dark and light theme as toggleable options — do not remove light mode. Inside the Appearance panel, set defaults to: Text size = Large, Width = Wide, Theme = Dark. The user can still manually switch to light mode; dark is just what loads first for everyone.
+20. Polish the Appearance panel UI
+
+Make the Appearance panel visually more polished — better spacing, clearer grouping between Text/Width/Theme controls, more refined styling overall. Should feel deliberate and modern, not bare/functional-only.
+21. Desktop nav menu — same collapse/expand animation as mobile
+
+The smooth slide+fade open/close animation used for the mobile hamburger menu applies to the desktop sidebar nav as well — it should collapse and expand with the same polished animation, not just snap open/closed.
+22. Page-load animations — articles
+
+When an article page loads, add a subtle entrance animation for the content and elements (e.g. fade-in or skeleton-loading effect) rather than content appearing abruptly. Apply consistently across all article pages.
+23. Landing page load behavior — no loading animation
+
+The landing page (wordmark + scroll prompt) should load and display normally and promptly, with no artificial loading/skeleton sequence beforehand. The entrance animations from item 22 apply only to article pages, not the landing page.
+24. About section — interlinking still broken
+
+The first paragraph of the About section mentions FOSS Coin but it is NOT hyperlinked to the FOSS Coin article. This was supposed to already be fixed — re-verify the entire About section, since if this instance was missed, others may be too.
+25. Search — not functioning as specified
+
+Current behavior is broken: typing a word shows no autocomplete suggestions. Searching "LLM" returns nothing despite likely-related content existing. Required behavior:
+
+As the user types, show live article suggestions immediately, not after pressing enter/search
+Match typed text against article titles AND body content/keywords, not just exact title matches
+Should feel visibly responsive — suggestions update as each character is typed
+
+26. Appearance panel — confirm exact required options
+
+Must have exactly:
+
+Text size: Small / Medium / Large
+Width: Standard / Wide
+Theme: Light / Dark toggle
+
+Default on load: Text size = Large, Width = Wide, Theme = Dark. Verify all three controls exist with these exact options, not just a theme toggle alone.
+
+27. "Related articles" / "Read next" boxes — visual redesign
+
+These currently render empty/bare and look unfinished. Redesign as proper modern cards: small thumbnail or category tag, article title, short excerpt. Match the visual polish level of the rest of the site.

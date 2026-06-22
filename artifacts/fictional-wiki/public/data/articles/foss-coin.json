@@ -10,8 +10,8 @@
   },
   "infobox": {
     "title": "FOSS Coin ($FOSS)",
-    "image": "https://media.giphy.com/media/bQL3YuiKKAXBwewvZ1/giphy.gif",
-    "imageCaption": "FOSS Coin live on the Orca Whirlpool DEX",
+    "image": "https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png",
+    "imageCaption": "FOSS Coin official logo",
     "fields": [
       { "label": "Full name", "value": "Free Open Source Soft" },
       { "label": "Symbol", "value": "$FOSS" },
@@ -27,6 +27,19 @@
   },
   "lead": "**FOSS Coin ($FOSS)** is a Solana SPL token I built to symbolise support for the Free and Open Source Software movement. I deployed it on Solana Mainnet in July 2025 and listed it on the Orca Whirlpool decentralised exchange in October 2025. It carries a fixed supply of one billion tokens — and I permanently revoked the mint authority at the moment of creation, meaning the supply can never be inflated by anyone, including me.\n\nI built this as a hands-on exercise to understand Solana at the instruction level — covering SPL token mechanics, Metaplex metadata, IPFS pinning, concentrated liquidity AMMs, and atomic multi-instruction transactions. The full source is on [GitHub (7 stars, 4 forks)](https://github.com/lingadevaru-hp/Foss-Token). It is not affiliated with the FSF, GNU, or Linux.org.",
   "sections": [
+    {
+      "id": "gif-preview",
+      "title": "Live Trading Preview",
+      "level": 2,
+      "content": [
+        {
+          "type": "banner",
+          "src": "https://media.giphy.com/media/bQL3YuiKKAXBwewvZ1/giphy.gif",
+          "alt": "FOSS Coin ($FOSS) live trading session on the Orca Whirlpool DEX",
+          "caption": "FOSS Coin ($FOSS) live on the Orca Whirlpool DEX — FOSS/SOL trading pair"
+        }
+      ]
+    },
     {
       "id": "philosophy",
       "title": "Why I Built This",
@@ -149,7 +162,7 @@
   "relatedArticles": ["insurance-dapp", "about", "privacy-stack"],
   "categories": ["Blockchain", "Solana", "Web3", "DeFi"],
   "editHistory": [
-    { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Rewritten in first person, added GIF, expanded learning section", "changeType": "major" },
+    { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Logo in infobox, GIF banner in body, wiki links fixed", "changeType": "major" },
     { "date": "2026-04-30T00:00:00Z", "editor": "thoshan", "summary": "Added atomic transaction table and phase callouts", "changeType": "major" },
     { "date": "2026-04-29T08:00:00Z", "editor": "thoshan", "summary": "Initial page created", "changeType": "new" }
   ]

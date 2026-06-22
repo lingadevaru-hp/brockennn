@@ -2,18 +2,24 @@ import { useState } from 'react';
 import { Link } from 'wouter';
 import { X } from 'lucide-react';
 import type { ContentBlock as ContentBlockType } from '../types/article';
-import { titleToSlug } from '../lib/articleLoader';
+
+function parseWikiLink(inner: string): { slug: string; text: string } {
+  const parts = inner.split('|');
+  const rawSlug = parts[0].trim();
+  const slug = rawSlug.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
+  const text = parts[1]?.trim() || parts[0].trim();
+  return { slug, text };
+}
 
 function parseWikiText(text: string): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
   const parts = text.split(/(\[\[.*?\]\]|\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/);
   parts.forEach((part, i) => {
     if (part.startsWith('[[') && part.endsWith(']]')) {
-      const title = part.slice(2, -2);
-      const slug = titleToSlug(title);
+      const { slug, text: display } = parseWikiLink(part.slice(2, -2));
       nodes.push(
         <Link key={i} href={`/wiki/${slug}`} className="text-accent hover:underline">
-          {title}
+          {display}
         </Link>
       );
     } else if (part.startsWith('**') && part.endsWith('**')) {
@@ -108,6 +114,24 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
     case 'text':
       return <div className="wiki-text mb-2">{renderMarkdown(block.content || '')}</div>;
 
+    case 'banner':
+      return (
+        <div className="mb-5 border border-border overflow-hidden" data-testid="banner-block">
+          <img
+            src={block.src}
+            alt={block.alt || ''}
+            className="w-full object-cover"
+            loading="eager"
+            style={{ maxHeight: '340px' }}
+          />
+          {block.caption && (
+            <p className="text-xs text-muted-foreground p-2 italic text-center bg-card/50 border-t border-border">
+              {block.caption}
+            </p>
+          )}
+        </div>
+      );
+
     case 'image':
       return (
         <div className="float-right clear-right ml-4 mb-4 max-w-[240px] border border-border bg-card text-center">
@@ -122,6 +146,7 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
           {block.caption && (
             <p className="text-xs text-muted-foreground p-1 italic">{block.caption}</p>
           )}
+          {lightbox && <Lightbox {...lightbox} onClose={() => setLightbox(null)} />}
         </div>
       );
 

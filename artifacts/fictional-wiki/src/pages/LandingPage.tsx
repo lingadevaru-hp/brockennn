@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'wouter';
-import { Search, Github, ExternalLink, BookOpen, ChevronDown } from 'lucide-react';
+import { Search, Github, ExternalLink, BookOpen } from 'lucide-react';
 import { loadArticlesIndex } from '../lib/articleLoader';
 import type { ArticleIndexEntry } from '../types/article';
 
@@ -16,6 +16,7 @@ const categoryColors: Record<string, string> = {
 };
 
 const GIF_URL = 'https://media.giphy.com/media/bQL3YuiKKAXBwewvZ1/giphy.gif';
+const LOGO_URL = 'https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png';
 
 const highlights = [
   { label: '10 public repos', icon: '📁' },
@@ -32,6 +33,11 @@ export default function LandingPage() {
 
   useEffect(() => {
     loadArticlesIndex().then((idx) => setArticles(idx.articles));
+    // Eagerly pre-fetch the GIF so it's in the browser cache by the time user scrolls
+    const img = new Image();
+    img.src = GIF_URL;
+    const logo = new Image();
+    logo.src = LOGO_URL;
   }, []);
 
   function handleSearch(e: React.FormEvent) {
@@ -54,7 +60,7 @@ export default function LandingPage() {
     <div className="min-h-screen bg-[#101418] text-[#E8E8E8] flex flex-col">
 
       {/* ── HERO (full viewport) ─────────────────────────────────── */}
-      <section className="min-h-screen flex flex-col items-center justify-center px-4 relative">
+      <section className="min-h-screen flex flex-col items-center justify-center px-4 relative select-none">
         {/* Globe */}
         <div className="mb-6">
           <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -105,20 +111,27 @@ export default function LandingPage() {
           Browse all articles
         </button>
 
-        {/* Bouncing scroll chevron */}
+        {/* ── Scroll prompt — visible on both mobile & desktop ── */}
         <button
           onClick={scrollDown}
-          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-[#505868] hover:text-[#7A8494] transition-colors"
           aria-label="Scroll to explore"
-          style={{ animation: 'bounce 2s infinite' }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 group"
+          style={{ animation: 'scrollPulse 2.5s ease-in-out infinite' }}
         >
-          <ChevronDown size={28} />
+          <span className="text-[11px] font-medium tracking-[0.2em] uppercase text-[#8090A8] group-hover:text-[#A0AABC] transition-colors">
+            Explore
+          </span>
+          <div className="w-9 h-9 rounded-full border-2 border-[#2E3A4A] bg-[#161C24]/70 flex items-center justify-center group-hover:border-[#3366CC] group-hover:bg-[#1E2A3A] transition-all duration-200">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+              <path d="M3 5.5L8 10.5L13 5.5" stroke="#6B7C96" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className="group-hover:stroke-[#5590E8] transition-colors" />
+            </svg>
+          </div>
         </button>
 
         <style>{`
-          @keyframes bounce {
-            0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
+          @keyframes scrollPulse {
+            0%, 100% { transform: translateX(-50%) translateY(0); opacity: 0.8; }
+            50% { transform: translateX(-50%) translateY(8px); opacity: 1; }
           }
         `}</style>
       </section>
@@ -195,12 +208,17 @@ export default function LandingPage() {
               className="w-full text-left border border-[#2A3040] bg-[#161C24] hover:bg-[#1E2530] hover:border-[#E67E22] transition-all group overflow-hidden"
               data-testid="foss-coin-featured"
             >
-              <img
-                src={GIF_URL}
-                alt="FOSS Coin live trading on Orca DEX"
-                className="w-full object-cover"
-                style={{ maxHeight: '320px' }}
-              />
+              {/* GIF with eager loading — already pre-fetched on mount */}
+              <div className="w-full overflow-hidden bg-[#0D1117]" style={{ maxHeight: '320px' }}>
+                <img
+                  src={GIF_URL}
+                  alt="FOSS Coin live trading on Orca DEX"
+                  className="w-full object-cover"
+                  style={{ maxHeight: '320px', display: 'block' }}
+                  loading="eager"
+                  decoding="async"
+                />
+              </div>
               <div className="p-5">
                 <span className="text-[10px] font-bold uppercase tracking-wider px-1.5 py-0.5 mb-2 inline-block"
                   style={{ color: '#E67E22', background: '#E67E221A', borderLeft: '2px solid #E67E22' }}>

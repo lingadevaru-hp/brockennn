@@ -9,7 +9,9 @@ import type { ArticleIndexEntry } from '../types/article';
 
 export default function SearchPage() {
   const [location] = useLocation();
-  const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(
+    () => typeof window !== 'undefined' && window.innerWidth >= 768
+  );
   const [results, setResults] = useState<ArticleIndexEntry[]>([]);
   const [query, setQuery] = useState('');
   const [loading, setLoading] = useState(false);
@@ -29,7 +31,7 @@ export default function SearchPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-foreground">
-      <WikiHeader onMenuClick={() => setSidebarOpen(true)} />
+      <WikiHeader onMenuClick={() => setSidebarOpen((o) => !o)} />
       <div className="flex flex-1 max-w-[1400px] mx-auto w-full">
         <WikiSidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
         <main className="flex-1 px-4 py-6 min-w-0">
