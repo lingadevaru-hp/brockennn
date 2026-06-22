@@ -4,9 +4,9 @@
     "title": "About — Lingadevaru H P",
     "slug": "about",
     "category": "Profile",
-    "lastEdited": "2026-04-30T00:00:00Z",
-    "editCount": 24,
-    "views": 8210
+    "lastEdited": "2026-06-22T00:00:00Z",
+    "editCount": 30,
+    "views": 8600
   },
   "infobox": {
     "title": "Lingadevaru H P",
@@ -20,10 +20,11 @@
       { "label": "Graduating", "value": "2026" },
       { "label": "Career focus", "value": "Networking, Cloud, Cybersecurity" },
       { "label": "GitHub", "value": "github.com/lingadevaru-hp" },
-      { "label": "Portfolio", "value": "lingadevaru.in" }
+      { "label": "HuggingFace", "value": "huggingface.co/lingadevaruhp" },
+      { "label": "LinkedIn", "value": "linkedin.com/in/lingadevaruhp" }
     ]
   },
-  "lead": "**Lingadevaru H P** (also known as **Thoshan**) is a 22-year-old MCA student at Siddaganga Institute of Technology, Tumakuru, graduating in 2026. He builds deployed projects across blockchain, AI/ML, web development, and self-hosted infrastructure — with a career focus on computer networking, cloud computing, and cybersecurity.\n\nUnlike most peers, he explicitly distinguishes himself as *not a software developer*: his proven strengths are operational — running, deploying, and managing systems. This is evidenced by a portfolio of live public projects: a [[foss-coin|Solana SPL token]] on Orca DEX, a [[thoshan-flash|fine-tuned LLM]] on Hugging Face, an [[insurance-dapp|Ethereum DApp]], and a self-hosted [[homelab|cloud homelab]] architecture.",
+  "lead": "I'm **Lingadevaru H P**, also known as **Thoshan** — a 22-year-old MCA student at Siddaganga Institute of Technology, Tumakuru, graduating in 2026. I build deployed projects across blockchain, AI/ML, web development, and self-hosted infrastructure, with a career focus on computer networking, cloud computing, and cybersecurity.\n\nI'm deliberately *not* positioning myself as a software developer — my proven strengths are operational: running, deploying, and managing systems. I demonstrate this through live public projects rather than buzzwords: a [[foss-coin|Solana SPL token]] on Orca DEX, a [[thoshan-flash|fine-tuned LLM]] on Hugging Face, an [[insurance-dapp|Ethereum DApp]], and a self-hosted [[homelab|cloud homelab]] architecture.",
   "sections": [
     {
       "id": "education",
@@ -40,7 +41,7 @@
         },
         {
           "type": "text",
-          "content": "The MCA programme at SIT is structured across four semesters. The **3rd semester** was devoted to the [[fraud-detection|Final Year Academic Project]] — an online fraud detection system built and publicly released on GitHub. The **4th (final) semester** consisted of an internship at CHIAC ASI (Panchasutra Ltd, UK), where he served as Team 8 Lead in Research & Publication, completing all three assigned projects."
+          "content": "My MCA at SIT is structured across four semesters. I spent the **3rd semester** on the [[fraud-detection|Final Year Academic Project]] — an online fraud detection system I built and publicly released on GitHub. The **4th (final) semester** was an internship at CHIAC ASI (Panchasutra Ltd, UK), where I served as Team 8 Lead in Research & Publication and completed all three assigned projects."
         }
       ]
     },
@@ -53,11 +54,11 @@
           "type": "callout",
           "variant": "info",
           "title": "Honest Skills Framework",
-          "content": "All skills listed here are demonstrated through real deployed work — not just classroom exposure or tutorials."
+          "content": "Every skill listed here is demonstrated through real deployed work — not just classroom exposure or tutorials. If I haven't shipped something with it, I don't list it."
         },
         {
           "type": "text",
-          "content": "**Linux & Systems:** Runs Arch Linux as a daily driver via [[linux-setup|Omarchy]], DHH's opinionated distro with Hyprland Wayland tiling WM. Comfortable with Bash, Git, GitHub, GitLab, Docker, and Kubernetes (exploring).\n\n**Self-Hosting & Deployment:** Deploys and manages containerised services using Docker and Coolify. Self-hosted services include Vaultwarden, SearXNG, Immich, and Pi-hole (see [[homelab|Homelab]]).\n\n**Networking & Security:** Cloudflare DNS management, WireGuard VPN, Pi-hole, AdGuard Home on GL.iNet router, SPF/DKIM/DMARC email records, UFW firewall configuration. Detailed in the [[privacy-stack|Privacy Stack]].\n\n**Blockchain / Web3:** Deployed a live Solana SPL token end-to-end ([[foss-coin|FOSS Coin]], live on Orca DEX) and a fully functional Ethereum smart contract DApp ([[insurance-dapp|Insurance DApp]]).\n\n**AI / ML:** Fine-tuned Google's Gemma-2-9B using QLoRA/PEFT ([[thoshan-flash|Thoshan Flash]], 26+ HF downloads). Built a custom perceptron-style ML regressor for metro arrival time prediction.\n\n**Media Production:** OBS Studio (screen recording with noise gate + RNNoise audio filters), Shotcut video editing."
+          "content": "**Linux & Systems:** I run Arch Linux as a daily driver via [[linux-setup|Omarchy]], DHH's opinionated distro with Hyprland Wayland tiling WM. I'm comfortable with Bash, Git, GitHub, GitLab, Docker, and Kubernetes (exploring).\n\n**Self-Hosting & Deployment:** I deploy and manage containerised services using Docker and Coolify. Services I run include Vaultwarden, SearXNG, Immich, and Pi-hole (see [[homelab|Homelab]]).\n\n**Networking & Security:** I manage Cloudflare DNS, configure WireGuard VPN, run Pi-hole, set up AdGuard Home on my GL.iNet router, configure SPF/DKIM/DMARC email records, and use UFW firewall. All documented in the [[privacy-stack|Privacy Stack]].\n\n**Blockchain / Web3:** I deployed a live Solana SPL token end-to-end ([[foss-coin|FOSS Coin]], live on Orca DEX) and built a fully functional Ethereum smart contract DApp ([[insurance-dapp|Insurance DApp]]).\n\n**AI / ML:** I fine-tuned Google's Gemma-2-9B using QLoRA/PEFT ([[thoshan-flash|Thoshan Flash]], 26+ HF downloads). I also built a custom perceptron-style ML regressor for metro arrival time prediction.\n\n**Media Production:** I use OBS Studio for screen recording (noise gate + RNNoise audio filters) and Shotcut for video editing."
         }
       ]
     },
@@ -77,7 +78,7 @@
         },
         {
           "type": "text",
-          "content": "In hackathons, he has participated in three events: an **AI Systems Hackathon** (2025, multi-agent autonomous systems), a **24-Hour Rapid Build Challenge** (2025, privacy-focused e-commerce prototype on Tor), and the **NMIT Web3 Hackathon** (2024, decentralised web application prototype)."
+          "content": "I've participated in three hackathons: an **AI Systems Hackathon** (2025, multi-agent autonomous systems), a **24-Hour Rapid Build Challenge** (2025, privacy-focused e-commerce prototype on Tor), and the **NMIT Web3 Hackathon** (2024, decentralised web application prototype)."
         }
       ]
     },
@@ -108,7 +109,7 @@
       "content": [
         {
           "type": "text",
-          "content": "The primary career target is **Computer Networking, Cloud Computing, and Cybersecurity** — specifically operational and deployment roles rather than software development. The distinction is deliberate: Python is described as uncomfortable; Java was a struggle. The strengths are in running, deploying, and managing systems.\n\nEvidence-based positioning is a core principle: every claim on the portfolio links to a live project, on-chain transaction, or GitHub repository rather than relying on buzzwords.\n\nFor planned certifications and tools being learned, see [[learning-roadmap|Learning Roadmap]]."
+          "content": "My primary career target is **Computer Networking, Cloud Computing, and Cybersecurity** — specifically operational and deployment roles rather than software development. This distinction is deliberate: Python makes me uncomfortable; Java was a struggle. My strengths are in running, deploying, and managing systems — not writing application code from scratch.\n\nEvidence-based positioning is a core principle for me: every claim on my portfolio links to a live project, an on-chain transaction, or a GitHub repository — not just a buzzword on a resume.\n\nFor the certifications I'm working toward and tools I'm learning, see [[learning-roadmap|Learning Roadmap]]."
         },
         {
           "type": "quote",
@@ -121,14 +122,14 @@
   ],
   "references": [
     { "id": 1, "title": "GitHub Profile — lingadevaru-hp", "url": "https://github.com/lingadevaru-hp" },
-    { "id": 2, "title": "Portfolio — lingadevaru.in", "url": "https://lingadevaru.in" },
-    { "id": 3, "title": "HuggingFace — lingadevaruhp", "url": "https://huggingface.co/lingadevaruhp" }
+    { "id": 2, "title": "HuggingFace — lingadevaruhp", "url": "https://huggingface.co/lingadevaruhp" },
+    { "id": 3, "title": "LinkedIn — lingadevaruhp", "url": "https://linkedin.com/in/lingadevaruhp" }
   ],
   "relatedArticles": ["foss-coin", "thoshan-flash", "homelab", "privacy-stack", "learning-roadmap"],
   "categories": ["Profile", "MCA", "Blockchain", "AI / ML", "Infrastructure"],
   "editHistory": [
+    { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Rewritten in first person throughout", "changeType": "major" },
     { "date": "2026-04-30T00:00:00Z", "editor": "thoshan", "summary": "Added GitHub repository table and career direction section", "changeType": "major" },
-    { "date": "2026-04-29T12:00:00Z", "editor": "thoshan", "summary": "Full rewrite from raw data", "changeType": "major" },
     { "date": "2026-04-29T08:00:00Z", "editor": "thoshan", "summary": "Initial article creation", "changeType": "new" }
   ]
 }

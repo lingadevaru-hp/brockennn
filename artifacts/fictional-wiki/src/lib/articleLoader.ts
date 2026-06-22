@@ -2,6 +2,7 @@ import type { Article, ArticleIndex, ArticleIndexEntry } from '../types/article'
 
 const articleCache = new Map<string, Article>();
 let indexCache: ArticleIndex | null = null;
+let allArticlesLoaded = false;
 
 const base = import.meta.env.BASE_URL.replace(/\/$/, '');
 
@@ -24,16 +25,66 @@ export async function loadArticlesIndex(): Promise<ArticleIndex> {
   return indexCache!;
 }
 
+async function preloadAllArticles(): Promise<void> {
+  if (allArticlesLoaded) return;
+  const index = await loadArticlesIndex();
+  await Promise.all(index.articles.map((a) => loadArticle(a.slug).catch(() => null)));
+  allArticlesLoaded = true;
+}
+
+function extractArticleText(article: Article): string {
+  const parts: string[] = [article.metadata.title, article.lead];
+  for (const section of article.sections) {
+    parts.push(section.title);
+    for (const block of section.content) {
+      if (block.type === 'text' && block.content) parts.push(block.content);
+      if (block.type === 'callout' && block.content) parts.push(`${block.title || ''} ${block.content}`);
+      if (block.type === 'quote' && block.content) parts.push(block.content);
+      if (block.type === 'table' && block.rows) {
+        for (const row of block.rows) {
+          parts.push(Object.values(row).join(' '));
+        }
+      }
+    }
+  }
+  return parts.join(' ').toLowerCase();
+}
+
 export async function searchArticles(query: string): Promise<ArticleIndexEntry[]> {
   const index = await loadArticlesIndex();
   if (!query.trim()) return index.articles;
-  const q = query.toLowerCase();
-  return index.articles.filter(
-    (a) =>
-      a.title.toLowerCase().includes(q) ||
-      a.excerpt.toLowerCase().includes(q) ||
-      a.category.toLowerCase().includes(q)
+
+  const q = query.toLowerCase().trim();
+
+  // Kick off full-article preload in background for future searches
+  preloadAllArticles().catch(() => null);
+
+  // Score each article
+  const scored = await Promise.all(
+    index.articles.map(async (entry) => {
+      let score = 0;
+
+      // High-weight: title match
+      if (entry.title.toLowerCase().includes(q)) score += 100;
+      // Medium-weight: category, excerpt
+      if (entry.category.toLowerCase().includes(q)) score += 40;
+      if (entry.excerpt.toLowerCase().includes(q)) score += 20;
+
+      // Full content search if article is already cached
+      const cached = articleCache.get(entry.slug);
+      if (cached) {
+        const text = extractArticleText(cached);
+        if (text.includes(q)) score += 10;
+      }
+
+      return { entry, score };
+    })
   );
+
+  return scored
+    .filter((s) => s.score > 0)
+    .sort((a, b) => b.score - a.score)
+    .map((s) => s.entry);
 }
 
 export function titleToSlug(title: string): string {

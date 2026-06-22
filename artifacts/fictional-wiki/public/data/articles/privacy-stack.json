@@ -4,9 +4,9 @@
     "title": "Privacy Stack",
     "slug": "privacy-stack",
     "category": "Security",
-    "lastEdited": "2026-04-29T00:00:00Z",
-    "editCount": 19,
-    "views": 3760
+    "lastEdited": "2026-06-22T00:00:00Z",
+    "editCount": 23,
+    "views": 3900
   },
   "infobox": {
     "title": "Privacy Stack",
@@ -23,7 +23,7 @@
       { "label": "Main gap", "value": "Email migration not done" }
     ]
   },
-  "lead": "The **Privacy Stack** is a layered personal privacy and security setup spanning OS hardening, browser fingerprint resistance, hardware-level network filtering, self-hosted services, and planned email migration. It currently sits at approximately **85% completeness** — the main remaining gap is Gmail, which has not yet been migrated to a privacy-respecting provider.\n\nThe stack is built entirely on free and open source software, which connects philosophically to [[foss-coin|FOSS Coin]] and the broader FOSS-first approach documented across the [[about|profile]]. Every layer is either already deployed or has a concrete plan for deployment through the [[homelab|Libre Cloud homelab]].",
+  "lead": "My **Privacy Stack** is a layered personal privacy and security setup spanning OS hardening, browser fingerprint resistance, hardware-level network filtering, self-hosted services, and planned email migration. It currently sits at approximately **85% completeness** — the main remaining gap is Gmail, which I haven't yet migrated to a privacy-respecting provider.\n\nI've built the entire stack on free and open source software, which connects philosophically to [[foss-coin|FOSS Coin]] and the broader FOSS-first approach documented in my [[about|profile]]. Every layer is either already deployed or has a concrete plan for deployment through my [[homelab|Libre Cloud homelab]].",
   "sections": [
     {
       "id": "os-layer",
@@ -32,13 +32,13 @@
       "content": [
         {
           "type": "text",
-          "content": "The operating system layer is the foundation. Running **Arch Linux via [[linux-setup|Omarchy]]** provides the most control over what software is installed and what runs in the background. Hyprland Wayland tiling WM has minimal background services by design — compared to a typical desktop environment, the attack surface and telemetry footprint are dramatically reduced.\n\nKey decisions at this layer:\n- **Chromium removed** (telemetry) — replaced with LibreWolf\n- **Spotify removed** (tracking) — no replacement\n- **Mac address randomization** enabled on all network interfaces\n- **Fork control**: upstream Omarchy changes are selectively applied via a personal GitHub fork"
+          "content": "The OS layer is the foundation. Running **Arch Linux via [[linux-setup|Omarchy]]** gives me the most control over what software is installed and what runs in the background. Hyprland Wayland tiling WM has minimal background services by design — compared to a typical desktop environment, the attack surface and telemetry footprint are dramatically reduced.\n\nKey decisions I made at this layer:\n- **Chromium removed** (telemetry) — replaced with LibreWolf\n- **Spotify removed** (tracking) — no replacement\n- **MAC address randomisation** enabled on all network interfaces\n- **Fork control**: I maintain a personal GitHub fork of Omarchy to selectively apply upstream changes on my own terms"
         },
         {
           "type": "callout",
           "variant": "info",
-          "title": "Trust model",
-          "content": "Arch packages flow through the Arch pacman ecosystem, not DHH's servers. Even when using an opinionated Arch distribution like Omarchy, the underlying package signatures and build infrastructure remain the Arch Linux project's — not a third party's."
+          "title": "My trust model",
+          "content": "Arch packages flow through the Arch pacman ecosystem, not DHH's servers. Even using Omarchy, the underlying package signatures and build infrastructure remain the Arch Linux project's — not a third party's."
         }
       ]
     },
@@ -49,13 +49,13 @@
       "content": [
         {
           "type": "text",
-          "content": "**LibreWolf** is a Firefox fork with hardened anti-fingerprinting defaults applied out of the box. Key differences from stock Firefox:\n- `resistFingerprinting` enabled by default — canvas, WebGL, audio, timezone, and font fingerprinting are all blocked\n- No telemetry or crash reporting sent to Mozilla\n- Stricter cookie defaults and cross-site isolation\n\n**uBlock Origin** runs on top of LibreWolf in medium mode — blocking all third-party scripts and frames by default, with manual allowlist rules added over time for sites that require scripts to function.\n\nFirefox Multi-Account Containers was also explored for session isolation per site category (banking in one container, social media in another, shopping in another)."
+          "content": "I use **LibreWolf** — a Firefox fork with hardened anti-fingerprinting defaults applied out of the box. Key differences from stock Firefox that I care about:\n- `resistFingerprinting` enabled by default — canvas, WebGL, audio, timezone, and font fingerprinting are all blocked\n- No telemetry or crash reporting sent to Mozilla\n- Stricter cookie defaults and cross-site isolation\n\n**uBlock Origin** runs on top of LibreWolf in medium mode — blocking all third-party scripts and frames by default, with manual allowlist rules I've added over time for sites that require scripts to function.\n\nI also explored Firefox Multi-Account Containers for session isolation per site category (banking in one container, social media in another, shopping in another)."
         },
         {
           "type": "callout",
           "variant": "warning",
-          "title": "Dark theme fix",
-          "content": "LibreWolf's resistFingerprinting setting can break dark mode rendering in some sites. Fix: toggle resistFingerprinting off and on in about:config to restore correct theming. Known quirk."
+          "title": "Known quirk — dark theme",
+          "content": "LibreWolf's resistFingerprinting setting can break dark mode rendering on some sites. Fix: toggle resistFingerprinting off and on in about:config to restore correct theming. I've hit this a few times."
         }
       ]
     },
@@ -66,23 +66,23 @@
       "content": [
         {
           "type": "text",
-          "content": "The DNS layer is the most technically layered part of the stack, running multiple filtering systems at different levels:"
+          "content": "The DNS layer is the most technically layered part of my stack — I run multiple filtering systems at different levels:"
         },
         {
           "type": "table",
           "columns": ["Layer", "Tool", "Scope"],
           "rows": [
-            { "Layer": "Home router", "Tool": "GL.iNet (Drop-in Gateway mode)", "Scope": "AdGuard Home on home subnet — blocks ads/malware for all devices" },
+            { "Layer": "Home router", "Tool": "GL.iNet (Drop-in Gateway mode)", "Scope": "AdGuard Home on home subnet — blocks ads/malware for all devices on my home network" },
             { "Layer": "Cloud DNS", "Tool": "NextDNS", "Scope": "Custom profile with telemetry blocking" },
-            { "Layer": "Device-level", "Tool": "Mullvad DNS", "Scope": "Ads + Trackers + Malware filtering on laptop/mobile" },
-            { "Layer": "VPN", "Tool": "WireGuard", "Scope": "Planned — encrypts traffic from device to homelab exit node" }
+            { "Layer": "Device-level", "Tool": "Mullvad DNS", "Scope": "Ads + Trackers + Malware filtering on my laptop and phone" },
+            { "Layer": "VPN", "Tool": "WireGuard", "Scope": "Planned — will encrypt traffic from device to homelab exit node" }
           ]
         },
         {
           "type": "callout",
           "variant": "warning",
           "title": "College WiFi constraint",
-          "content": "SonicWALL SSL inspection on the college WiFi blocks pacman package downloads. Workaround: mobile hotspot for system updates on campus."
+          "content": "SonicWALL SSL inspection on the college WiFi blocks pacman package downloads. My workaround: mobile hotspot for system updates on campus."
         }
       ]
     },
@@ -97,15 +97,15 @@
           "rows": [
             { "Service": "Password manager", "Tool": "Vaultwarden (self-hosted Bitwarden fork)", "Status": "Planned — homelab dependency" },
             { "Service": "Notes", "Tool": "Joplin Server (self-hosted, E2E encrypted)", "Status": "In progress — homelab dependency" },
-            { "Service": "Email", "Tool": "Gmail → Proton Mail or Tutanota", "Status": "❌ Pending — main gap. Custom domain contact@lingadevaru.in active." },
-            { "Service": "Analytics (own sites)", "Tool": "GoatCounter", "Status": "✅ Live — no fingerprinting, no Google Analytics on any owned property" }
+            { "Service": "Email", "Tool": "Gmail → Proton Mail or Tutanota", "Status": "❌ Pending — my main gap. Custom domain contact@lingadevaru.in active." },
+            { "Service": "Analytics (own sites)", "Tool": "GoatCounter", "Status": "✅ Live — no fingerprinting, no Google Analytics on any site I own" }
           ]
         }
       ]
     },
     {
       "id": "stack-completeness",
-      "title": "Stack Completeness",
+      "title": "Stack Completeness — Honest Status",
       "level": 2,
       "content": [
         {
@@ -133,6 +133,7 @@
   "relatedArticles": ["linux-setup", "homelab", "about"],
   "categories": ["Security", "Privacy", "Networking", "Linux"],
   "editHistory": [
+    { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Rewritten in first person", "changeType": "major" },
     { "date": "2026-04-29T00:00:00Z", "editor": "thoshan", "summary": "Full rewrite: layered explanation, completeness table", "changeType": "major" },
     { "date": "2026-04-28T10:00:00Z", "editor": "thoshan", "summary": "Initial page", "changeType": "new" }
   ]

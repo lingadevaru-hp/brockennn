@@ -1,0 +1,45 @@
+1. Landing page redesign
+
+On initial load, show only the centered "THOSHAN'S WIKI" wordmark/logo — nothing else. Remove "About the Author" and "Articles in this Wiki" from the immediate view. Below the fold, add a subtle animated scroll-down prompt (e.g. bouncing chevron or "scroll to explore") inviting the user to continue.
+2. Search functionality
+
+Make search fully functional: full-text search across all article titles, body content, and keywords — not just title matching. Show live results/autocomplete as the user types.
+3. Interlinking — audit and fix across the entire site
+
+Check every article and the About section for unlinked mentions of other articles/projects (e.g. "FOSS Coin" mentioned in About must hyperlink to the actual FOSS Coin article). Cross-check all 10 articles against each other so every reference to another project becomes a working link.
+4. FOSS Coin article — expand and complete
+
+Reference github.com/lingadevaru-hp/Foss-Token and rewrite this article to be fully complete (not a stub) using real project details from that repo. Link the repo directly in the article.
+5. Mobile infobox fix
+
+On mobile only: infobox/info cards render full-width above the article text (not squeezed beside it with unreadably small text). Desktop layout stays exactly as it is now — no changes there.
+6. Default appearance settings
+
+Set defaults for all users on first load: Text size = Large, Width = Wide, Theme = Dark.
+7. Talk / Read / View source / View history tabs
+
+Audit each. If functional, keep it. If purely decorative with no real behavior, remove it rather than leave a dead link.
+8. Callout/info box sizing
+
+Make all callout/info boxes properly wide, matching the article content width — current ones are too narrow and cramped.
+9. Mobile nav menu animation
+
+Add a smooth open/close animation to the hamburger nav drawer (slide + fade, under 300ms). Auto-close the menu when an article link is tapped, playing the same animation in reverse.
+10. Header — add social links
+
+Next to the existing GitHub username, add LinkedIn and Hugging Face links. Use handle lingadevaruhp for every platform except GitHub, which keeps its own existing username.
+11. Rewrite all articles in first person
+
+Convert every article (all 10, not just FOSS Coin) from third-person to first-person, conversational tone — "I built X, here's why and how" — while keeping the Wikipedia-style structure (infobox, sections, references). Confirm each article has real depth and explains the project fully, not just a tone change on thin content.
+12. FOSS Coin as the visual highlight on the landing page
+
+After the user scrolls past the hero section, feature FOSS Coin prominently on the landing page — larger card, positioned first, without literally labeling it "flagship." Embed this GIF: https://camo.githubusercontent.com/83e9d33984dd65af8ddff8fb07d24c6ce76075362cf3564c78bacda2fbefbd73/68747470733a2f2f6d65646961302e67697068792e636f6d2f6d656469612f76312e59326c6b505463354d4749334e6a4578644864324d584e346248687663546b77645870735a3231724d6e527564484a744e4870754e32527a5a3239725a7a64314d574a3465535a6c634431324d563970626e526c636d35686246396e61575a66596e6c666157516d593351395a772f62514c335975694b4b415842776577765a312f67697068792e676966 Copy should speak directly: "I built FOSS Coin — here's what it is and why it matters."
+13. Embed the same GIF inside the FOSS Coin article itself
+
+Place it prominently near the top of the article, full-width on both desktop and mobile — fully visible, not cropped or squeezed.
+14. Social handles — platform clarification
+
+lingadevaruhp is the correct username for LinkedIn, Hugging Face, and any other platform added — except GitHub, which already has its own separate, correct username. Don't overwrite the GitHub one.
+15. Thoshan Flash — link Hugging Face
+
+Add a direct link in the Thoshan Flash article to: https://huggingface.co/lingadevaruhp/thoshan_Flash

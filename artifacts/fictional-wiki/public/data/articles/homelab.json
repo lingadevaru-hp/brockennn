@@ -4,9 +4,9 @@
     "title": "Libre Cloud — Homelab",
     "slug": "homelab",
     "category": "Infrastructure",
-    "lastEdited": "2026-04-30T00:00:00Z",
-    "editCount": 22,
-    "views": 2980
+    "lastEdited": "2026-06-22T00:00:00Z",
+    "editCount": 26,
+    "views": 3100
   },
   "infobox": {
     "title": "Libre Cloud — Homelab",
@@ -22,48 +22,48 @@
       { "label": "Target services", "value": "14 (3 public, 6 WireGuard-private, 5 ARM-only)" }
     ]
   },
-  "lead": "**Libre Cloud** is a zero-trust self-hosted infrastructure project running on Oracle Cloud Always Free tier. The design routes all external traffic through Cloudflare for DDoS protection and IP masking, then into an Oracle Cloud VM running a Caddy reverse proxy that serves public and WireGuard-private services.\n\nThe project name reflects the philosophy behind it: all services are free and open source, the platform is free-tier cloud, and the domain name carries the FOSS identity. It connects directly to the [[privacy-stack|Privacy Stack]] — services like Vaultwarden (passwords), Joplin Server (notes), and SearXNG (private search) are all designed to run in this infrastructure.",
+  "lead": "**Libre Cloud** is my zero-trust self-hosted infrastructure project running on Oracle Cloud's Always Free tier. The design routes all external traffic through Cloudflare for DDoS protection and IP masking, then into an Oracle Cloud VM running a Caddy reverse proxy that serves both public and WireGuard-private services.\n\nI named it 'Libre Cloud' deliberately: everything in the stack is free and open source, the platform is free-tier cloud, and the domain carries the FOSS identity. It connects directly to my [[privacy-stack|Privacy Stack]] — services like Vaultwarden (passwords), Joplin Server (notes), and SearXNG (private search) are all designed to run here.",
   "sections": [
     {
       "id": "current-reality",
-      "title": "Current Reality",
+      "title": "Current Reality — What I Actually Have",
       "level": 2,
       "content": [
         {
           "type": "callout",
           "variant": "warning",
           "title": "Status: Blocked / Severely Constrained",
-          "content": "The target VM was VM.Standard.A1.Flex (4 OCPU, 24 GB RAM — ARM Ampere, free forever on OCI). Persistent 'out of capacity' errors in the Hyderabad region made this unachievable after repeated attempts. The plan to get that VM is abandoned for now. What actually exists: 1x VM.Standard.E2.1.Micro — 1 OCPU, 1 GB RAM."
+          "content": "My target VM was VM.Standard.A1.Flex — Oracle's 4 OCPU, 24 GB RAM ARM Ampere instance, free forever. I hit persistent 'out of capacity' errors in the Hyderabad region after repeated attempts over months. The ARM plan is abandoned for now. What I actually have: 1x VM.Standard.E2.1.Micro — 1 OCPU, 1 GB RAM."
         },
         {
           "type": "table",
-          "columns": ["Service", "RAM usage", "Feasibility on 1 GB"],
+          "columns": ["Service", "RAM usage", "Feasibility on my 1 GB VM"],
           "rows": [
-            { "Service": "WireGuard", "RAM usage": "~5 MB", "Feasibility on 1 GB": "✅ Easy" },
-            { "Service": "Pi-hole", "RAM usage": "~50–100 MB", "Feasibility on 1 GB": "✅ Easy" },
-            { "Service": "Vaultwarden", "RAM usage": "~50 MB", "Feasibility on 1 GB": "✅ Easy" },
-            { "Service": "Caddy / nginx", "RAM usage": "~30 MB", "Feasibility on 1 GB": "✅ Easy" },
-            { "Service": "Portfolio (static files)", "RAM usage": "Minimal", "Feasibility on 1 GB": "✅ Easy" },
-            { "Service": "SearXNG", "RAM usage": "~200–400 MB", "Feasibility on 1 GB": "⚠️ Tight" },
-            { "Service": "Coolify (Docker PaaS)", "RAM usage": "~500 MB–1 GB", "Feasibility on 1 GB": "❌ Too heavy" },
-            { "Service": "Immich / Jellyfin / Ollama", "RAM usage": "2–24 GB", "Feasibility on 1 GB": "❌ Impossible" }
+            { "Service": "WireGuard", "RAM usage": "~5 MB", "Feasibility on my 1 GB VM": "✅ Easy" },
+            { "Service": "Pi-hole", "RAM usage": "~50–100 MB", "Feasibility on my 1 GB VM": "✅ Easy" },
+            { "Service": "Vaultwarden", "RAM usage": "~50 MB", "Feasibility on my 1 GB VM": "✅ Easy" },
+            { "Service": "Caddy / nginx", "RAM usage": "~30 MB", "Feasibility on my 1 GB VM": "✅ Easy" },
+            { "Service": "Portfolio (static files)", "RAM usage": "Minimal", "Feasibility on my 1 GB VM": "✅ Easy" },
+            { "Service": "SearXNG", "RAM usage": "~200–400 MB", "Feasibility on my 1 GB VM": "⚠️ Tight" },
+            { "Service": "Coolify (Docker PaaS)", "RAM usage": "~500 MB–1 GB", "Feasibility on my 1 GB VM": "❌ Too heavy" },
+            { "Service": "Immich / Jellyfin / Ollama", "RAM usage": "2–24 GB", "Feasibility on my 1 GB VM": "❌ Impossible" }
           ]
         }
       ]
     },
     {
       "id": "architecture",
-      "title": "Architecture",
+      "title": "Architecture — How I Designed It",
       "level": 2,
       "content": [
         {
           "type": "text",
-          "content": "The zero-trust architecture is designed so that no service is directly exposed to the internet without passing through Cloudflare and the reverse proxy layer. Services are split into three visibility tiers: public (accessible to anyone via Cloudflare), private (accessible only through a WireGuard VPN tunnel), and ARM-only (requiring the unprovisioned A1.Flex VM)."
+          "content": "I designed the architecture so nothing is directly exposed to the internet without passing through Cloudflare and the reverse proxy layer. Services are split into three visibility tiers: public (accessible to anyone via Cloudflare), private (accessible only through a WireGuard VPN tunnel), and ARM-only (requiring the unprovisioned A1.Flex VM)."
         },
         {
           "type": "callout",
           "variant": "info",
-          "title": "Architecture flow",
+          "title": "My architecture flow",
           "content": "Internet → Cloudflare (DNS + DDoS + IP masking) → Oracle Cloud VM (1 GB Micro) → Reverse proxy (Caddy/nginx) → [Public: Portfolio, Pi-hole DoH] / [Private (WireGuard-gated): Vaultwarden, Joplin Server, Gitea]"
         },
         {
@@ -86,12 +86,12 @@
     },
     {
       "id": "why-oracle",
-      "title": "Why Oracle Cloud Always Free",
+      "title": "Why I Chose Oracle Cloud",
       "level": 2,
       "content": [
         {
           "type": "text",
-          "content": "Oracle Cloud's Always Free tier is uniquely generous compared to AWS, GCP, and Azure free tiers. The headline offering is the **ARM Ampere A1.Flex** instance: 4 OCPU and 24 GB RAM — free forever, no expiry.\n\nFor context, AWS Free Tier gives a t2.micro (1 vCPU, 1 GB) for 12 months only. Oracle's AMD Micro is a comparable shape but is always-free in perpetuity, and the ARM Ampere would be dramatically more capable.\n\nThe catch is capacity availability: the Hyderabad region ARM Ampere has been perennially 'out of capacity'. Other regions would require a separate account setup. This is a known, widely-reported issue in the Oracle Cloud community — not unique to this project."
+          "content": "Oracle Cloud's Always Free tier is uniquely generous compared to AWS, GCP, and Azure free tiers. The headline offering is the **ARM Ampere A1.Flex** instance: 4 OCPU and 24 GB RAM — free forever. For comparison, AWS Free Tier gives a t2.micro (1 vCPU, 1 GB) for only 12 months. Oracle's AMD Micro is comparable but always-free in perpetuity, and the ARM Ampere would be dramatically more capable.\n\nThe catch is capacity availability: the Hyderabad region ARM Ampere has been perennially 'out of capacity'. This is a widely-reported issue in the Oracle Cloud community — not unique to me. Other regions would require a separate account setup. I've been stuck on this constraint for months."
         },
         {
           "type": "quote",
@@ -109,8 +109,8 @@
   "relatedArticles": ["privacy-stack", "linux-setup", "about"],
   "categories": ["Infrastructure", "Self-Hosting", "Cloud", "Networking"],
   "editHistory": [
+    { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Rewritten in first person", "changeType": "major" },
     { "date": "2026-04-30T00:00:00Z", "editor": "thoshan", "summary": "Added ARM capacity issue detail, updated service table", "changeType": "major" },
-    { "date": "2026-04-29T14:00:00Z", "editor": "thoshan", "summary": "Full rewrite with zero-trust architecture", "changeType": "major" },
     { "date": "2026-04-29T08:00:00Z", "editor": "thoshan", "summary": "Initial page", "changeType": "new" }
   ]
 }

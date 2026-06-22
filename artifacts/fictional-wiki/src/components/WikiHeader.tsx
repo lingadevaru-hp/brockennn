@@ -134,8 +134,10 @@ export default function WikiHeader({ onMenuClick }: WikiHeaderProps) {
           )}
         </div>
 
-        <nav className="hidden md:flex items-center gap-3 text-sm text-foreground shrink-0">
-          <a href="https://github.com/lingadevaru-hp" target="_blank" rel="noreferrer" className="hover:text-accent">GitHub</a>
+        <nav className="hidden md:flex items-center gap-2 text-sm text-foreground shrink-0">
+          <a href="https://github.com/lingadevaru-hp" target="_blank" rel="noreferrer" className="hover:text-accent px-2 py-1 hover:bg-card rounded text-xs">GitHub</a>
+          <a href="https://linkedin.com/in/lingadevaruhp" target="_blank" rel="noreferrer" className="hover:text-accent px-2 py-1 hover:bg-card rounded text-xs">LinkedIn</a>
+          <a href="https://huggingface.co/lingadevaruhp" target="_blank" rel="noreferrer" className="hover:text-accent px-2 py-1 hover:bg-card rounded text-xs">🤗 HF</a>
         </nav>
 
         <button

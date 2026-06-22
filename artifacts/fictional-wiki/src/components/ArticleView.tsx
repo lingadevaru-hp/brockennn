@@ -37,7 +37,7 @@ function parseLeadText(text: string) {
 
 export default function ArticleView({ article }: ArticleViewProps) {
   const [activeSection, setActiveSection] = useState('');
-  const [fontSize, setFontSize] = useState<'small' | 'standard' | 'large'>('standard');
+  const [fontSize, setFontSize] = useState<'small' | 'standard' | 'large'>('large');
   const [contentWidth, setContentWidth] = useState<'standard' | 'wide'>('wide');
   const [allArticles, setAllArticles] = useState<ArticleIndexEntry[]>([]);
   const articleRef = useRef<HTMLDivElement>(null);

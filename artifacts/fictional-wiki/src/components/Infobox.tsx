@@ -8,7 +8,11 @@ export default function Infobox({ data }: InfolboxProps) {
   return (
     <table
       data-testid="infobox"
-      className="float-right clear-right ml-4 mb-4 w-full max-w-[280px] text-sm border border-border bg-card"
+      className="
+        w-full mb-4 text-sm border border-border bg-card
+        md:float-right md:clear-right md:ml-4 md:mb-4 md:w-auto md:max-w-[280px]
+        block md:table
+      "
       style={{ clear: 'right' }}
     >
       <tbody>

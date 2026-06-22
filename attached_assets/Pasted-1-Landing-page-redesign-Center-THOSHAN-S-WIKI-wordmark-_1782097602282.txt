@@ -1,0 +1,48 @@
+1. Landing page redesign
+
+Center "THOSHAN'S WIKI" wordmark/logo prominently — that's all that should be visible on initial load. Remove "About the Author" and "Articles in this Wiki" sections from the immediate landing view.
+Below the fold, add a subtle animated scroll-down prompt (e.g. bouncing chevron or "scroll to explore") that invites the user to scroll to see About/Articles sections.
+
+2. Search functionality
+
+Make search fully functional — full-text search across all article titles, content, and keywords, not just title matching. Show live results/autocomplete as the user types.
+
+3. Interlinking — fix throughout the entire site
+
+Audit every article and the About section for unlinked references to other articles (e.g. "FOSS Coin" mentioned in About must link to the actual FOSS Coin article page, not be plain text).
+Cross-check all 10 articles against each other — every mention of another project/article by name should be a working hyperlink to that article.
+
+4. FOSS Coin article — expand and complete
+
+Reference github.com/lingadevaru-hp/Foss-Token for full project details — rewrite this article to be complete (not a stub), pulling real details from the repo.
+Embed the terminal GIF (provided URL) prominently, full-width/full-screen-appropriate on both desktop and mobile, near the top of the article.
+Link the GitHub repo URL directly in the article (e.g. an infobox field or inline link).
+
+5. Mobile infobox fix
+
+On mobile only: infobox/info cards should render full-width above the article text (not squeezed beside it with unreadably small text). Desktop layout stays exactly as-is, unchanged.
+
+6. Default appearance settings
+
+Set defaults to: Text size = Large, Width = Wide, Theme = Dark. Apply these on first load for all users.
+
+7. Tabs: Talk / Read / View source / View history
+
+Audit each one. If functional, keep. If purely decorative/non-functional, remove it rather than leave a dead link.
+
+8. Callout/info boxes — sizing
+
+Make callout boxes (info/warning/etc.) properly wide — current ones are too narrow/cramped. Match article content width.
+
+9. Mobile nav menu animation
+
+Add smooth open/close animation to the hamburger nav drawer (slide + fade, under 300ms). Auto-close the menu when an article link is tapped, with the same animation reversed.
+
+10. Header — add social links
+
+Next to the existing GitHub username, add LinkedIn and Hugging Face links. Both use the handle lingadevaruhp.
+
+11. Rewrite all articles in first person
+
+Convert every article from third-person ("Lingadevaru built X") to first-person, conversational tone ("I built X, here's why..."). This applies to all 10 articles, not just FOSS Coin.
+Keep Wikipedia-style structure (infobox, sections, references) but the voice should read like the person explaining their own work directly.

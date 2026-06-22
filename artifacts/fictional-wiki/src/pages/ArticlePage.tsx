@@ -60,17 +60,11 @@ export default function ArticlePage() {
           {article && !loading && (
             <div>
               <div className="mb-2 text-xs text-muted-foreground flex items-center gap-2 border-b border-border pb-2">
+                <button onClick={() => setLocation('/')} className="text-accent hover:underline">Home</button>
+                <span>·</span>
                 <button onClick={() => setLocation('/wiki/main-page')} className="text-accent hover:underline">Main Page</button>
                 <span>·</span>
-                <span className="text-foreground">{article.metadata.title}</span>
-                <span>·</span>
-                <span className="text-muted-foreground">Talk</span>
-                <span>·</span>
-                <span className="text-muted-foreground">Read</span>
-                <span>·</span>
-                <span className="text-muted-foreground">Edit</span>
-                <span>·</span>
-                <span className="text-muted-foreground">View history</span>
+                <span className="text-foreground font-medium">{article.metadata.title}</span>
               </div>
               <ArticleView article={article} />
             </div>
