@@ -24,6 +24,7 @@ export interface ContentBlock {
   type: 'text' | 'image' | 'table' | 'video' | 'gallery' | 'callout' | 'quote' | 'banner';
   content?: string;
   src?: string;
+  fallbackSrc?: string;
   alt?: string;
   caption?: string;
   width?: string;
@@ -33,6 +34,7 @@ export interface ContentBlock {
   variant?: 'info' | 'warning' | 'success' | 'error';
   title?: string;
   author?: string;
+  expandable?: boolean;
   items?: { src: string; alt: string; caption?: string }[];
 }
 

@@ -114,23 +114,126 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
     case 'text':
       return <div className="wiki-text mb-2">{renderMarkdown(block.content || '')}</div>;
 
-    case 'banner':
+    case 'banner': {
+      const isGif = block.src?.endsWith('.gif') || block.src?.includes('giphy');
+      const src = block.src || '';
+      const fallback = block.fallbackSrc;
+      const expandable = block.expandable ?? false;
+
+      const handleError = (e: React.SyntheticEvent<HTMLImageElement>) => {
+        if (fallback && e.currentTarget.src !== fallback) {
+          e.currentTarget.src = fallback;
+        }
+      };
+
       return (
-        <div className="mb-5 border border-border overflow-hidden" data-testid="banner-block">
-          <img
-            src={block.src}
-            alt={block.alt || ''}
-            className="w-full object-cover"
-            loading="eager"
-            style={{ maxHeight: '340px' }}
-          />
-          {block.caption && (
-            <p className="text-xs text-muted-foreground p-2 italic text-center bg-card/50 border-t border-border">
-              {block.caption}
-            </p>
+        <>
+          <div
+            className={`mb-5 border border-border${isGif ? '' : ' overflow-hidden'}${expandable ? ' group relative' : ''}`}
+            data-testid="banner-block"
+          >
+            <img
+              src={src}
+              alt={block.alt || ''}
+              onError={fallback ? handleError : undefined}
+              style={{
+                display: 'block',
+                width: '100%',
+                height: 'auto',
+                ...(isGif ? {} : { maxHeight: '340px', objectFit: 'cover' }),
+                cursor: expandable ? 'zoom-in' : 'default',
+              }}
+              loading="eager"
+              onClick={
+                expandable
+                  ? () => setLightbox({ src, alt: block.alt || '', caption: block.caption })
+                  : undefined
+              }
+              title={expandable ? 'Click to view full screen' : undefined}
+            />
+
+            {/* Hover overlay hint for expandable banners */}
+            {expandable && (
+              <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors pointer-events-none flex items-end justify-end">
+                <span className="m-2 px-2 py-1 text-[10px] bg-black/60 text-white rounded opacity-0 group-hover:opacity-100 transition-opacity select-none">
+                  🔍 Click to expand
+                </span>
+              </div>
+            )}
+
+            {block.caption && (
+              <p className="text-xs text-muted-foreground p-2 italic text-center bg-card/50 border-t border-border">
+                {block.caption}
+              </p>
+            )}
+          </div>
+
+          {/* Fullscreen lightbox for expandable banners */}
+          {lightbox && (
+            <div
+              className="fixed inset-0 bg-black/90 z-[200] flex flex-col items-center justify-center p-4"
+              onClick={() => setLightbox(null)}
+            >
+              {/* Top bar */}
+              <div
+                className="w-full max-w-5xl flex items-center justify-between mb-3"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <p className="text-white/70 text-xs truncate">{lightbox.alt}</p>
+                <div className="flex items-center gap-2">
+                  <a
+                    href={lightbox.src}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="px-3 py-1 text-xs bg-white/10 hover:bg-white/20 text-white rounded transition-colors"
+                    title="Open in new tab"
+                  >
+                    ↗ New tab
+                  </a>
+                  <a
+                    href={lightbox.src}
+                    download
+                    className="px-3 py-1 text-xs bg-white/10 hover:bg-white/20 text-white rounded transition-colors"
+                    title="Download"
+                  >
+                    ↓ Download
+                  </a>
+                  <button
+                    className="px-3 py-1 text-xs bg-white/10 hover:bg-white/20 text-white rounded transition-colors"
+                    onClick={() => setLightbox(null)}
+                  >
+                    ✕ Close
+                  </button>
+                </div>
+              </div>
+
+              {/* Image */}
+              <div
+                className="max-w-5xl w-full flex items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img
+                  src={lightbox.src}
+                  alt={lightbox.alt}
+                  style={{ display: 'block', maxWidth: '100%', maxHeight: '80vh', height: 'auto', objectFit: 'contain' }}
+                />
+              </div>
+
+              {lightbox.caption && (
+                <p
+                  className="text-white/60 text-xs mt-3 text-center max-w-2xl"
+                  onClick={(e) => e.stopPropagation()}
+                >
+                  {lightbox.caption}
+                </p>
+              )}
+              <p className="text-white/30 text-xs mt-2">Click outside to close</p>
+            </div>
           )}
-        </div>
+        </>
       );
+    }
+
 
     case 'image':
       return (

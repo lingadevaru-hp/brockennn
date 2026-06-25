@@ -4,8 +4,8 @@
     "title": "Insurance DApp",
     "slug": "insurance-dapp",
     "category": "Blockchain",
-    "lastEdited": "2026-06-22T00:00:00Z",
-    "editCount": 18,
+    "lastEdited": "2026-06-25T00:00:00Z",
+    "editCount": 19,
     "views": 3350
   },
   "infobox": {
@@ -20,10 +20,11 @@
       { "label": "Frontend", "value": "HTML5, CSS3, Bootstrap" },
       { "label": "GitHub", "value": "github.com/lingadevaru-hp/insurance-dapp" },
       { "label": "GitHub stars", "value": "1 ⭐" },
+      { "label": "Live site", "value": "insurance.lingadevaru.in" },
       { "label": "Status", "value": "Live demo + GitHub" }
     ]
   },
-  "lead": "The **Insurance DApp** is a decentralised insurance application I built on the **Ethereum blockchain**, using Solidity smart contracts to replace the traditional insurance company as the intermediary. Policies, premiums, claims, and payouts are all handled by on-chain logic — no human in the loop, no company deciding your claim.\n\nI built this to explore the gap between centralised insurance (where a company decides your outcome) and decentralised insurance (where a smart contract executes pre-agreed rules automatically and transparently). It sits alongside [[foss-coin|FOSS Coin]] in my blockchain portfolio — together they cover two completely different ecosystems: Ethereum (EVM, Solidity) and Solana (SPL, Rust runtime).",
+  "lead": "The **Insurance DApp** is a decentralised insurance application I built on the **Ethereum blockchain**, using Solidity smart contracts to replace the traditional insurance company as the intermediary. Policies, premiums, claims, and payouts are all handled by on-chain logic — no human in the loop, no company deciding your claim.\n\nI built this to explore the gap between centralised insurance (where a company decides your outcome) and decentralised insurance (where a smart contract executes pre-agreed rules automatically and transparently). It sits alongside [[foss-coin|FOSS Coin]] in my blockchain portfolio — together they cover two completely different ecosystems: Ethereum (EVM, Solidity) and Solana (SPL, Rust runtime).\n\nThe application is **live** at [insurance.lingadevaru.in](https://insurance.lingadevaru.in) — you can interact with it directly using a MetaMask wallet connected to the Sepolia testnet. No real ETH needed: grab Sepolia test ETH from any faucet, connect MetaMask, and you can purchase a policy, submit a claim, and watch the smart contract execute the payout — all on-chain, in real time.\n\nThe full source code — Solidity contracts, Truffle migration scripts, contract ABI, and the complete frontend — is open-sourced on [GitHub (github.com/lingadevaru-hp/insurance-dapp)](https://github.com/lingadevaru-hp/insurance-dapp). The repo includes a README with step-by-step setup instructions for anyone who wants to fork, deploy, or audit the contract logic.\n\nBuilt with **Solidity** for the smart contracts, **Truffle** for compilation and migration, **Web3.js** for the browser-to-blockchain interaction layer, and a plain **HTML5 / CSS3 / Bootstrap** frontend — this project deliberately avoids modern JS frameworks. The goal was to understand the raw contract interaction without abstraction: every transaction is constructed manually, signed via MetaMask, and broadcast directly to the Ethereum network. No backend server. No database. No company infrastructure of any kind.",
   "sections": [
     {
       "id": "why-decentralised",
@@ -80,6 +81,48 @@
       ]
     },
     {
+      "id": "live-demo",
+      "title": "See It Live",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "The Insurance DApp is deployed and accessible online. You can interact with the live demo using a Web3-enabled browser (like Chrome with MetaMask extension). The smart contract is deployed on the Ethereum testnet (Sepolia), so no real ETH is needed — just grab some Sepolia test ETH from a faucet and try it out."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Live Demo",
+          "content": "Visit [insurance.lingadevaru.in](https://insurance.lingadevaru.in) to see the DApp in action. You'll need MetaMask connected to the Sepolia testnet. The full source code, contract ABI, and deployment instructions are available on GitHub."
+        },
+        {
+          "type": "text",
+          "content": "The frontend is a clean Bootstrap interface that walks through each step: connecting your wallet, viewing active policies, submitting claims, and seeing the smart contract's response in real time. Every transaction is signed through MetaMask and broadcast to the Sepolia testnet."
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "title": "Resources",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Everything you need to explore, verify, or fork this project is linked below. The GitHub repository contains the full source code, Truffle migration scripts, and a README with setup instructions. The live demo lets you interact with the deployed contract without cloning anything."
+        },
+        {
+          "type": "table",
+          "columns": ["Resource", "URL", "What you get"],
+          "rows": [
+            { "Resource": "GitHub Repository", "URL": "[github.com/lingadevaru-hp/insurance-dapp](https://github.com/lingadevaru-hp/insurance-dapp)", "What you get": "Full source code — Solidity contracts, Truffle config, frontend HTML/CSS/JS" },
+            { "Resource": "Live Demo", "URL": "[insurance.lingadevaru.in](https://insurance.lingadevaru.in)", "What you get": "Interactive DApp running on Sepolia testnet — try policy purchase, claims, payouts" },
+            { "Resource": "Contract on Sepolia", "URL": "View on Etherscan (link in repo)", "What you get": "Verified contract code, transaction history, event logs" },
+            { "Resource": "My Blockchain Portfolio", "URL": "/[about|GitHub profile](https://github.com/lingadevaru-hp)", "What you get": "All my Web3 projects — FOSS Coin (Solana), this DApp (Ethereum), and more" }
+          ]
+        }
+      ]
+    },
+    {
       "id": "relationship-to-other-work",
       "title": "How This Connects to My Other Work",
       "level": 2,
@@ -93,11 +136,13 @@
     }
   ],
   "references": [
-    { "id": 1, "title": "GitHub — insurance-dapp", "url": "https://github.com/lingadevaru-hp/insurance-dapp" }
+    { "id": 1, "title": "GitHub — insurance-dapp", "url": "https://github.com/lingadevaru-hp/insurance-dapp" },
+    { "id": 2, "title": "Live Demo — insurance.lingadevaru.in", "url": "https://insurance.lingadevaru.in" }
   ],
   "relatedArticles": ["foss-coin", "about", "fraud-detection"],
   "categories": ["Blockchain", "Ethereum", "Web3", "Smart Contracts"],
   "editHistory": [
+    { "date": "2026-06-25T00:00:00Z", "editor": "thoshan", "summary": "Added live demo section, resources, external links", "changeType": "major" },
     { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Rewritten in first person", "changeType": "major" },
     { "date": "2026-04-29T00:00:00Z", "editor": "thoshan", "summary": "Full rewrite: added how-it-works, context section", "changeType": "major" },
     { "date": "2026-04-28T10:00:00Z", "editor": "thoshan", "summary": "Initial page", "changeType": "new" }

@@ -22,10 +22,11 @@
       { "label": "DEX", "value": "Orca Whirlpool (FOSS/SOL)" },
       { "label": "Status", "value": "Live" },
       { "label": "GitHub", "value": "github.com/lingadevaru-hp/Foss-Token" },
-      { "label": "GitHub stars", "value": "7 ⭐  4 🔱" }
+      { "label": "GitHub stars", "value": "7 ⭐  4 🔱" },
+      { "label": "Live trading", "value": "go.lingadevaru.in/foss-trading" }
     ]
   },
-  "lead": "**FOSS Coin ($FOSS)** is a Solana SPL token I built to symbolise support for the Free and Open Source Software movement. I deployed it on Solana Mainnet in July 2025 and listed it on the Orca Whirlpool decentralised exchange in October 2025. It carries a fixed supply of one billion tokens — and I permanently revoked the mint authority at the moment of creation, meaning the supply can never be inflated by anyone, including me.\n\nI built this as a hands-on exercise to understand Solana at the instruction level — covering SPL token mechanics, Metaplex metadata, IPFS pinning, concentrated liquidity AMMs, and atomic multi-instruction transactions. The full source is on [GitHub (7 stars, 4 forks)](https://github.com/lingadevaru-hp/Foss-Token). It is not affiliated with the FSF, GNU, or Linux.org.",
+  "lead": "**FOSS Coin ($FOSS)** is a Solana SPL token I built to symbolise support for the Free and Open Source Software movement. I deployed it on Solana Mainnet in July 2025 and listed it on the Orca Whirlpool decentralised exchange in October 2025. It carries a fixed supply of one billion tokens — and I permanently revoked the mint authority at the moment of creation, meaning the supply can never be inflated by anyone, including me.\n\nI built this as a hands-on exercise to understand Solana at the instruction level — covering SPL token mechanics, Metaplex metadata, IPFS pinning, concentrated liquidity AMMs, and atomic multi-instruction transactions. The full source code is open-sourced on [GitHub (7 stars, 4 forks)](https://github.com/lingadevaru-hp/Foss-Token). It is not affiliated with the FSF, GNU, or Linux.org.\n\nThe entire launch — from token mint to mint authority revocation to initial DEX liquidity — was executed in **one atomic transaction containing 7 instructions**. If any single instruction had failed, the entire transaction would have rolled back with zero partial state on-chain. That all-or-nothing design is one of the things that makes Solana architecturally elegant, and understanding it at the instruction level was the whole point of building this.\n\nThe token is live and actively trading on the [Orca Whirlpool DEX](https://go.lingadevaru.in/foss-trading) — the FOSS/SOL pair has been running since October 2025 with concentrated liquidity. The live trading session is recorded in the GIF below: you can see the FOSS/SOL pair on Orca's interface, real-time price action, and the pool depth chart.\n\nThis project sits in a different ecosystem from my [[insurance-dapp|Insurance DApp]] (Ethereum / Solidity). FOSS Coin operates on Solana's Rust-based runtime using the SPL Token Program. Together they represent hands-on, deployed work across the two largest smart contract platforms — different toolchains, different programming models, both live.",
   "sections": [
     {
       "id": "gif-preview",
@@ -34,9 +35,11 @@
       "content": [
         {
           "type": "banner",
-          "src": "https://media.giphy.com/media/bQL3YuiKKAXBwewvZ1/giphy.gif",
-          "alt": "FOSS Coin ($FOSS) live trading session on the Orca Whirlpool DEX",
-          "caption": "FOSS Coin ($FOSS) live on the Orca Whirlpool DEX — FOSS/SOL trading pair"
+          "src": "/foss-coin-trading.gif",
+          "fallbackSrc": "https://media.giphy.com/media/bQL3YuiKKAXBwewvZ1/giphy.gif",
+          "alt": "FOSS Coin ($FOSS) live trading session on the Orca Whirlpool DEX — 1280×720",
+          "caption": "FOSS Coin ($FOSS) live on the Orca Whirlpool DEX — FOSS/SOL trading pair · Click to view full screen",
+          "expandable": true
         }
       ]
     },
@@ -152,6 +155,49 @@
           "content": "Extremely low liquidity (only ~0.0004 SOL in the pool at launch). Not listed on Jupiter aggregator. No on-chain utility — no staking, governance, or DApp integration. IPFS dependency for metadata. I hold the sole Whirlpool position NFT. The token was created via a launchpad (no-code deployment), though I've documented every instruction in detail. This is a learning project that happens to be live, not a DeFi product."
         }
       ]
+    },
+    {
+      "id": "live-trading-section",
+      "title": "Live Trading",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "FOSS Coin is actively trading on the Orca Whirlpool DEX. You can view the live trading interface, pool depth, and recent transactions in real time. The FOSS/SOL pair has been live since October 2025 with concentrated liquidity."
+        },
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "View Live Trading",
+          "content": "Go to [go.lingadevaru.in/foss-trading](https://go.lingadevaru.in/foss-trading) to see FOSS Coin live on Orca Whirlpool. The interface shows the current price, pool liquidity, swap functionality, and transaction history for the FOSS/SOL pair."
+        },
+        {
+          "type": "text",
+          "content": "The Whirlpool pool uses concentrated liquidity, meaning the capital is allocated within specific price ranges rather than across the entire curve. I created the initial position at launch and seeded the first liquidity. The pool continues to operate autonomously on Orca's infrastructure — no further action is required from me for basicOc trading to function."
+        }
+      ]
+    },
+    {
+      "id": "resources",
+      "title": "Resources",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "Everything needed to verify, trade, or fork FOSS Coin is linked below."
+        },
+        {
+          "type": "table",
+          "columns": ["Resource", "URL", "What you get"],
+          "rows": [
+            { "Resource": "GitHub Repository", "URL": "[github.com/lingadevaru-hp/Foss-Token](https://github.com/lingadevaru-hp/Foss-Token)", "What you get": "Full source, deployment scripts, README with complete setup" },
+            { "Resource": "Live Trading", "URL": "[go.lingadevaru.in/foss-trading](https://go.lingadevaru.in/foss-trading)", "What you get": "Active Orca Whirlpool — swap, view liquidity, see price history" },
+            { "Resource": "Solana Explorer", "URL": "[explorer.solana.com](https://explorer.solana.com/)", "What you get": "Mint address, supply, holder count, transaction history" },
+            { "Resource": "Orca Whirlpool", "URL": "[orca.so](https://www.orca.so)", "What you get": "Official DEX — trade FOSS/SOL directly" },
+            { "Resource": "My Portfolio", "URL": "[lingadevaru.in](https://lingadevaru.in)", "What you get": "All projects and links" }
+          ]
+        }
+      ]
     }
   ],
   "references": [
@@ -162,6 +208,7 @@
   "relatedArticles": ["insurance-dapp", "about", "privacy-stack"],
   "categories": ["Blockchain", "Solana", "Web3", "DeFi"],
   "editHistory": [
+    { "date": "2026-06-25T00:00:00Z", "editor": "thoshan", "summary": "Added live trading section, resources, external links", "changeType": "major" },
     { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Logo in infobox, GIF banner in body, wiki links fixed", "changeType": "major" },
     { "date": "2026-04-30T00:00:00Z", "editor": "thoshan", "summary": "Added atomic transaction table and phase callouts", "changeType": "major" },
     { "date": "2026-04-29T08:00:00Z", "editor": "thoshan", "summary": "Initial page created", "changeType": "new" }

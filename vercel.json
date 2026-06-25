@@ -11,6 +11,7 @@
     }
   ],
   "routes": [
-    { "src": "/(.*)", "dest": "/artifacts/fictional-wiki/dist/public/$1" }
+    { "src": "/[^.]+", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/$1" }
   ]
 }

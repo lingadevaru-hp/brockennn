@@ -4,6 +4,42 @@ interface InfolboxProps {
   data: InfoboxType;
 }
 
+/** Renders a field value — auto-linking bare domains and markdown [text](url) patterns */
+function FieldValue({ value }: { value: string }) {
+  // Markdown link: [text](url)
+  const mdLink = value.match(/^\[([^\]]+)\]\((https?:\/\/[^)]+)\)$/);
+  if (mdLink) {
+    return (
+      <a href={mdLink[2]} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline break-all">
+        {mdLink[1]}
+      </a>
+    );
+  }
+
+  // Bare https?:// URL
+  if (/^https?:\/\//.test(value)) {
+    return (
+      <a href={value} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline break-all">
+        {value.replace(/^https?:\/\//, '')}
+      </a>
+    );
+  }
+
+  // Bare domain that looks like a URL (contains a dot, no spaces, reasonable length)
+  // e.g. github.com/lingadevaru-hp/Foss-Token, insurance.lingadevaru.in
+  const domainPattern = /^([a-z0-9-]+\.)+[a-z]{2,}(\/\S*)?$/i;
+  if (domainPattern.test(value) && !value.includes(' ') && value.length < 120) {
+    const href = `https://${value}`;
+    return (
+      <a href={href} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline break-all">
+        {value}
+      </a>
+    );
+  }
+
+  return <>{value}</>;
+}
+
 export default function Infobox({ data }: InfolboxProps) {
   return (
     <table
@@ -43,7 +79,9 @@ export default function Infobox({ data }: InfolboxProps) {
             <th className="py-1 px-2 font-bold text-left align-top bg-card/50 w-2/5 text-xs">
               {field.label}
             </th>
-            <td className="py-1 px-2 align-top text-xs">{field.value}</td>
+            <td className="py-1 px-2 align-top text-xs">
+              <FieldValue value={field.value} />
+            </td>
           </tr>
         ))}
       </tbody>
