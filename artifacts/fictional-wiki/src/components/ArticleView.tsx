@@ -49,6 +49,49 @@ function parseLeadText(text: string) {
   });
 }
 
+// Helper to collect all images inside the current article in logical order
+function collectArticleImages(article: Article) {
+  const images: { src: string; alt: string; caption?: string }[] = [];
+  
+  if (article.infobox?.image) {
+    images.push({
+      src: article.infobox.image,
+      alt: article.infobox.title,
+      caption: article.infobox.imageCaption,
+    });
+  }
+  
+  const scanSection = (sec: any) => {
+    sec.content?.forEach((block: any) => {
+      if (block.type === 'banner' && block.src) {
+        images.push({
+          src: block.src,
+          alt: block.alt || '',
+          caption: block.caption,
+        });
+      } else if (block.type === 'image' && block.src) {
+        images.push({
+          src: block.src,
+          alt: block.alt || '',
+          caption: block.caption,
+        });
+      } else if (block.type === 'gallery' && block.items) {
+        block.items.forEach((item: any) => {
+          images.push({
+            src: item.src,
+            alt: item.alt || '',
+            caption: item.caption,
+          });
+        });
+      }
+    });
+    sec.subsections?.forEach(scanSection);
+  };
+  
+  article.sections.forEach(scanSection);
+  return images;
+}
+
 export default function ArticleView({ article }: ArticleViewProps) {
   const { theme, setTheme } = useTheme();
   const [activeSection, setActiveSection] = useState('');
@@ -56,6 +99,19 @@ export default function ArticleView({ article }: ArticleViewProps) {
   const [contentWidth, setContentWidth] = useState<'standard' | 'wide'>('wide');
   const [allArticles, setAllArticles] = useState<ArticleIndexEntry[]>([]);
   const articleRef = useRef<HTMLDivElement>(null);
+
+  // Global Lightbox state
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+  const [lightboxImages, setLightboxImages] = useState<{ src: string; alt: string; caption?: string }[]>([]);
+  const touchStartX = useRef<number>(0);
+  const touchEndX = useRef<number>(0);
+
+  // Synchronize image collections on article loading
+  useEffect(() => {
+    const imgs = collectArticleImages(article);
+    setLightboxImages(imgs);
+    setLightboxIndex(null);
+  }, [article]);
 
   useEffect(() => {
     const prefs = localStorage.getItem('wiki-preferences');
@@ -87,7 +143,72 @@ export default function ArticleView({ article }: ArticleViewProps) {
     return () => observer.disconnect();
   }, [article]);
 
+  // Handle open-lightbox event
+  useEffect(() => {
+    function handleOpen(e: Event) {
+      const customEvent = e as CustomEvent<{ src: string }>;
+      const src = customEvent.detail.src;
+      // Re-collect list to make sure it is accurate
+      const currentImages = collectArticleImages(article);
+      setLightboxImages(currentImages);
+      
+      const foundIdx = currentImages.findIndex((img) => img.src === src);
+      if (foundIdx !== -1) {
+        setLightboxIndex(foundIdx);
+      } else {
+        // Fallback if the image wasn't indexed
+        const customImg = { src, alt: '', caption: '' };
+        setLightboxImages((prev) => {
+          const list = [...prev];
+          if (!list.some(x => x.src === src)) {
+            list.push(customImg);
+          }
+          return list;
+        });
+        setLightboxIndex(currentImages.length);
+      }
+    }
+
+    window.addEventListener('open-lightbox', handleOpen);
+    return () => window.removeEventListener('open-lightbox', handleOpen);
+  }, [article]);
+
+  // Handle keyboard events for global lightbox
+  useEffect(() => {
+    if (lightboxIndex === null) return;
+
+    function handleKeyDown(e: KeyboardEvent) {
+      if (e.key === 'ArrowRight') {
+        setLightboxIndex((prev) => (prev !== null && prev < lightboxImages.length - 1 ? prev + 1 : prev));
+      } else if (e.key === 'ArrowLeft') {
+        setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : prev));
+      } else if (e.key === 'Escape') {
+        setLightboxIndex(null);
+      }
+    }
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [lightboxIndex, lightboxImages]);
+
   const fontSizeClass = fontSize === 'small' ? 'text-xs' : fontSize === 'large' ? 'text-base' : 'text-sm';
+  const maxWidthClass = contentWidth === 'wide' ? 'max-w-none' : 'max-w-[680px]';
+
+  function handleTouchStart(e: React.TouchEvent) {
+    touchStartX.current = e.changedTouches[0].screenX;
+  }
+
+  function handleTouchEnd(e: React.TouchEvent) {
+    touchEndX.current = e.changedTouches[0].screenX;
+    const diff = touchStartX.current - touchEndX.current;
+    if (diff > 50) {
+      // swipe left -> next
+      setLightboxIndex((prev) => (prev !== null && prev < lightboxImages.length - 1 ? prev + 1 : prev));
+    } else if (diff < -50) {
+      // swipe right -> prev
+      setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : prev));
+    }
+  }
   const maxWidthClass = contentWidth === 'wide' ? 'max-w-none' : 'max-w-[680px]';
 
   return (

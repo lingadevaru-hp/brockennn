@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'wouter';
 import { Search, Github, ExternalLink, BookOpen } from 'lucide-react';
-import { loadArticlesIndex } from '../lib/articleLoader';
+import { loadArticlesIndex, searchArticles } from '../lib/articleLoader';
 import type { ArticleIndexEntry } from '../types/article';
 
 const categoryColors: Record<string, string> = {
@@ -15,21 +15,25 @@ const categoryColors: Record<string, string> = {
   'Learning':       '#F39C12',
 };
 
-const GIF_URL = 'https://media.giphy.com/media/bQL3YuiKKAXBwewvZ1/giphy.gif';
-const LOGO_URL = 'https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png';
+const GIF_URL = '/foss-coin-trading.gif';
+const LOGO_URL = '/foss-logo.png';
 
 const highlights = [
-  { label: '10 public repos', icon: '📁' },
-  { label: 'Solana SPL token live on Orca DEX', icon: '🪙' },
+  { label: 'Created FOSS Coin ($FOSS) cryptocurrency', icon: '🪙' },
+  { label: 'Solana SPL token live on Orca DEX', icon: '📈' },
   { label: 'Gemma-2-9B fine-tune · 26+ HF downloads', icon: '🤖' },
-  { label: 'MCA · SIT Tumakuru · 2026', icon: '🎓' },
+  { label: '10 public repos on GitHub', icon: '📁' },
 ];
 
 export default function LandingPage() {
   const [query, setQuery] = useState('');
   const [articles, setArticles] = useState<ArticleIndexEntry[]>([]);
+  const [suggestions, setSuggestions] = useState<ArticleIndexEntry[]>([]);
+  const [showSuggestions, setShowSuggestions] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(-1);
   const [, setLocation] = useLocation();
   const belowFoldRef = useRef<HTMLDivElement>(null);
+  const searchRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     loadArticlesIndex().then((idx) => setArticles(idx.articles));
@@ -39,6 +43,56 @@ export default function LandingPage() {
     const logo = new Image();
     logo.src = LOGO_URL;
   }, []);
+
+  useEffect(() => {
+    if (query.trim().length === 0) {
+      setSuggestions([]);
+      setShowSuggestions(false);
+      return;
+    }
+    let cancelled = false;
+    searchArticles(query).then((results) => {
+      if (!cancelled) {
+        setSuggestions(results.slice(0, 5));
+        setShowSuggestions(true);
+        setActiveIdx(-1);
+      }
+    });
+    return () => { cancelled = true; };
+  }, [query]);
+
+  useEffect(() => {
+    function handleClick(e: MouseEvent) {
+      if (searchRef.current && !searchRef.current.contains(e.target as Node)) {
+        setShowSuggestions(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClick);
+    return () => document.removeEventListener('mousedown', handleClick);
+  }, []);
+
+  function handleKeyDown(e: React.KeyboardEvent) {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      setActiveIdx((i) => Math.min(i + 1, suggestions.length - 1));
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      setActiveIdx((i) => Math.max(i - 1, -1));
+    } else if (e.key === 'Enter') {
+      if (activeIdx >= 0 && suggestions[activeIdx]) {
+        e.preventDefault();
+        navigate(suggestions[activeIdx].slug);
+      }
+    } else if (e.key === 'Escape') {
+      setShowSuggestions(false);
+    }
+  }
+
+  function navigate(slug: string) {
+    setLocation(`/wiki/${slug}`);
+    setQuery('');
+    setShowSuggestions(false);
+  }
 
   function handleSearch(e: React.FormEvent) {
     e.preventDefault();
@@ -55,6 +109,7 @@ export default function LandingPage() {
 
   const fossCoin = articles.find((a) => a.slug === 'foss-coin');
   const otherArticles = articles.filter((a) => a.slug !== 'foss-coin');
+
 
   return (
     <div className="min-h-screen bg-[#101418] text-[#E8E8E8] flex flex-col">
@@ -79,28 +134,77 @@ export default function LandingPage() {
         </h1>
         <p className="text-sm text-[#7A8494] tracking-wide mb-10">A personal knowledge base</p>
 
-        {/* Search */}
-        <form onSubmit={handleSearch} className="flex w-full max-w-md mb-4 gap-1">
-          <div className="relative flex-1">
-            <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#505868]" />
-            <input
-              data-testid="input-landing-search"
-              type="search"
-              value={query}
-              onChange={(e) => setQuery(e.target.value)}
-              placeholder="Search articles..."
-              className="w-full pl-8 pr-3 py-2 text-sm border border-[#2A3040] bg-[#161C24] text-[#E8E8E8] focus:outline-none focus:border-[#3366CC] placeholder:text-[#505868]"
-            />
-          </div>
-          <button
-            data-testid="button-landing-search"
-            type="submit"
-            className="px-4 py-2 bg-[#3366CC] text-white text-sm hover:bg-[#2255bb] flex items-center gap-1.5"
-          >
-            <Search size={13} />
-            Search
-          </button>
-        </form>
+        <div ref={searchRef} className="w-full max-w-md mb-4 relative z-50">
+          <form onSubmit={handleSearch} className="flex gap-1">
+            <div className="relative flex-1">
+              <Search size={14} className="absolute left-2.5 top-1/2 -translate-y-1/2 text-[#505868]" />
+              <input
+                data-testid="input-landing-search"
+                type="search"
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+                onKeyDown={handleKeyDown}
+                onFocus={() => query.trim().length > 0 && setShowSuggestions(true)}
+                placeholder="Search articles..."
+                className="w-full pl-8 pr-3 py-2 text-sm border border-[#2A3040] bg-[#161C24] text-[#E8E8E8] focus:outline-none focus:border-[#3366CC] placeholder:text-[#505868]"
+              />
+            </div>
+            <button
+              data-testid="button-landing-search"
+              type="submit"
+              className="px-4 py-2 bg-[#3366CC] text-white text-sm hover:bg-[#2255bb] flex items-center gap-1.5 shrink-0"
+            >
+              <Search size={13} />
+              Search
+            </button>
+          </form>
+
+          {showSuggestions && suggestions.length > 0 && (
+            <div className="absolute top-full left-0 right-0 bg-[#161C24] border border-[#2A3040] shadow-2xl z-50 mt-1 max-h-[380px] overflow-y-auto rounded-sm backdrop-blur-md">
+              {suggestions.map((s, i) => (
+                <button
+                  key={s.id}
+                  data-testid={`suggestion-item-${s.id}`}
+                  onClick={() => navigate(s.slug)}
+                  className={`w-full text-left p-3 flex items-start gap-3 border-b border-[#2A3040]/30 hover:bg-[#1E2530] transition-colors ${i === activeIdx ? 'bg-[#1E2530]' : ''}`}
+                >
+                  {s.thumbnail ? (
+                    <img
+                      src={s.thumbnail}
+                      alt={s.title}
+                      className="w-12 h-8 object-cover rounded-sm border border-[#2A3040] shrink-0 mt-0.5"
+                      onError={(e) => {
+                        e.currentTarget.style.display = 'none';
+                      }}
+                    />
+                  ) : (
+                    <div className="w-12 h-8 bg-[#2A3040] rounded-sm flex items-center justify-center shrink-0 mt-0.5 text-xs text-[#505868] font-bold">
+                      W
+                    </div>
+                  )}
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center justify-between gap-2 mb-0.5">
+                      <span className="text-sm font-medium text-white truncate">{s.title}</span>
+                      <span
+                        className="text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded-sm shrink-0"
+                        style={{
+                          color: categoryColors[s.category] || '#7A8494',
+                          background: `${categoryColors[s.category] || '#7A8494'}1A`,
+                          borderLeft: `2px solid ${categoryColors[s.category] || '#7A8494'}`,
+                        }}
+                      >
+                        {s.category}
+                      </span>
+                    </div>
+                    <p className="text-xs text-[#8090A8] line-clamp-1 leading-normal">
+                      {s.excerpt}
+                    </p>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
 
         <button
           onClick={() => setLocation('/wiki/main-page')}
@@ -147,9 +251,10 @@ export default function LandingPage() {
                 <p className="text-[10px] font-bold uppercase tracking-widest text-[#3366CC] mb-1">About the author</p>
                 <h2 className="text-xl font-serif font-bold text-[#E8E8E8] mb-2">Lingadevaru H P</h2>
                 <p className="text-sm text-[#A0AABC] leading-relaxed mb-4">
-                  MCA student at SIT Tumakuru (2024–2026), building deployed projects across blockchain,
-                  AI/ML, and cloud infrastructure. Career focus: computer networking, cloud computing,
-                  and cybersecurity — operational roles, not software development.
+                  Creator of FOSS Coin ($FOSS), a live cryptocurrency on the Solana Mainnet.
+                  Building deployed projects across blockchain, AI/ML, and cloud infrastructure.
+                  Career focus: computer networking, cloud computing, and cybersecurity — operational
+                  roles, not software development.
                 </p>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 mb-4">
                   {highlights.map((h) => (

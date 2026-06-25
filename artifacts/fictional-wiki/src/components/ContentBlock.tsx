@@ -237,7 +237,7 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
 
     case 'image':
       return (
-        <div className="float-right clear-right ml-4 mb-4 max-w-[240px] border border-border bg-card text-center">
+        <div className="float-none md:float-right md:clear-right mx-auto md:ml-4 mb-4 max-w-full md:max-w-[240px] border border-border bg-card text-center">
           <img
             src={block.src}
             alt={block.alt || ''}

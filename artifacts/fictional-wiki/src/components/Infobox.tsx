@@ -63,11 +63,33 @@ export default function Infobox({ data }: InfolboxProps) {
         {data.image && (
           <tr>
             <td colSpan={2} className="p-1 text-center">
-              <img
-                src={data.image}
-                alt={data.imageCaption || data.title}
-                className="w-full max-h-48 object-cover"
-              />
+              {/* Clickable infobox image: open global lightbox via custom event, also allow opening in new tab/download */}
+              <div className="inline-block">
+                <button
+                  type="button"
+                  onClick={() => {
+                    try {
+                      window.dispatchEvent(new CustomEvent('open-lightbox', { detail: { src: data.image } }));
+                    } catch (e) {
+                      // fallback: open in new tab
+                      window.open(data.image, '_blank', 'noopener');
+                    }
+                  }}
+                  title={data.imageCaption ? `${data.imageCaption} — click to view` : 'Click to view image'}
+                  className="p-0 bg-transparent border-0 cursor-zoom-in"
+                >
+                  <img
+                    src={data.image}
+                    alt={data.imageCaption || data.title}
+                    className="w-full max-h-48 object-contain"
+                  />
+                </button>
+                <div className="mt-1 flex items-center justify-center gap-2">
+                  <a href={data.image} target="_blank" rel="noopener noreferrer" className="text-xs text-accent hover:underline">Open</a>
+                  <a href={data.image} download className="text-xs text-accent hover:underline">Download</a>
+                </div>
+              </div>
+
               {data.imageCaption && (
                 <p className="text-xs text-muted-foreground mt-1 italic text-center">{data.imageCaption}</p>
               )}

@@ -10,21 +10,18 @@
   },
   "infobox": {
     "title": "Lingadevaru H P",
-    "image": "https://picsum.photos/seed/about-profile/280/200",
-    "imageCaption": "Personal workspace setup, April 2026",
+    "image": "/foss-logo.png",
+    "imageCaption": "FOSS Coin — official project logo",
     "fields": [
       { "label": "Also known as", "value": "Thoshan" },
-      { "label": "Age", "value": "22" },
-      { "label": "Location", "value": "Tumakuru, Karnataka, India" },
-      { "label": "Degree", "value": "MCA — Siddaganga Institute of Technology" },
-      { "label": "Graduating", "value": "2026" },
-      { "label": "Career focus", "value": "Networking, Cloud, Cybersecurity" },
+      { "label": "Career focus", "value": "Networking, Cloud, Cybersecurity (operational)" },
+      { "label": "Primary project", "value": "[[foss-coin|FOSS Coin ($FOSS)]]" },
       { "label": "GitHub", "value": "github.com/lingadevaru-hp" },
       { "label": "HuggingFace", "value": "huggingface.co/lingadevaruhp" },
       { "label": "LinkedIn", "value": "linkedin.com/in/lingadevaruhp" }
     ]
   },
-  "lead": "I'm **Lingadevaru H P**, also known as **Thoshan** — a 22-year-old MCA student at Siddaganga Institute of Technology, Tumakuru, graduating in 2026. I build deployed projects across blockchain, AI/ML, web development, and self-hosted infrastructure, with a career focus on computer networking, cloud computing, and cybersecurity.\n\nI'm deliberately *not* positioning myself as a software developer — my proven strengths are operational: running, deploying, and managing systems. I demonstrate this through live public projects rather than buzzwords: a [[foss-coin|Solana SPL token]] on Orca DEX, a [[thoshan-flash|fine-tuned LLM]] on Hugging Face, an [[insurance-dapp|Ethereum DApp]], and a self-hosted [[homelab|cloud homelab]] architecture.",
+  "lead": "Creator of **[[foss-coin|FOSS Coin ($FOSS)]]**, a live Solana SPL token deployed with a fixed 1,000,000,000 supply and mint authority permanently revoked. I focus on building and operating deployed systems across blockchain, AI/ML, and self-hosted infrastructure — emphasising operational engineering (networking, cloud, and security) rather than application development.\n\nFOSS Coin is the primary public project showcased here: it demonstrates low-level Solana instruction work, Metaplex metadata management, IPFS pinning, and concentrated liquidity on Orca Whirlpool. See the FOSS Coin article for launch details, source code, and live trading links.\n\nOther live projects include a fine-tuned LLM on Hugging Face, an Ethereum DApp, and a homelab self-hosted cloud architecture. Each claim on this site links to code, a transaction, or a live deployment — evidence-first portfolio."
   "sections": [
     {
       "id": "education",
@@ -35,13 +32,13 @@
           "type": "table",
           "columns": ["Degree", "Institution", "Years", "Result"],
           "rows": [
-            { "Degree": "MCA", "Institution": "Siddaganga Institute of Technology, Tumakuru", "Years": "2024 – 2026", "Result": "Final semester — graduating 2026" },
-            { "Degree": "BCA", "Institution": "Seshadripuram Degree College", "Years": "2021 – 2024", "Result": "CGPA 8.2/10" }
+            { "Degree": "MCA", "Institution": "University Department of Computer Applications", "Years": "2024 – 2026", "Result": "Final semester — graduating 2026" },
+            { "Degree": "BCA", "Institution": "College", "Years": "2021 – 2024", "Result": "CGPA 8.2/10" }
           ]
         },
         {
           "type": "text",
-          "content": "My MCA at SIT is structured across four semesters. I spent the **3rd semester** on the [[fraud-detection|Final Year Academic Project]] — an online fraud detection system I built and publicly released on GitHub. The **4th (final) semester** was an internship at CHIAC ASI (Panchasutra Ltd, UK), where I served as Team 8 Lead in Research & Publication and completed all three assigned projects."
+          "content": "My postgraduate studies are structured across four semesters. I spent the **3rd semester** on the [[fraud-detection|Final Year Academic Project]] — an online fraud detection system I built and publicly released on GitHub. The **4th (final) semester** was an internship at CHIAC ASI (Panchasutra Ltd, UK), where I served as Team 8 Lead in Research & Publication and completed all three assigned projects."
         }
       ]
     },
@@ -72,8 +69,8 @@
           "columns": ["Honour", "Year", "Detail"],
           "rows": [
             { "Honour": "Yoga Ratna Award", "Year": "2018", "Detail": "National-level recognition by the Central Government of India" },
-            { "Honour": "Event Lead, Zerone 2.0", "Year": "2025", "Detail": "Elected lead; managed an 80-member team for SIT's flagship technical event" },
-            { "Honour": "Founder, Debate Society", "Year": "2021–24", "Detail": "Established and led a 60–80 member community at Seshadripuram College" }
+            { "Honour": "Event Lead, Campus Tech Fest", "Year": "2025", "Detail": "Elected lead; managed an 80-member team for the flagship campus technical event" },
+            { "Honour": "Founder, Debate Society", "Year": "2021–24", "Detail": "Established and led a 60–80 member debate community at college" }
           ]
         },
         {

@@ -22,6 +22,7 @@ export default function ArticlePage() {
     setLoading(true);
     setError(false);
     setVisible(false);
+    setSidebarOpen(false);
     loadArticle(slug)
       .then((a) => {
         setArticle(a);

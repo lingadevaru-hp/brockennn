@@ -5,8 +5,8 @@
       "title": "About — Lingadevaru H P",
       "slug": "about",
       "category": "Profile",
-      "excerpt": "MCA student at SIT Tumakuru graduating 2026. Builder of deployed blockchain, AI, and web projects. Career focus: networking, cloud, and cybersecurity.",
-      "thumbnail": "https://picsum.photos/seed/about-thumb/160/100"
+      "excerpt": "Creator of FOSS Coin ($FOSS) — a live Solana SPL token. Builder of deployed blockchain, AI/ML, and self-hosted infrastructure projects. Career focus on operational roles: networking, cloud, and security.",
+      "thumbnail": "/foss-coin-trading.gif"
     },
     {
       "id": "foss-coin",
@@ -14,7 +14,7 @@
       "slug": "foss-coin",
       "category": "Blockchain",
       "excerpt": "An SPL token on Solana Mainnet built to symbolise support for Free and Open Source Software. Live on Orca Whirlpool DEX with a fixed 1B supply.",
-      "thumbnail": "https://raw.githubusercontent.com/lingadevaru-hp/Foss-Token/refs/heads/main/foss-logo.png"
+      "thumbnail": "/foss-logo.png"
     },
     {
       "id": "thoshan-flash",
