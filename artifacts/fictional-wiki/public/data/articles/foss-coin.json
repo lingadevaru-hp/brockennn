@@ -184,17 +184,42 @@
       "content": [
         {
           "type": "text",
-          "content": "Everything needed to verify, trade, or fork FOSS Coin is linked below."
+          "content": "This file contains public project resources and evidence records for FOSS Coin, deduplicated and organised by category. Use these links to verify mint details, transactions, the creator wallet, pool, and metadata."
         },
         {
           "type": "table",
           "columns": ["Resource", "URL", "What you get"],
           "rows": [
-            { "Resource": "GitHub Repository", "URL": "[github.com/lingadevaru-hp/Foss-Token](https://github.com/lingadevaru-hp/Foss-Token)", "What you get": "Full source, deployment scripts, README with complete setup" },
-            { "Resource": "Live Trading", "URL": "[go.lingadevaru.in/foss-trading](https://go.lingadevaru.in/foss-trading)", "What you get": "Active Orca Whirlpool — swap, view liquidity, see price history" },
-            { "Resource": "Solana Explorer", "URL": "[explorer.solana.com](https://explorer.solana.com/)", "What you get": "Mint address, supply, holder count, transaction history" },
-            { "Resource": "Orca Whirlpool", "URL": "[orca.so](https://www.orca.so)", "What you get": "Official DEX — trade FOSS/SOL directly" },
-            { "Resource": "My Portfolio", "URL": "[lingadevaru.in](https://lingadevaru.in)", "What you get": "All projects and links" }
+            { "Resource": "Solana Explorer — mint", "URL": "https://explorer.solana.com/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin", "What you get": "Mint account page: decimals, total supply, authorities, program" },
+            { "Resource": "Solscan — token", "URL": "https://solscan.io/token/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin", "What you get": "Token overview, holders, transfers in an alternate explorer" },
+            { "Resource": "Solana FM — token", "URL": "https://solana.fm/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin", "What you get": "Token mint view and analytics" },
+
+            { "Resource": "Creation transaction (atomic launch)", "URL": "https://explorer.solana.com/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN", "What you get": "Full atomic creation: mint, metadata, mint-authority revocation, initial buy" },
+            { "Resource": "Creation tx (Solscan) — parsed", "URL": "https://solscan.io/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN", "What you get": "Solscan view with parsed inner instructions" },
+            { "Resource": "Transfer (17 Aug 2025)", "URL": "https://explorer.solana.com/tx/3BmzHVUWbFinDcRK9gKK4kFovLattTP8k411Yke2amD3vhiLhzGr99RxpQFfSHCKNiu1JjEJK2KMVjxkJup5K29g", "What you get": "Example transfer transaction" },
+            { "Resource": "Orca Whirlpool pool creation", "URL": "https://explorer.solana.com/tx/5obapSAxEfqkkQCJaYxCkLZb8dub5vthyk2eBqN56akHmAtVVC12nBbsYQXmbPZgQWexUArRnJrsk3dt86hXtWiB", "What you get": "Pool creation transaction for the FOSS/SOL Whirlpool" },
+            { "Resource": "Liquidity provision (position NFT)", "URL": "https://explorer.solana.com/tx/2xR9TXLpkjZPTd5BjCS58Xzwqw7X2wCLDZW2ZsWFnbH7sEkvxToxHKTDNA6r9Dto9rQLS7b5XXe5GhkJQDFmJEGm", "What you get": "Transaction that minted the position NFT and added initial liquidity" },
+            { "Resource": "Airdrop (18 Jan 2026) — 1", "URL": "https://explorer.solana.com/tx/4Xu9TWvWCoxnye7ZTr1kswaMnyLUiVoWZnccu1dASuMMMtz6aJd6AAtpxiAPwULa3Kp6JUkxAMEGsjcNrnVtTREq", "What you get": "Community distribution transaction" },
+            { "Resource": "Airdrop (18 Jan 2026) — 2", "URL": "https://explorer.solana.com/tx/4CchR52nCrirsLaViyM2vfvqraPYfkWhnb54gkfAQ78AisQqKUM4geiZg82oHwVqNFWTjxF693Shjng4Be5Xkj4T", "What you get": "Additional distribution record" },
+
+            { "Resource": "Creator / fee-payer wallet (Explorer)", "URL": "https://explorer.solana.com/address/HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b", "What you get": "Creator wallet: transaction history and role in project actions" },
+            { "Resource": "Creator wallet (Solscan)", "URL": "https://solscan.io/account/HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b", "What you get": "Alternate account view with parsed transactions" },
+
+            { "Resource": "Orca Whirlpool — pool page", "URL": "https://www.orca.so/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2", "What you get": "Official Orca UI for the FOSS/SOL pool (swap, liquidity, charts)" },
+            { "Resource": "Pool account (Explorer)", "URL": "https://explorer.solana.com/address/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2", "What you get": "On-chain pool account details" },
+            { "Resource": "Orca Whirlpools — developer docs", "URL": "https://docs.orca.so/developers/whirlpools/interacting-with-the-protocol", "What you get": "Docs for interacting with Orca Whirlpool program and CLMM mechanics" },
+
+            { "Resource": "GeckoTerminal — pool analytics", "URL": "https://www.geckoterminal.com/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2", "What you get": "Charts and analytics for the FOSS/SOL pool" },
+            { "Resource": "GeckoTerminal — token API", "URL": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin", "What you get": "API endpoint for token metrics" },
+            { "Resource": "GeckoTerminal — pool API", "URL": "https://api.geckoterminal.com/api/v2/networks/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2", "What you get": "API endpoint for pool metrics" },
+
+            { "Resource": "IPFS — metadata JSON", "URL": "https://ipfs.io/ipfs/QmNaaTSFFy4ZBp95vhA8F8MCoYHu9tmzWgcW16YyQcni9n", "What you get": "IPFS-hosted token metadata (name, symbol, description, image URI)" },
+            { "Resource": "IPFS — token logo image", "URL": "https://ipfs.io/ipfs/QmZjM3DiAsnwzVPBD2zNzDN518fJqTCmmw41u2bfRZFJMf", "What you get": "IPFS-hosted logo image used in Metaplex metadata" },
+
+            { "Resource": "Solana JSON-RPC (public)", "URL": "https://api.mainnet-beta.solana.com", "What you get": "Public RPC used for verification (getAccountInfo, getSignaturesForAddress, getTokenLargestAccounts)" },
+
+            { "Resource": "Launchpad program (Explorer)", "URL": "https://explorer.solana.com/address/HtKnLjomtPrjJwyuQe6HApuEcnb76AUp3oG3nTpnQSAr", "What you get": "Explorer page for the custom launchpad program used in the project" },
+            { "Resource": "Launchpad program (Solana FM)", "URL": "https://solana.fm/address/HtKnLjomtPrjJwyuQe6HApuEcnb76AUp3oG3nTpnQSAr", "What you get": "Alternate explorer view for the launchpad program" }
           ]
         }
       ]

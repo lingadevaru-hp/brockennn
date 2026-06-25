@@ -174,12 +174,11 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
               className="fixed inset-0 bg-black/90 z-[200] flex flex-col items-center justify-center p-4"
               onClick={() => setLightbox(null)}
             >
-              {/* Top bar */}
+              {/* Top bar: show controls only; avoid duplicating caption/alt text if caption matches alt */}
               <div
-                className="w-full max-w-5xl flex items-center justify-between mb-3"
+                className="w-full max-w-5xl flex items-center justify-end mb-3"
                 onClick={(e) => e.stopPropagation()}
               >
-                <p className="text-white/70 text-xs truncate">{lightbox.alt}</p>
                 <div className="flex items-center gap-2">
                   <a
                     href={lightbox.src}
@@ -201,6 +200,7 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
                   <button
                     className="px-3 py-1 text-xs bg-white/10 hover:bg-white/20 text-white rounded transition-colors"
                     onClick={() => setLightbox(null)}
+                    aria-label="Close"
                   >
                     ✕ Close
                   </button>
@@ -215,18 +215,21 @@ export default function ContentBlock({ block }: { block: ContentBlockType }) {
                 <img
                   src={lightbox.src}
                   alt={lightbox.alt}
-                  style={{ display: 'block', maxWidth: '100%', maxHeight: '80vh', height: 'auto', objectFit: 'contain' }}
+                  title={lightbox.alt}
+                  className="max-w-full max-h-[80vh] object-contain"
                 />
               </div>
 
-              {lightbox.caption && (
+              {/* Caption: show below image if present. If caption === alt, show once here only. */}
+              {(lightbox.caption || lightbox.alt) && (
                 <p
                   className="text-white/60 text-xs mt-3 text-center max-w-2xl"
                   onClick={(e) => e.stopPropagation()}
                 >
-                  {lightbox.caption}
+                  {lightbox.caption && lightbox.caption !== lightbox.alt ? lightbox.caption : lightbox.alt}
                 </p>
               )}
+
               <p className="text-white/30 text-xs mt-2">Click outside to close</p>
             </div>
           )}
