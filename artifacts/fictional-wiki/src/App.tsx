@@ -17,7 +17,7 @@ function Router() {
       <Route path="/" component={LandingPage} />
       <Route path="/wiki/main-page" component={MainPage} />
       <Route path="/wiki/search" component={SearchPage} />
-      <Route path="/wiki/:slug" component={ArticlePage} />
+      <Route path="/wiki/:slug*" component={ArticlePage} />
       <Route component={NotFoundPage} />
     </Switch>
   );
