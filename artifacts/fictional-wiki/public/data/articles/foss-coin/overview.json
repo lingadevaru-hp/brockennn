@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "id": "foss-coin/overview",
+    "title": "Overview — FOSS Coin (Source)",
+    "slug": "foss-coin/overview",
+    "category": "Blockchain",
+    "lastEdited": "2026-06-26T03:04:30.532Z",
+    "editCount": 1,
+    "views": 0
+  },
+  "infobox": null,
+  "lead": "Source file: overview.md",
+  "sections": [
+    {
+      "id": "download",
+      "title": "Download & Sub-articles",
+      "level": 2,
+      "content": [
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Download source",
+          "content": "This page embeds the original source file verbatim. Download: <a href=\"https://raw.githubusercontent.com/lingadevaru-hp/brockennn/main/attached_assets/resources%20for%20articles/Foss-Token-main/overview.md\" target=\"_blank\" rel=\"noopener noreferrer\">Download overview.md</a>"
+        },
+        {
+          "type": "text",
+          "content": "Sub-article links (cross-linked): [Overview](/wiki/foss-coin/overview) · [On Chain Verification](/wiki/foss-coin/on-chain-verification) · [How It Was Built](/wiki/foss-coin/how-it-was-built) · [Transactions](/wiki/foss-coin/transactions) · [Programs](/wiki/foss-coin/programs) · [FOSS COIN ALL URLS](/wiki/foss-coin/foss-coin-all-urls) · [FOSS COIN EVIDENCE](/wiki/foss-coin/foss-coin-evidence) · [Token Spec](/wiki/foss-coin/token-spec) · [Foss Pool Sol Balance](/wiki/foss-coin/foss-pool-sol-balance) · [FOSS COIN MASTER](/wiki/foss-coin/foss-coin-master)"
+        }
+      ]
+    },
+    {
+      "id": "original",
+      "title": "Original Markdown",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "# Overview\n\nI created `FOSS` as an SPL token on Solana mainnet with a fixed supply and a public on-chain record. The token is live, the mint authority is revoked, and liquidity was later added on Orca DEX through an Orca Whirlpool pool.\n\nThe idea behind this project was to use blockchain as a real technical medium to represent support for Free and Open Source Software. I built it as a learning project, but I also wanted the project itself to reflect open verifiability, public records, and transparent technical evidence.\n\n\n## Quick Verification Links\n\n- Mint: <https://explorer.solana.com/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin>\n- Creation transaction: <https://explorer.solana.com/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN>\n- Orca pool: <https://www.orca.so/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2>\n- Full resource index: [resources.md](resources.md)\n\n## Token Specification\n\n| Field | Value |\n|---|---|\n| Name | `Free Open Source Soft ` |\n| Symbol | `FOSS` |\n| Mint address | `64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin` |\n| Decimals | `6` |\n| Total supply | `1,000,000,000` |\n| Mint authority | `null` / revoked |\n| Freeze authority | `null` / revoked |\n| Token program | `TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA` |\n| Metadata program | `metaqbxxUerdq28cj1RbAWkYQm3ybzjb6a8bt518x1s` |\n| DEX | Orca Whirlpool |\n| Pool address | `3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2` |\n\n## IPFS Metadata JSON\n\nThe metadata JSON below is the verified project metadata used for the token:\n\n```json\n{\n  \"name\": \"Free Open Source Soft \",\n  \"symbol\": \"FOSS\",\n  \"description\": \"FOSS Coin is a community-created token built to support and promote Free and Open Source Software (FOSS).\\n\\nIt can be used to:\\n- Donate to FOSS projects\\n- Reward developers and contributors\\n- Raise awareness about digital privacy, Linux, and open technologies\\n\\nThis is not an official project by GNU, Linux.org, or the Free Software Foundation. $FOSS is an independent grassroots effort by passionate individuals who believe in the freedom to build, share, and innovate without restrictions.\\n\\nBy holding or using FOSS Coin, you become part of a decentralized movement to fund the tools that power the internet — freely and ethically.\",\n  \"image\": \"https://ipfs.io/ipfs/QmZjM3DiAsnwzVPBD2zNzDN518fJqTCmmw41u2bfRZFJMf\"\n}\n```\n\n## Logo\n\n- IPFS hash: `QmZjM3DiAsnwzVPBD2zNzDN518fJqTCmmw41u2bfRZFJMf`\n- Format: PNG\n- Size: about 2.5 MB\n- Status: HTTP 200 confirmed\n\n## Supply Distribution\n\n| Holder / destination | Approx. amount | Percentage |\n|---|---|---|\n| Creator ATA | ~35,759 FOSS | ~0.0036% |\n| Orca Whirlpool vault | ~999,964,234 FOSS | ~99.9964% |\n| Airdrops and small transfers | <100 FOSS | <0.001% |\n\nThe recorded distribution shows that almost the entire supply ended up in the Orca Whirlpool vault, with a much smaller amount remaining in the creator wallet and very small amounts transferred out later.\n"
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "relatedArticles": [
+    "foss-coin"
+  ],
+  "categories": [
+    "Blockchain"
+  ],
+  "editHistory": []
+}

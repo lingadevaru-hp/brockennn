@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "id": "foss-coin/how-it-was-built",
+    "title": "How It Was Built — FOSS Coin (Source)",
+    "slug": "foss-coin/how-it-was-built",
+    "category": "Blockchain",
+    "lastEdited": "2026-06-26T03:04:30.537Z",
+    "editCount": 1,
+    "views": 0
+  },
+  "infobox": null,
+  "lead": "Source file: how-it-was-built.md",
+  "sections": [
+    {
+      "id": "download",
+      "title": "Download & Sub-articles",
+      "level": 2,
+      "content": [
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Download source",
+          "content": "This page embeds the original source file verbatim. Download: <a href=\"https://raw.githubusercontent.com/lingadevaru-hp/brockennn/main/attached_assets/resources%20for%20articles/Foss-Token-main/how-it-was-built.md\" target=\"_blank\" rel=\"noopener noreferrer\">Download how-it-was-built.md</a>"
+        },
+        {
+          "type": "text",
+          "content": "Sub-article links (cross-linked): [Overview](/wiki/foss-coin/overview) · [On Chain Verification](/wiki/foss-coin/on-chain-verification) · [How It Was Built](/wiki/foss-coin/how-it-was-built) · [Transactions](/wiki/foss-coin/transactions) · [Programs](/wiki/foss-coin/programs) · [FOSS COIN ALL URLS](/wiki/foss-coin/foss-coin-all-urls) · [FOSS COIN EVIDENCE](/wiki/foss-coin/foss-coin-evidence) · [Token Spec](/wiki/foss-coin/token-spec) · [Foss Pool Sol Balance](/wiki/foss-coin/foss-pool-sol-balance) · [FOSS COIN MASTER](/wiki/foss-coin/foss-coin-master)"
+        }
+      ]
+    },
+    {
+      "id": "original",
+      "title": "Original Markdown",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "# How It Was Built\n\nI built this project through a no-code Solana launchpad flow, but I documented it at the instruction and transaction level so the technical steps are still clear.\n\n## Step 1 — Token creation\n\nDate: July 23, 2025  \nSlot: `355,223,383`  \nTime: `07:43:36 UTC`\n\nI created the token in one atomic transaction. This is what happened inside that single transaction:\n\n1. System Program allocated the mint account with 82 bytes.\n2. `InitializeMint2` set the token to 6 decimals and assigned the initial mint authority.\n3. Metaplex `Create Metadata Accounts v3` registered the name, symbol, and IPFS metadata URI on-chain.\n4. An Associated Token Account was created for my creator wallet.\n5. `MintTo` minted `1,000,000,000` tokens to the creator ATA.\n6. `SetAuthority` set the mint authority to `null`, which is permanent and irreversible.\n7. The launchpad `Buy` instruction immediately purchased `35,765.474485` FOSS.\n\nFee payer: `HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b`  \nFee: `90,000` lamports\n\nThe important technical point here is that token creation, metadata registration, minting, authority revocation, and the initial launchpad buy all happened in one block with no exposed intermediate state.\n\n## Step 2 — Orca Whirlpool pool creation\n\nDate: October 21, 2025  \nSlot: `374,850,194`  \nTime: `14:13:04 UTC`\n\nI later created an Orca Whirlpool pool for the token.\n\n- `InitializePoolWithAdaptiveFee`\n- Pool: `3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2`\n- Pair: `FOSS / Wrapped SOL`\n- Tick arrays initialized\n\nThis step moved the project from just being a token on-chain to also being a token with a real liquidity pool on a Solana DEX.\n\n## Step 3 — Liquidity provision\n\nDate: October 21, 2025  \nTime: `14:13:23 UTC`  \nDelay from pool creation: `19 seconds`\n\nI added liquidity to the pool immediately after it was created.\n\n- Position NFT minted: `8RVfhVxFGUo5uJKcMZQUu6MD7FhLH8v8WFRaxsT3doxY` using Token-2022\n- `IncreaseLiquidityV2`: `2.900653` FOSS + `0.0004` SOL added\n\nThis created the initial Orca liquidity position and tied the pool to a position NFT rather than a simple LP token account.\n\n## What I Learned\n\nThis project taught me how Solana token infrastructure works beyond the surface level.\n\n- I learned the SPL Token Program instruction set in practical terms: `InitializeMint2`, `MintTo`, `SetAuthority`, and `TransferChecked`.\n- I learned that Metaplex metadata connects on-chain token accounts to off-chain IPFS data, which is how explorers and wallets show names, symbols, descriptions, and images.\n- I learned that mint authority revocation is enforced by Solana consensus. It is not reversible and it is not just a promise from the creator.\n- I learned that Orca Whirlpool uses concentrated liquidity, tick arrays, and position NFTs instead of a simple constant-product AMM design.\n- I learned why atomic transactions matter. All seven creation steps happened in one block, so the token was never left in a partially configured state.\n- I learned the difference between using a no-code launchpad and actually understanding what the BPF program executed under the hood.\n"
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "relatedArticles": [
+    "foss-coin"
+  ],
+  "categories": [
+    "Blockchain"
+  ],
+  "editHistory": []
+}

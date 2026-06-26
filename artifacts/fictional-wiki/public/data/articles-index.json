@@ -79,6 +79,86 @@
       "category": "Learning",
       "excerpt": "Planned certifications in networking, cloud, and cybersecurity (CCNA, Security+). Tools being learned: Vim/Neovim, Obsidian. CS50 Cybersecurity in progress.",
       "thumbnail": "https://picsum.photos/seed/learn-thumb/160/100"
+    },
+    {
+      "id": "foss-coin/overview",
+      "title": "Overview — FOSS Coin (source)",
+      "slug": "foss-coin/overview",
+      "category": "Blockchain",
+      "excerpt": "Source file: overview.md",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/on-chain-verification",
+      "title": "On Chain Verification — FOSS Coin (source)",
+      "slug": "foss-coin/on-chain-verification",
+      "category": "Blockchain",
+      "excerpt": "Source file: on-chain-verification.md",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/how-it-was-built",
+      "title": "How It Was Built — FOSS Coin (source)",
+      "slug": "foss-coin/how-it-was-built",
+      "category": "Blockchain",
+      "excerpt": "Source file: how-it-was-built.md",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/transactions",
+      "title": "Transactions — FOSS Coin (source)",
+      "slug": "foss-coin/transactions",
+      "category": "Blockchain",
+      "excerpt": "Source file: transactions.md",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/programs",
+      "title": "Programs — FOSS Coin (source)",
+      "slug": "foss-coin/programs",
+      "category": "Blockchain",
+      "excerpt": "Source file: programs.md",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/foss-coin-all-urls",
+      "title": "FOSS COIN ALL URLS — FOSS Coin (source)",
+      "slug": "foss-coin/foss-coin-all-urls",
+      "category": "Blockchain",
+      "excerpt": "Source file: FOSS_COIN_ALL_URLS.md",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/foss-coin-evidence",
+      "title": "FOSS COIN EVIDENCE — FOSS Coin (source)",
+      "slug": "foss-coin/foss-coin-evidence",
+      "category": "Blockchain",
+      "excerpt": "Source file: FOSS_COIN_EVIDENCE.md",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/token-spec",
+      "title": "Token Spec — FOSS Coin (source)",
+      "slug": "foss-coin/token-spec",
+      "category": "Blockchain",
+      "excerpt": "Source file: token-spec.json",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/foss-pool-sol-balance",
+      "title": "Foss Pool Sol Balance — FOSS Coin (source)",
+      "slug": "foss-coin/foss-pool-sol-balance",
+      "category": "Blockchain",
+      "excerpt": "Source file: foss_pool_sol_balance.json",
+      "thumbnail": "/foss-logo.png"
+    },
+    {
+      "id": "foss-coin/foss-coin-master",
+      "title": "FOSS COIN MASTER — FOSS Coin (source)",
+      "slug": "foss-coin/foss-coin-master",
+      "category": "Blockchain",
+      "excerpt": "Source file: FOSS_COIN_MASTER.md",
+      "thumbnail": "/foss-logo.png"
     }
   ]
 }

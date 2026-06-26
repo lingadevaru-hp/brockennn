@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "id": "foss-coin/foss-pool-sol-balance",
+    "title": "Foss Pool Sol Balance — FOSS Coin (Source)",
+    "slug": "foss-coin/foss-pool-sol-balance",
+    "category": "Blockchain",
+    "lastEdited": "2026-06-26T03:04:30.538Z",
+    "editCount": 1,
+    "views": 0
+  },
+  "infobox": null,
+  "lead": "Source file: foss_pool_sol_balance.json",
+  "sections": [
+    {
+      "id": "download",
+      "title": "Download & Sub-articles",
+      "level": 2,
+      "content": [
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Download source",
+          "content": "This page embeds the original source file verbatim. Download: <a href=\"https://raw.githubusercontent.com/lingadevaru-hp/brockennn/main/attached_assets/resources%20for%20articles/Foss-Token-main/foss_pool_sol_balance.json\" target=\"_blank\" rel=\"noopener noreferrer\">Download foss_pool_sol_balance.json</a>"
+        },
+        {
+          "type": "text",
+          "content": "Sub-article links (cross-linked): [Overview](/wiki/foss-coin/overview) · [On Chain Verification](/wiki/foss-coin/on-chain-verification) · [How It Was Built](/wiki/foss-coin/how-it-was-built) · [Transactions](/wiki/foss-coin/transactions) · [Programs](/wiki/foss-coin/programs) · [FOSS COIN ALL URLS](/wiki/foss-coin/foss-coin-all-urls) · [FOSS COIN EVIDENCE](/wiki/foss-coin/foss-coin-evidence) · [Token Spec](/wiki/foss-coin/token-spec) · [Foss Pool Sol Balance](/wiki/foss-coin/foss-pool-sol-balance) · [FOSS COIN MASTER](/wiki/foss-coin/foss-coin-master)"
+        }
+      ]
+    },
+    {
+      "id": "original",
+      "title": "Original JSON",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "```json\n{\"jsonrpc\":\"2.0\",\"result\":{\"context\":{\"apiVersion\":\"3.1.13\",\"slot\":413091978},\"value\":{\"amount\":\"400000\",\"decimals\":9,\"uiAmount\":0.0004,\"uiAmountString\":\"0.0004\"}},\"id\":1}\n\n```"
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "relatedArticles": [
+    "foss-coin"
+  ],
+  "categories": [
+    "Blockchain"
+  ],
+  "editHistory": []
+}

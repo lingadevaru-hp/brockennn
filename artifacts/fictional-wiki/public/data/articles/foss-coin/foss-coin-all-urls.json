@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "id": "foss-coin/foss-coin-all-urls",
+    "title": "FOSS COIN ALL URLS — FOSS Coin (Source)",
+    "slug": "foss-coin/foss-coin-all-urls",
+    "category": "Blockchain",
+    "lastEdited": "2026-06-26T03:04:30.537Z",
+    "editCount": 1,
+    "views": 0
+  },
+  "infobox": null,
+  "lead": "Source file: FOSS_COIN_ALL_URLS.md",
+  "sections": [
+    {
+      "id": "download",
+      "title": "Download & Sub-articles",
+      "level": 2,
+      "content": [
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Download source",
+          "content": "This page embeds the original source file verbatim. Download: <a href=\"https://raw.githubusercontent.com/lingadevaru-hp/brockennn/main/attached_assets/resources%20for%20articles/Foss-Token-main/FOSS_COIN_ALL_URLS.md\" target=\"_blank\" rel=\"noopener noreferrer\">Download FOSS_COIN_ALL_URLS.md</a>"
+        },
+        {
+          "type": "text",
+          "content": "Sub-article links (cross-linked): [Overview](/wiki/foss-coin/overview) · [On Chain Verification](/wiki/foss-coin/on-chain-verification) · [How It Was Built](/wiki/foss-coin/how-it-was-built) · [Transactions](/wiki/foss-coin/transactions) · [Programs](/wiki/foss-coin/programs) · [FOSS COIN ALL URLS](/wiki/foss-coin/foss-coin-all-urls) · [FOSS COIN EVIDENCE](/wiki/foss-coin/foss-coin-evidence) · [Token Spec](/wiki/foss-coin/token-spec) · [Foss Pool Sol Balance](/wiki/foss-coin/foss-pool-sol-balance) · [FOSS COIN MASTER](/wiki/foss-coin/foss-coin-master)"
+        }
+      ]
+    },
+    {
+      "id": "original",
+      "title": "Original Markdown",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "# FOSS Coin — All URLs & Evidence Links\n\n## Token & Mint\n\n**https://explorer.solana.com/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin**\nSolana Explorer page for the FOSS token mint account.\nShows decimals (6), supply (1B raw), mint authority (null), freeze authority (null).\n\n**https://solscan.io/token/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin**\nSolscan token page — same data in a different explorer format.\nShows holder count, transfer history, and top holders.\n\n## Creation Transaction\n\n**https://explorer.solana.com/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN**\nThe original token creation transaction (July 23, 2025).\nToken was created, 1B minted, mint authority revoked, and initial buy executed — all in one tx.\n\n**https://solscan.io/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN**\nSame creation transaction on Solscan with parsed inner instructions.\n\n## Creator Wallet\n\n**https://explorer.solana.com/address/HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b**\nThe creator's wallet that paid fees for all FOSS transactions.\nSigned the creation tx, pool creation, liquidity provision, and all transfers.\n\n**https://solscan.io/account/HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b**\nSame creator wallet on Solscan with full transaction history.\n\n## Orca DEX Pool\n\n**https://www.orca.so/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2**\nThe Orca Whirlpool page for the FOSS/SOL trading pair.\nConcentrated liquidity AMM pool where anyone can swap FOSS ↔ SOL.\n\n**https://www.geckoterminal.com/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2**\nGeckoTerminal chart and analytics for the FOSS/SOL Orca pool.\nShows price history, liquidity depth, and volume data.\n\n**https://explorer.solana.com/address/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2**\nSolana Explorer view of the Orca Whirlpool program account.\nShows the pool's on-chain data including token vaults and tick arrays.\n\n## Pool Creation Transaction\n\n**https://explorer.solana.com/tx/5obapSAxEfqkkQCJaYxCkLZb8dub5vthyk2eBqN56akHmAtVVC12nBbsYQXmbPZgQWexUArRnJrsk3dt86hXtWiB**\nTransaction that created the Orca Whirlpool (Oct 21, 2025).\nInitialized pool with adaptive fee, created SOL + FOSS vaults, and set up tick arrays.\n\n## Liquidity Provision Transaction\n\n**https://explorer.solana.com/tx/2xR9TXLpkjZPTd5BjCS58Xzwqw7X2wCLDZW2ZsWFnbH7sEkvxToxHKTDNA6r9Dto9rQLS7b5XXe5GhkJQDFmJEGm**\nTransaction that added initial liquidity to the Orca pool (19 seconds after pool creation).\nCreated a position NFT and deposited FOSS + SOL into the Whirlpool.\n\n## GeckoTerminal APIs\n\n**https://api.geckoterminal.com/api/v2/networks/solana/tokens/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin**\nGeckoTerminal REST API endpoint for FOSS token price and market data.\nReturns JSON with current price, market cap, and trading pairs.\n\n**https://api.geckoterminal.com/api/v2/networks/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2**\nGeckoTerminal REST API endpoint for the Orca pool data.\nReturns JSON with reserves, volume, and pool statistics.\n\n## Metadata (IPFS)\n\n**https://ipfs.io/ipfs/QmNaaTSFFy4ZBp95vhA8F8MCoYHu9tmzWgcW16YyQcni9n**\nThe Metaplex metadata JSON file stored on IPFS.\nContains token name (\"Free Open Source Soft \"), symbol (FOSS), description, and image link.\n\n**https://ipfs.io/ipfs/QmZjM3DiAsnwzVPBD2zNzDN518fJqTCmmw41u2bfRZFJMf**\nThe FOSS token logo image (PNG, ~2.5 MB) stored on IPFS.\nThis is what wallets and explorers display as the token's icon.\n\n## Orca Developer Docs\n\n**https://docs.orca.so/developers/whirlpools/interacting-with-the-protocol**\nOfficial Orca documentation for developers interacting with Whirlpools.\nExplains how to create pools, add liquidity, swap, and manage positions programmatically.\n\n## Launchpad Program\n\n**https://explorer.solana.com/address/HtKnLjomtPrjJwyuQe6HApuEcnb76AUp3oG3nTpnQSAr**\nThe no-code launchpad BPF program that created the FOSS token.\nHandles token creation, metadata, minting, authority revocation, and initial buy in one atomic tx.\n\n## Recent Transfer Transactions\n\n**https://explorer.solana.com/tx/3BmzHVUWbFinDcRK9gKK4kFovLattTP8k411Yke2amD3vhiLhzGr99RxpQFfSHCKNiu1JjEJK2KMVjxkJup5K29g**\nToken transfer on Aug 17, 2025 — moved 2 FOSS to an external wallet.\n\n**https://explorer.solana.com/tx/4CchR52nCrirsLaViyM2vfvqraPYfkWhnb54gkfAQ78AisQqKUM4geiZg82oHwVqNFWTjxF693Shjng4Be5Xkj4T**\nToken transfer on Jan 18, 2026 — airdropped 1 FOSS to a new wallet.\n\n## Solana RPC (for programmatic verification)\n\n**https://api.mainnet-beta.solana.com**\nSolana's public JSON-RPC endpoint.\nUse `getAccountInfo` with the mint address to verify token specs live from the chain.\n"
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "relatedArticles": [
+    "foss-coin"
+  ],
+  "categories": [
+    "Blockchain"
+  ],
+  "editHistory": []
+}

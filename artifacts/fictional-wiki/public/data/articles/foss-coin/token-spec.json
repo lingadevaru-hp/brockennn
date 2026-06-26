@@ -1,0 +1,51 @@
+{
+  "metadata": {
+    "id": "foss-coin/token-spec",
+    "title": "Token Spec — FOSS Coin (Source)",
+    "slug": "foss-coin/token-spec",
+    "category": "Blockchain",
+    "lastEdited": "2026-06-26T03:04:30.538Z",
+    "editCount": 1,
+    "views": 0
+  },
+  "infobox": null,
+  "lead": "Source file: token-spec.json",
+  "sections": [
+    {
+      "id": "download",
+      "title": "Download & Sub-articles",
+      "level": 2,
+      "content": [
+        {
+          "type": "callout",
+          "variant": "info",
+          "title": "Download source",
+          "content": "This page embeds the original source file verbatim. Download: <a href=\"https://raw.githubusercontent.com/lingadevaru-hp/brockennn/main/attached_assets/resources%20for%20articles/Foss-Token-main/token-spec.json\" target=\"_blank\" rel=\"noopener noreferrer\">Download token-spec.json</a>"
+        },
+        {
+          "type": "text",
+          "content": "Sub-article links (cross-linked): [Overview](/wiki/foss-coin/overview) · [On Chain Verification](/wiki/foss-coin/on-chain-verification) · [How It Was Built](/wiki/foss-coin/how-it-was-built) · [Transactions](/wiki/foss-coin/transactions) · [Programs](/wiki/foss-coin/programs) · [FOSS COIN ALL URLS](/wiki/foss-coin/foss-coin-all-urls) · [FOSS COIN EVIDENCE](/wiki/foss-coin/foss-coin-evidence) · [Token Spec](/wiki/foss-coin/token-spec) · [Foss Pool Sol Balance](/wiki/foss-coin/foss-pool-sol-balance) · [FOSS COIN MASTER](/wiki/foss-coin/foss-coin-master)"
+        }
+      ]
+    },
+    {
+      "id": "original",
+      "title": "Original JSON",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "```json\n{\n  \"chainId\": 101,\n  \"address\": \"64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin\",\n  \"symbol\": \"FOSS\",\n  \"name\": \"Free Open Source Soft \",\n  \"decimals\": 6,\n  \"logoURI\": \"https://ipfs.io/ipfs/QmZjM3DiAsnwzVPBD2zNzDN518fJqTCmmw41u2bfRZFJMf\",\n  \"tags\": [\"utility-token\"],\n  \"network\": \"solana-mainnet\",\n  \"mintAuthority\": null,\n  \"freezeAuthority\": null,\n  \"totalSupply\": \"1000000000\",\n  \"totalSupplyRaw\": \"1000000000000000\",\n  \"orcaPool\": \"3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2\",\n  \"metadataURI\": \"https://ipfs.io/ipfs/QmNaaTSFFy4ZBp95vhA8F8MCoYHu9tmzWgcW16YyQcni9n\",\n  \"createdAt\": \"2025-07-23T07:43:36Z\",\n  \"creationTx\": \"VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN\",\n  \"creatorWallet\": \"HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b\",\n  \"launchpadProgram\": \"HtKnLjomtPrjJwyuQe6HApuEcnb76AUp3oG3nTpnQSAr\",\n  \"lastVerified\": \"2026-04-14\"\n}\n\n```"
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "relatedArticles": [
+    "foss-coin"
+  ],
+  "categories": [
+    "Blockchain"
+  ],
+  "editHistory": []
+}

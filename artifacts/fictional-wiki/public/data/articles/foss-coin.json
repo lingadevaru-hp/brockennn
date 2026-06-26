@@ -13,20 +13,53 @@
     "image": "/foss-logo.png",
     "imageCaption": "FOSS Coin official logo",
     "fields": [
-      { "label": "Full name", "value": "Free Open Source Soft" },
-      { "label": "Symbol", "value": "$FOSS" },
-      { "label": "Network", "value": "Solana Mainnet" },
-      { "label": "Standard", "value": "SPL Token (Legacy Token Program)" },
-      { "label": "Total supply", "value": "1,000,000,000 (fixed)" },
-      { "label": "Mint authority", "value": "null — revoked permanently" },
-      { "label": "DEX", "value": "Orca Whirlpool (FOSS/SOL)" },
-      { "label": "Status", "value": "Live" },
-      { "label": "GitHub", "value": "github.com/lingadevaru-hp/Foss-Token" },
-      { "label": "GitHub stars", "value": "7 ⭐  4 🔱" },
-      { "label": "Live trading", "value": "go.lingadevaru.in/foss-trading" }
+      {
+        "label": "Full name",
+        "value": "Free Open Source Soft"
+      },
+      {
+        "label": "Symbol",
+        "value": "$FOSS"
+      },
+      {
+        "label": "Network",
+        "value": "Solana Mainnet"
+      },
+      {
+        "label": "Standard",
+        "value": "SPL Token (Legacy Token Program)"
+      },
+      {
+        "label": "Total supply",
+        "value": "1,000,000,000 (fixed)"
+      },
+      {
+        "label": "Mint authority",
+        "value": "null — revoked permanently"
+      },
+      {
+        "label": "DEX",
+        "value": "Orca Whirlpool (FOSS/SOL)"
+      },
+      {
+        "label": "Status",
+        "value": "Live"
+      },
+      {
+        "label": "GitHub",
+        "value": "github.com/lingadevaru-hp/Foss-Token"
+      },
+      {
+        "label": "GitHub stars",
+        "value": "7 ⭐  4 🔱"
+      },
+      {
+        "label": "Live trading",
+        "value": "go.lingadevaru.in/foss-trading"
+      }
     ]
   },
-  "lead": "**FOSS Coin ($FOSS)** is a Solana SPL token I built to symbolise support for the Free and Open Source Software movement. I deployed it on Solana Mainnet in July 2025 and listed it on the Orca Whirlpool decentralised exchange in October 2025. It carries a fixed supply of one billion tokens — and I permanently revoked the mint authority at the moment of creation, meaning the supply can never be inflated by anyone, including me.\n\nI built this as a hands-on exercise to understand Solana at the instruction level — covering SPL token mechanics, Metaplex metadata, IPFS pinning, concentrated liquidity AMMs, and atomic multi-instruction transactions. The full source code is open-sourced on [GitHub (7 stars, 4 forks)](https://github.com/lingadevaru-hp/Foss-Token). It is not affiliated with the FSF, GNU, or Linux.org.\n\nThe entire launch — from token mint to mint authority revocation to initial DEX liquidity — was executed in **one atomic transaction containing 7 instructions**. If any single instruction had failed, the entire transaction would have rolled back with zero partial state on-chain. That all-or-nothing design is one of the things that makes Solana architecturally elegant, and understanding it at the instruction level was the whole point of building this.\n\nThe token is live and actively trading on the [Orca Whirlpool DEX](https://go.lingadevaru.in/foss-trading) — the FOSS/SOL pair has been running since October 2025 with concentrated liquidity. The live trading session is recorded in the GIF below: you can see the FOSS/SOL pair on Orca's interface, real-time price action, and the pool depth chart.\n\nThis project sits in a different ecosystem from my [[insurance-dapp|Insurance DApp]] (Ethereum / Solidity). FOSS Coin operates on Solana's Rust-based runtime using the SPL Token Program. Together they represent hands-on, deployed work across the two largest smart contract platforms — different toolchains, different programming models, both live.",
+  "lead": "I created FOSS, a cryptocurrency token on the Solana blockchain.\n\n\n<div class=\"flex gap-2 mb-3\">\n  <a href=\"https://explorer.solana.com/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin\" class=\"px-3 py-1 text-xs bg-accent text-white rounded\" target=\"_blank\">Verify on Solana Explorer</a>\n  <a href=\"https://solscan.io/token/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin\" class=\"px-3 py-1 text-xs bg-accent text-white rounded\" target=\"_blank\">View on Solscan</a>\n  <a href=\"https://www.orca.so/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2\" class=\"px-3 py-1 text-xs bg-accent text-white rounded\" target=\"_blank\">Trade on Orca</a>\n  <a href=\"https://www.geckoterminal.com/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2\" class=\"px-3 py-1 text-xs bg-accent text-white rounded\" target=\"_blank\">Live Chart (GeckoTerminal)</a>\n  <a href=\"https://explorer.solana.com/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN\" class=\"px-3 py-1 text-xs bg-accent text-white rounded\" target=\"_blank\">View Creation Transaction</a>\n</div>\n\n\nFull name: Free Open Source Soft — Symbol: FOSS — Decimals: 6 — Total supply: 1,000,000,000 — Mint authority: null (revoked) — Freeze authority: null (revoked) — Creator wallet: HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b — Mint address: 64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin.\n\n**FOSS Coin ($FOSS)** is a Solana SPL token I built to symbolise support for the Free and Open Source Software movement. I deployed it on Solana Mainnet in July 2025 and listed it on the Orca Whirlpool decentralised exchange in October 2025. It carries a fixed supply of one billion tokens — and I permanently revoked the mint authority at the moment of creation, meaning the supply can never be inflated by anyone, including me.\n\nI built this as a hands-on exercise to understand Solana at the instruction level — covering SPL token mechanics, Metaplex metadata, IPFS pinning, concentrated liquidity AMMs, and atomic multi-instruction transactions. The full source code is open-sourced on [GitHub (7 stars, 4 forks)](https://github.com/lingadevaru-hp/Foss-Token). It is not affiliated with the FSF, GNU, or Linux.org.\n\nThe entire launch — from token mint to mint authority revocation to initial DEX liquidity — was executed in **one atomic transaction containing 7 instructions**. If any single instruction had failed, the entire transaction would have rolled back with zero partial state on-chain. That all-or-nothing design is one of the things that makes Solana architecturally elegant, and understanding it at the instruction level was the whole point of building this.\n\nThe token is live and actively trading on the [Orca Whirlpool DEX](https://go.lingadevaru.in/foss-trading) — the FOSS/SOL pair has been running since October 2025 with concentrated liquidity. The live trading session is recorded in the GIF below: you can see the FOSS/SOL pair on Orca's interface, real-time price action, and the pool depth chart.\n\nThis project sits in a different ecosystem from my [[insurance-dapp|Insurance DApp]] (Ethereum / Solidity). FOSS Coin operates on Solana's Rust-based runtime using the SPL Token Program. Together they represent hands-on, deployed work across the two largest smart contract platforms — different toolchains, different programming models, both live.",
   "sections": [
     {
       "id": "gif-preview",
@@ -70,15 +103,47 @@
         },
         {
           "type": "table",
-          "columns": ["Step", "Instruction", "What I was doing"],
+          "columns": [
+            "Step",
+            "Instruction",
+            "What I was doing"
+          ],
           "rows": [
-            { "Step": "1", "Instruction": "Allocate mint account", "What I was doing": "Reserve the on-chain account that will represent the token" },
-            { "Step": "2", "Instruction": "InitializeMint2", "What I was doing": "Set 6 decimal places for the token" },
-            { "Step": "3", "Instruction": "Metaplex metadata v3", "What I was doing": "Register name 'Free Open Source Soft', symbol '$FOSS', and IPFS URI on-chain" },
-            { "Step": "4", "Instruction": "Create ATA", "What I was doing": "Create my Associated Token Account to hold the supply" },
-            { "Step": "5", "Instruction": "MintTo", "What I was doing": "Mint the full 1,000,000,000 FOSS to my ATA" },
-            { "Step": "6", "Instruction": "SetAuthority → null", "What I was doing": "Permanently revoke mint authority — no more tokens can ever be created" },
-            { "Step": "7", "Instruction": "Launchpad Buy", "What I was doing": "Buy 35,765 FOSS through the launchpad to seed initial activity" }
+            {
+              "Step": "1",
+              "Instruction": "Allocate mint account",
+              "What I was doing": "Reserve the on-chain account that will represent the token"
+            },
+            {
+              "Step": "2",
+              "Instruction": "InitializeMint2",
+              "What I was doing": "Set 6 decimal places for the token"
+            },
+            {
+              "Step": "3",
+              "Instruction": "Metaplex metadata v3",
+              "What I was doing": "Register name 'Free Open Source Soft', symbol '$FOSS', and IPFS URI on-chain"
+            },
+            {
+              "Step": "4",
+              "Instruction": "Create ATA",
+              "What I was doing": "Create my Associated Token Account to hold the supply"
+            },
+            {
+              "Step": "5",
+              "Instruction": "MintTo",
+              "What I was doing": "Mint the full 1,000,000,000 FOSS to my ATA"
+            },
+            {
+              "Step": "6",
+              "Instruction": "SetAuthority → null",
+              "What I was doing": "Permanently revoke mint authority — no more tokens can ever be created"
+            },
+            {
+              "Step": "7",
+              "Instruction": "Launchpad Buy",
+              "What I was doing": "Buy 35,765 FOSS through the launchpad to seed initial activity"
+            }
           ]
         }
       ]
@@ -115,18 +180,51 @@
       "content": [
         {
           "type": "table",
-          "columns": ["Property", "Value"],
+          "columns": [
+            "Property",
+            "Value"
+          ],
           "rows": [
-            { "Property": "Full Name", "Value": "Free Open Source Soft" },
-            { "Property": "Symbol", "Value": "$FOSS" },
-            { "Property": "Network", "Value": "Solana Mainnet" },
-            { "Property": "Token Standard", "Value": "SPL Token (Legacy Token Program)" },
-            { "Property": "Decimals", "Value": "6" },
-            { "Property": "Total Supply", "Value": "1,000,000,000 (1B — fixed, immutable)" },
-            { "Property": "Mint Authority", "Value": "null — revoked permanently at creation" },
-            { "Property": "Freeze Authority", "Value": "null — revoked" },
-            { "Property": "Metadata Standard", "Value": "Metaplex Token Metadata v3 → IPFS JSON" },
-            { "Property": "DEX", "Value": "Orca Whirlpool (FOSS/SOL pair)" }
+            {
+              "Property": "Full Name",
+              "Value": "Free Open Source Soft"
+            },
+            {
+              "Property": "Symbol",
+              "Value": "$FOSS"
+            },
+            {
+              "Property": "Network",
+              "Value": "Solana Mainnet"
+            },
+            {
+              "Property": "Token Standard",
+              "Value": "SPL Token (Legacy Token Program)"
+            },
+            {
+              "Property": "Decimals",
+              "Value": "6"
+            },
+            {
+              "Property": "Total Supply",
+              "Value": "1,000,000,000 (1B — fixed, immutable)"
+            },
+            {
+              "Property": "Mint Authority",
+              "Value": "null — revoked permanently at creation"
+            },
+            {
+              "Property": "Freeze Authority",
+              "Value": "null — revoked"
+            },
+            {
+              "Property": "Metadata Standard",
+              "Value": "Metaplex Token Metadata v3 → IPFS JSON"
+            },
+            {
+              "Property": "DEX",
+              "Value": "Orca Whirlpool (FOSS/SOL pair)"
+            }
           ]
         }
       ]
@@ -188,54 +286,184 @@
         },
         {
           "type": "table",
-          "columns": ["Resource", "URL", "What you get"],
+          "columns": [
+            "Resource",
+            "URL",
+            "What you get"
+          ],
           "rows": [
-            { "Resource": "Solana Explorer — mint", "URL": "https://explorer.solana.com/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin", "What you get": "Mint account page: decimals, total supply, authorities, program" },
-            { "Resource": "Solscan — token", "URL": "https://solscan.io/token/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin", "What you get": "Token overview, holders, transfers in an alternate explorer" },
-            { "Resource": "Solana FM — token", "URL": "https://solana.fm/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin", "What you get": "Token mint view and analytics" },
-
-            { "Resource": "Creation transaction (atomic launch)", "URL": "https://explorer.solana.com/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN", "What you get": "Full atomic creation: mint, metadata, mint-authority revocation, initial buy" },
-            { "Resource": "Creation tx (Solscan) — parsed", "URL": "https://solscan.io/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN", "What you get": "Solscan view with parsed inner instructions" },
-            { "Resource": "Transfer (17 Aug 2025)", "URL": "https://explorer.solana.com/tx/3BmzHVUWbFinDcRK9gKK4kFovLattTP8k411Yke2amD3vhiLhzGr99RxpQFfSHCKNiu1JjEJK2KMVjxkJup5K29g", "What you get": "Example transfer transaction" },
-            { "Resource": "Orca Whirlpool pool creation", "URL": "https://explorer.solana.com/tx/5obapSAxEfqkkQCJaYxCkLZb8dub5vthyk2eBqN56akHmAtVVC12nBbsYQXmbPZgQWexUArRnJrsk3dt86hXtWiB", "What you get": "Pool creation transaction for the FOSS/SOL Whirlpool" },
-            { "Resource": "Liquidity provision (position NFT)", "URL": "https://explorer.solana.com/tx/2xR9TXLpkjZPTd5BjCS58Xzwqw7X2wCLDZW2ZsWFnbH7sEkvxToxHKTDNA6r9Dto9rQLS7b5XXe5GhkJQDFmJEGm", "What you get": "Transaction that minted the position NFT and added initial liquidity" },
-            { "Resource": "Airdrop (18 Jan 2026) — 1", "URL": "https://explorer.solana.com/tx/4Xu9TWvWCoxnye7ZTr1kswaMnyLUiVoWZnccu1dASuMMMtz6aJd6AAtpxiAPwULa3Kp6JUkxAMEGsjcNrnVtTREq", "What you get": "Community distribution transaction" },
-            { "Resource": "Airdrop (18 Jan 2026) — 2", "URL": "https://explorer.solana.com/tx/4CchR52nCrirsLaViyM2vfvqraPYfkWhnb54gkfAQ78AisQqKUM4geiZg82oHwVqNFWTjxF693Shjng4Be5Xkj4T", "What you get": "Additional distribution record" },
-
-            { "Resource": "Creator / fee-payer wallet (Explorer)", "URL": "https://explorer.solana.com/address/HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b", "What you get": "Creator wallet: transaction history and role in project actions" },
-            { "Resource": "Creator wallet (Solscan)", "URL": "https://solscan.io/account/HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b", "What you get": "Alternate account view with parsed transactions" },
-
-            { "Resource": "Orca Whirlpool — pool page", "URL": "https://www.orca.so/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2", "What you get": "Official Orca UI for the FOSS/SOL pool (swap, liquidity, charts)" },
-            { "Resource": "Pool account (Explorer)", "URL": "https://explorer.solana.com/address/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2", "What you get": "On-chain pool account details" },
-            { "Resource": "Orca Whirlpools — developer docs", "URL": "https://docs.orca.so/developers/whirlpools/interacting-with-the-protocol", "What you get": "Docs for interacting with Orca Whirlpool program and CLMM mechanics" },
-
-            { "Resource": "GeckoTerminal — pool analytics", "URL": "https://www.geckoterminal.com/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2", "What you get": "Charts and analytics for the FOSS/SOL pool" },
-            { "Resource": "GeckoTerminal — token API", "URL": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin", "What you get": "API endpoint for token metrics" },
-            { "Resource": "GeckoTerminal — pool API", "URL": "https://api.geckoterminal.com/api/v2/networks/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2", "What you get": "API endpoint for pool metrics" },
-
-            { "Resource": "IPFS — metadata JSON", "URL": "https://ipfs.io/ipfs/QmNaaTSFFy4ZBp95vhA8F8MCoYHu9tmzWgcW16YyQcni9n", "What you get": "IPFS-hosted token metadata (name, symbol, description, image URI)" },
-            { "Resource": "IPFS — token logo image", "URL": "https://ipfs.io/ipfs/QmZjM3DiAsnwzVPBD2zNzDN518fJqTCmmw41u2bfRZFJMf", "What you get": "IPFS-hosted logo image used in Metaplex metadata" },
-
-            { "Resource": "Solana JSON-RPC (public)", "URL": "https://api.mainnet-beta.solana.com", "What you get": "Public RPC used for verification (getAccountInfo, getSignaturesForAddress, getTokenLargestAccounts)" },
-
-            { "Resource": "Launchpad program (Explorer)", "URL": "https://explorer.solana.com/address/HtKnLjomtPrjJwyuQe6HApuEcnb76AUp3oG3nTpnQSAr", "What you get": "Explorer page for the custom launchpad program used in the project" },
-            { "Resource": "Launchpad program (Solana FM)", "URL": "https://solana.fm/address/HtKnLjomtPrjJwyuQe6HApuEcnb76AUp3oG3nTpnQSAr", "What you get": "Alternate explorer view for the launchpad program" }
+            {
+              "Resource": "Solana Explorer — mint",
+              "URL": "https://explorer.solana.com/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin",
+              "What you get": "Mint account page: decimals, total supply, authorities, program"
+            },
+            {
+              "Resource": "Solscan — token",
+              "URL": "https://solscan.io/token/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin",
+              "What you get": "Token overview, holders, transfers in an alternate explorer"
+            },
+            {
+              "Resource": "Solana FM — token",
+              "URL": "https://solana.fm/address/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin",
+              "What you get": "Token mint view and analytics"
+            },
+            {
+              "Resource": "Creation transaction (atomic launch)",
+              "URL": "https://explorer.solana.com/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN",
+              "What you get": "Full atomic creation: mint, metadata, mint-authority revocation, initial buy"
+            },
+            {
+              "Resource": "Creation tx (Solscan) — parsed",
+              "URL": "https://solscan.io/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN",
+              "What you get": "Solscan view with parsed inner instructions"
+            },
+            {
+              "Resource": "Transfer (17 Aug 2025)",
+              "URL": "https://explorer.solana.com/tx/3BmzHVUWbFinDcRK9gKK4kFovLattTP8k411Yke2amD3vhiLhzGr99RxpQFfSHCKNiu1JjEJK2KMVjxkJup5K29g",
+              "What you get": "Example transfer transaction"
+            },
+            {
+              "Resource": "Orca Whirlpool pool creation",
+              "URL": "https://explorer.solana.com/tx/5obapSAxEfqkkQCJaYxCkLZb8dub5vthyk2eBqN56akHmAtVVC12nBbsYQXmbPZgQWexUArRnJrsk3dt86hXtWiB",
+              "What you get": "Pool creation transaction for the FOSS/SOL Whirlpool"
+            },
+            {
+              "Resource": "Liquidity provision (position NFT)",
+              "URL": "https://explorer.solana.com/tx/2xR9TXLpkjZPTd5BjCS58Xzwqw7X2wCLDZW2ZsWFnbH7sEkvxToxHKTDNA6r9Dto9rQLS7b5XXe5GhkJQDFmJEGm",
+              "What you get": "Transaction that minted the position NFT and added initial liquidity"
+            },
+            {
+              "Resource": "Airdrop (18 Jan 2026) — 1",
+              "URL": "https://explorer.solana.com/tx/4Xu9TWvWCoxnye7ZTr1kswaMnyLUiVoWZnccu1dASuMMMtz6aJd6AAtpxiAPwULa3Kp6JUkxAMEGsjcNrnVtTREq",
+              "What you get": "Community distribution transaction"
+            },
+            {
+              "Resource": "Airdrop (18 Jan 2026) — 2",
+              "URL": "https://explorer.solana.com/tx/4CchR52nCrirsLaViyM2vfvqraPYfkWhnb54gkfAQ78AisQqKUM4geiZg82oHwVqNFWTjxF693Shjng4Be5Xkj4T",
+              "What you get": "Additional distribution record"
+            },
+            {
+              "Resource": "Creator / fee-payer wallet (Explorer)",
+              "URL": "https://explorer.solana.com/address/HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b",
+              "What you get": "Creator wallet: transaction history and role in project actions"
+            },
+            {
+              "Resource": "Creator wallet (Solscan)",
+              "URL": "https://solscan.io/account/HLwsSkx8v7z25N6aZo6rjAywJ1YfjjwhpCA7fCD1Db2b",
+              "What you get": "Alternate account view with parsed transactions"
+            },
+            {
+              "Resource": "Orca Whirlpool — pool page",
+              "URL": "https://www.orca.so/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2",
+              "What you get": "Official Orca UI for the FOSS/SOL pool (swap, liquidity, charts)"
+            },
+            {
+              "Resource": "Pool account (Explorer)",
+              "URL": "https://explorer.solana.com/address/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2",
+              "What you get": "On-chain pool account details"
+            },
+            {
+              "Resource": "Orca Whirlpools — developer docs",
+              "URL": "https://docs.orca.so/developers/whirlpools/interacting-with-the-protocol",
+              "What you get": "Docs for interacting with Orca Whirlpool program and CLMM mechanics"
+            },
+            {
+              "Resource": "GeckoTerminal — pool analytics",
+              "URL": "https://www.geckoterminal.com/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2",
+              "What you get": "Charts and analytics for the FOSS/SOL pool"
+            },
+            {
+              "Resource": "GeckoTerminal — token API",
+              "URL": "https://api.geckoterminal.com/api/v2/networks/solana/tokens/64AcKtFgExrtJWPJVr6U4iQrJ1VpiUvDHvRtdMHAcoin",
+              "What you get": "API endpoint for token metrics"
+            },
+            {
+              "Resource": "GeckoTerminal — pool API",
+              "URL": "https://api.geckoterminal.com/api/v2/networks/solana/pools/3Ub4ojhVSiMZtmrS8bHSEiMo9oqzauTyYtd3HjFbZnE2",
+              "What you get": "API endpoint for pool metrics"
+            },
+            {
+              "Resource": "IPFS — metadata JSON",
+              "URL": "https://ipfs.io/ipfs/QmNaaTSFFy4ZBp95vhA8F8MCoYHu9tmzWgcW16YyQcni9n",
+              "What you get": "IPFS-hosted token metadata (name, symbol, description, image URI)"
+            },
+            {
+              "Resource": "IPFS — token logo image",
+              "URL": "https://ipfs.io/ipfs/QmZjM3DiAsnwzVPBD2zNzDN518fJqTCmmw41u2bfRZFJMf",
+              "What you get": "IPFS-hosted logo image used in Metaplex metadata"
+            },
+            {
+              "Resource": "Solana JSON-RPC (public)",
+              "URL": "https://api.mainnet-beta.solana.com",
+              "What you get": "Public RPC used for verification (getAccountInfo, getSignaturesForAddress, getTokenLargestAccounts)"
+            },
+            {
+              "Resource": "Launchpad program (Explorer)",
+              "URL": "https://explorer.solana.com/address/HtKnLjomtPrjJwyuQe6HApuEcnb76AUp3oG3nTpnQSAr",
+              "What you get": "Explorer page for the custom launchpad program used in the project"
+            },
+            {
+              "Resource": "Launchpad program (Solana FM)",
+              "URL": "https://solana.fm/address/HtKnLjomtPrjJwyuQe6HApuEcnb76AUp3oG3nTpnQSAr",
+              "What you get": "Alternate explorer view for the launchpad program"
+            }
           ]
         }
       ]
     }
   ],
   "references": [
-    { "id": 1, "title": "GitHub — Foss-Token (7 stars, 4 forks)", "url": "https://github.com/lingadevaru-hp/Foss-Token" },
-    { "id": 2, "title": "Live Trading — go.lingadevaru.in/foss-trading", "url": "https://go.lingadevaru.in/foss-trading" },
-    { "id": 3, "title": "Orca Whirlpool DEX", "url": "https://www.orca.so" }
+    {
+      "id": 1,
+      "title": "GitHub — Foss-Token (7 stars, 4 forks)",
+      "url": "https://github.com/lingadevaru-hp/Foss-Token"
+    },
+    {
+      "id": 2,
+      "title": "Live Trading — go.lingadevaru.in/foss-trading",
+      "url": "https://go.lingadevaru.in/foss-trading"
+    },
+    {
+      "id": 3,
+      "title": "Orca Whirlpool DEX",
+      "url": "https://www.orca.so"
+    }
   ],
-  "relatedArticles": ["insurance-dapp", "about", "privacy-stack"],
-  "categories": ["Blockchain", "Solana", "Web3", "DeFi"],
+  "relatedArticles": [
+    "insurance-dapp",
+    "about",
+    "privacy-stack"
+  ],
+  "categories": [
+    "Blockchain",
+    "Solana",
+    "Web3",
+    "DeFi"
+  ],
   "editHistory": [
-    { "date": "2026-06-25T00:00:00Z", "editor": "thoshan", "summary": "Added live trading section, resources, external links", "changeType": "major" },
-    { "date": "2026-06-22T00:00:00Z", "editor": "thoshan", "summary": "Logo in infobox, GIF banner in body, wiki links fixed", "changeType": "major" },
-    { "date": "2026-04-30T00:00:00Z", "editor": "thoshan", "summary": "Added atomic transaction table and phase callouts", "changeType": "major" },
-    { "date": "2026-04-29T08:00:00Z", "editor": "thoshan", "summary": "Initial page created", "changeType": "new" }
+    {
+      "date": "2026-06-25T00:00:00Z",
+      "editor": "thoshan",
+      "summary": "Added live trading section, resources, external links",
+      "changeType": "major"
+    },
+    {
+      "date": "2026-06-22T00:00:00Z",
+      "editor": "thoshan",
+      "summary": "Logo in infobox, GIF banner in body, wiki links fixed",
+      "changeType": "major"
+    },
+    {
+      "date": "2026-04-30T00:00:00Z",
+      "editor": "thoshan",
+      "summary": "Added atomic transaction table and phase callouts",
+      "changeType": "major"
+    },
+    {
+      "date": "2026-04-29T08:00:00Z",
+      "editor": "thoshan",
+      "summary": "Initial page created",
+      "changeType": "new"
+    }
   ]
 }
