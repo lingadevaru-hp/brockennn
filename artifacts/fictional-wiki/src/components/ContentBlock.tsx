@@ -13,8 +13,10 @@ function parseWikiLink(inner: string): { slug: string; text: string } {
 
 function parseWikiText(text: string): React.ReactNode[] {
   const nodes: React.ReactNode[] = [];
-  const parts = text.split(/(\[\[.*?\]\]|\*\*.*?\*\*|\*.*?\*|\[.*?\]\(.*?\))/);
+  // Split into wiki links, bold, italic, inline code, markdown links
+  const parts = text.split(/(\[\[.*?\]\]|\*\*.*?\*\*|\*[^*].*?\*|`[^`]*`|\[.*?\]\(.*?\))/);
   parts.forEach((part, i) => {
+    if (!part) return;
     if (part.startsWith('[[') && part.endsWith(']]')) {
       const { slug, text: display } = parseWikiLink(part.slice(2, -2));
       nodes.push(
@@ -26,6 +28,20 @@ function parseWikiText(text: string): React.ReactNode[] {
       nodes.push(<strong key={i}>{part.slice(2, -2)}</strong>);
     } else if (part.startsWith('*') && part.endsWith('*') && part.length > 2) {
       nodes.push(<em key={i}>{part.slice(1, -1)}</em>);
+    } else if (part.startsWith('`') && part.endsWith('`')) {
+      const code = part.slice(1, -1);
+      nodes.push(
+        <span key={i} className="inline-flex items-center gap-2">
+          <code className="bg-card px-1 rounded text-xs">{code}</code>
+          <button
+            onClick={() => navigator.clipboard?.writeText(code)}
+            className="text-xs px-2 py-0.5 bg-card/60 rounded border border-border hover:bg-card/80"
+            title="Copy"
+          >
+            Copy
+          </button>
+        </span>
+      );
     } else if (part.match(/^\[.*?\]\(.*?\)$/)) {
       const m = part.match(/^\[(.*?)\]\((.*?)\)$/);
       if (m) {
@@ -50,6 +66,92 @@ function renderMarkdown(content: string): React.ReactNode {
   while (i < lines.length) {
     const line = lines[i];
 
+    // Fenced code block
+    if (line.startsWith('```')) {
+      const lang = line.slice(3).trim();
+      i++;
+      const codeLines: string[] = [];
+      while (i < lines.length && !lines[i].startsWith('```')) {
+        codeLines.push(lines[i]);
+        i++;
+      }
+      i++; // skip closing ```
+      const code = codeLines.join('\n');
+      result.push(
+        <div key={i} className="mb-4">
+          <div className="flex items-center gap-2 mb-2">
+            <span className="text-xs px-2 py-1 bg-card/60 rounded">{lang || 'code'}</span>
+            <button
+              onClick={() => navigator.clipboard?.writeText(code)}
+              className="text-xs px-2 py-0.5 bg-card/60 rounded border border-border hover:bg-card/80"
+            >Copy</button>
+            <a
+              href={`data:text/plain;charset=utf-8,${encodeURIComponent(code)}`}
+              download={lang ? `snippet.${lang}` : 'snippet.txt'}
+              className="text-xs px-2 py-0.5 bg-card/60 rounded border border-border hover:bg-card/80"
+            >Download</a>
+          </div>
+          <pre className="overflow-x-auto p-3 bg-black/5 rounded"><code>{code}</code></pre>
+        </div>
+      );
+      continue;
+    }
+
+    // Table detection: header with pipes and separator of dashes
+    if (line.includes('|') && i + 1 < lines.length && lines[i + 1].match(/^\s*\|?\s*:-{0,}\s*\|/)) {
+      // parse header
+      const headerLine = line;
+      const sepLine = lines[i + 1];
+      const headers = headerLine.split('|').map(h => h.trim()).filter(Boolean);
+      i += 2;
+      const rows: string[][] = [];
+      while (i < lines.length && lines[i].includes('|')) {
+        const cells = lines[i].split('|').map(c => c.trim()).filter(() => true);
+        rows.push(cells);
+        i++;
+      }
+      result.push(
+        <div key={i} className="overflow-x-auto mb-4">
+          <table className="w-full border-collapse border border-border text-sm">
+            <thead>
+              <tr className="bg-card">
+                {headers.map((h, hi) => (
+                  <th key={hi} className="border border-border px-3 py-1.5 text-left font-bold">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {rows.map((r, ri) => (
+                <tr key={ri} className={ri % 2 === 1 ? 'bg-card/40' : ''}>
+                  {headers.map((_, ci) => (
+                    <td key={ci} className="border border-border px-3 py-1.5">{r[ci] ?? ''}</td>
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+      continue;
+    }
+
+    // Unordered list
+    if (line.trim().startsWith('- ') || line.trim().startsWith('* ')) {
+      const items: string[] = [];
+      while (i < lines.length && (lines[i].trim().startsWith('- ') || lines[i].trim().startsWith('* '))) {
+        items.push(lines[i].trim().slice(2));
+        i++;
+      }
+      result.push(
+        <ul key={i} className="list-disc pl-6 mb-4 text-sm leading-relaxed">
+          {items.map((it, idx) => (
+            <li key={idx}>{parseWikiText(it)}</li>
+          ))}
+        </ul>
+      );
+      continue;
+    }
+
     if (line.startsWith('### ')) {
       result.push(<h3 key={i} className="text-lg font-bold mt-4 mb-2 font-serif">{line.slice(4)}</h3>);
       i++;
@@ -63,7 +165,7 @@ function renderMarkdown(content: string): React.ReactNode {
       i++;
     } else {
       const paraLines: string[] = [];
-      while (i < lines.length && lines[i].trim() !== '' && !lines[i].startsWith('#')) {
+      while (i < lines.length && lines[i].trim() !== '' && !lines[i].startsWith('#') && !lines[i].startsWith('```')) {
         paraLines.push(lines[i]);
         i++;
       }
