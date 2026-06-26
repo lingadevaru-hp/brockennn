@@ -18,12 +18,18 @@ export default function ArticlePage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   useEffect(() => {
+    // wouter splat param may include a leading slash when using "/wiki/:slug*".
+    // Normalize it to a path-like slug without leading slash so loader fetches
+    // the correct JSON file at /data/articles/<slug>.json
     if (!slug) return;
+    const normalizedSlug = slug.replace(/^\//, '');
+    if (!normalizedSlug) return;
+
     setLoading(true);
     setError(false);
     setVisible(false);
     setSidebarOpen(false);
-    loadArticle(slug)
+    loadArticle(normalizedSlug)
       .then((a) => {
         setArticle(a);
         setLoading(false);
