@@ -93,6 +93,17 @@
       ]
     },
     {
+      "id": "source-documents",
+      "title": "Source documents & sub-articles",
+      "level": 2,
+      "content": [
+        {
+          "type": "text",
+          "content": "- [Overview](/wiki/foss-coin/overview)\n- [On-chain verification](/wiki/foss-coin/on-chain-verification)\n- [How it was built](/wiki/foss-coin/how-it-was-built)\n- [Transactions](/wiki/foss-coin/transactions)\n- [Programs](/wiki/foss-coin/programs)\n- [All URLs](/wiki/foss-coin/foss-coin-all-urls)\n- [Evidence](/wiki/foss-coin/foss-coin-evidence)\n- [Token spec](/wiki/foss-coin/token-spec)\n- [Pool sol balance](/wiki/foss-coin/foss-pool-sol-balance)\n- [Master doc](/wiki/foss-coin/foss-coin-master)\n\nClick any link to open the original source file as a separate sub-article page.\n\nCreation transaction: [View on Explorer](https://explorer.solana.com/tx/VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN) — `VQT5gJrktGkJNuSChKwnfQNeni4ULDLfgHV4bfspBTsZj44v6Wxqc6nGCZze7Mg66atQEmzuVf5MgyUBC9iGroN`"
+        }
+      ]
+    },
+    {
       "id": "how-i-built-it",
       "title": "How I Built It — One Atomic Transaction",
       "level": 2,
