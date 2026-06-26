@@ -209,7 +209,6 @@ export default function ArticleView({ article }: ArticleViewProps) {
       setLightboxIndex((prev) => (prev !== null && prev > 0 ? prev - 1 : prev));
     }
   }
-  const maxWidthClass = contentWidth === 'wide' ? 'max-w-none' : 'max-w-[680px]';
 
   return (
     <div className="flex gap-6 flex-1">
